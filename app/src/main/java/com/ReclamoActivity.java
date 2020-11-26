@@ -1,0 +1,37 @@
+package com;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import com.Adapters.ReclamoAdapter;
+import com.model.Reclamo;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class ReclamoActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_reclamo);
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
+
+        List<Reclamo> reclamoList = new LinkedList<>();
+        reclamoList.add (new Reclamo ("Vencido","Leche en Lata", "Subsidio", R.drawable.lechelata));
+        reclamoList.add (new Reclamo ("Abierto","Harina", "Subsidio", R.drawable.harina));
+        reclamoList.add (new Reclamo ("Sobreprecio","Hipermaxi", "Servicio", R.drawable.hipermaxi));
+        reclamoList.add (new Reclamo ("Sobreprecio","Vacuna de fiebre", "Servicio", R.drawable.salud));
+
+        libroList.add(new Libro("Divina comedia", "Dante Alighieri", R.drawable.divina_comedia));
+
+        ReclamoAdapter adapter = new ReclamoAdapter(this, reclamoList);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+}

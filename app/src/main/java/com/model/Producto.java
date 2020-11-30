@@ -7,7 +7,7 @@ public class Producto {
     private int foto;
     private int precio;
 
-    public Libro(String nombre, String descripcion, int foto, int precio) {
+    public Producto(String nombre, String descripcion, int foto, int precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.foto = foto;

@@ -1,12 +1,17 @@
 package com;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.model.Reclamo;
 
 import java.util.List;
 
@@ -16,7 +21,7 @@ public class RecyclerView_Reclamos {
     private ReclamoAdapter mReclamoAdapter;
 
 
-    public void setConfig (RecyclerView recyclerView,Context context,List<Reclamos> reclamos, List <String> keys ){
+    public void setConfig (RecyclerView recyclerView, Context context, List<Reclamo> reclamos, List <String> keys ){
         mContext = context;
         mReclamoAdapter = new ReclamoAdapter(reclamos ,keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -27,7 +32,7 @@ public class RecyclerView_Reclamos {
         private TextView mnombre;
         private TextView mdescripcion;
         private TextView mprodserv;
-        private Image mfoto;
+        private ImageView mfoto;
         private String key;
 
         public ReclamoItemView(ViewGroup parent){
@@ -44,7 +49,7 @@ public class RecyclerView_Reclamos {
             mnombre.setText(reclamo.getNombre());
             mdescripcion.setText(reclamo.getDescripcion());
             mprodserv.setText(reclamo.getProdServ());
-            mfoto.setText(reclamo.getFoto());
+            mfoto.setImageResource(reclamo.getFoto());
             this.key = key;
              }
 

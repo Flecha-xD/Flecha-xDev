@@ -12,13 +12,12 @@ import com.R;
 
 public class ContactoConsumidorActivity extends AppCompatActivity { //en teoria, ya esta
 
-    Intent intent;
     GridLayout menuGrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seleccion_normativa);
+        setContentView(R.layout.activity_contacto_consumidor);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
         menuGrid = (GridLayout) findViewById(R.id.menuGrid);
         setSingleEvent(menuGrid);

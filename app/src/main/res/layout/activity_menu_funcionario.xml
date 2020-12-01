@@ -179,9 +179,12 @@
         android:layout_marginBottom="15dp"
         android:id="@+id/logoutButton"
         android:background="@drawable/round_button_aqua"
+        android:textAllCaps="false"
 
 
         />
+
+
 
 
 </LinearLayout>

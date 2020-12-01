@@ -1,4 +1,4 @@
-package com;
+package proingsoftware.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,10 +8,13 @@ import android.widget.GridLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.R;
+
 import java.util.LinkedList;
 import java.util.List;
 
-public class ContactoActivity extends AppCompatActivity {
+public class ContactoConsumidorActivity extends AppCompatActivity { //en teoria, ya esta
 
     Intent intent;
     GridLayout menuGrid;

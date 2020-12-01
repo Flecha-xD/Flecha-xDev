@@ -1,17 +1,17 @@
 
-package com.model;
+package proingsoftware.model;
 
-public class Reclamo {
+public class Producto {
     private String nombre;
-    private String prodserv;
     private String descripcion;
     private int foto;
+    private int precio;
 
-    public Reclamo(String nombre, String descripcion, String prodserv , int foto) {
+    public Producto(String nombre, String descripcion, int foto, int precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.prodserv = prodserv;
         this.foto = foto;
+        this.precio = precio;
     }
 
     public String getDescripcion() {
@@ -25,7 +25,7 @@ public class Reclamo {
     public int getFoto() {
         return foto;
     }
-    public String getProdServ() {
-        return prodserv;
+    public int getPrecio() {
+        return precio;
     }
 }

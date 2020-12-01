@@ -1,4 +1,4 @@
-package com;
+package proingsoftware.activities;
 
 public class InformacionActivity {
 }

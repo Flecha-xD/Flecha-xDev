@@ -1,4 +1,4 @@
-package com.Adapters;
+package proingsoftware.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
-import com.model.Normativa;
+import proingsoftware.model.Normativa;
 
 import java.util.List;
 

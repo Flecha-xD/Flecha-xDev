@@ -1,7 +1,6 @@
-package com;
+package proingsoftware.activities;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,11 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.model.Producto;
+import com.R;
+
+import proingsoftware.model.Producto;
 
 import java.util.List;
 
-public class RecyclerView_Config {
+public class RecyclerView_ProductosSubsidio { //en teoria ya esta
 
     private Context mContext;
     private SubsidioAdapter mSubsidioAdapter;

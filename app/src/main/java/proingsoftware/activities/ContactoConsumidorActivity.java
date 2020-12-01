@@ -6,13 +6,9 @@ import androidx.cardview.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class ContactoConsumidorActivity extends AppCompatActivity { //en teoria, ya esta
 
@@ -22,7 +18,7 @@ public class ContactoConsumidorActivity extends AppCompatActivity { //en teoria,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_normativa);
+        setContentView(R.layout.activity_seleccion_normativa);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
         menuGrid = (GridLayout) findViewById(R.id.menuGrid);
         setSingleEvent(menuGrid);

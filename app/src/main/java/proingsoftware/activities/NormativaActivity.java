@@ -23,7 +23,7 @@ public class NormativaActivity extends AppCompatActivity { // falta acomodar a l
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_normativa);
+        setContentView(R.layout.activity_seleccion_normativa);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
 
         List<Normativa> normativaList = new LinkedList<>();

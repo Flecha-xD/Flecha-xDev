@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    android:orientation="vertical"
+    android:background="@color/colorPrimary"
     android:weightSum="10"
     tools:context="proingsoftware.activities.NormativaActivity">
 
@@ -29,7 +30,7 @@
 
         >
 
-        <!--- ley-->
+        <!--- linea-->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="19dp"
@@ -40,7 +41,9 @@
             android:layout_marginBottom="25dp"
             android:layout_marginTop="15dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/colorAccent">
+            >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -53,7 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Ley N° 453"
+                    android:text="800-10-0202"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -63,7 +66,7 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!--- Reglamento 1-->
+        <!--- email -->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="19dp"
@@ -73,7 +76,8 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="25dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/colorAccent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -86,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Reglamento de Regulación de Supermercados"
+                    android:text="Enviar e-mail"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -96,7 +100,7 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!--- Reglamento 2-->
+        <!--- Web-->
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="19dp"
@@ -106,7 +110,8 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="25dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/colorAccent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -119,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Reglamento de Publicidad Engañosa y Abuso"
+                    android:text="Visitar Web"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -129,6 +134,39 @@
 
         </androidx.cardview.widget.CardView>
 
+        <!--- mapa-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="19dp"
+            android:layout_rowWeight="0.34"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="25dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/colorAccent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Localizar en Mapa"
+                    android:textColor="@android:color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </GridLayout>
 

@@ -1,4 +1,4 @@
-package com;
+package proingsoftware.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
@@ -7,12 +7,15 @@ import android.widget.GridLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.Adapters.NormativaAdapter;
-import com.model.Normativa;
+import proingsoftware.Adapters.NormativaAdapter;
+
+import com.R;
+
+import proingsoftware.model.Normativa;
 import java.util.LinkedList;
 import java.util.List;
 
-public class NormativaActivity extends AppCompatActivity {
+public class NormativaActivity extends AppCompatActivity { // falta acomodar a la pantalla de información
 
     Intent intent;
     GridLayout menuGrid;

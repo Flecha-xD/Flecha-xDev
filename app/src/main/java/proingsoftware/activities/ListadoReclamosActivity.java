@@ -1,24 +1,22 @@
-package com;
+package proingsoftware.activities;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.Adapters.ReclamoAdapter;
+import proingsoftware.Adapters.ReclamoAdapter;
 import com.R;
-import com.model.Reclamo;
-
+import proingsoftware.model.Reclamo;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ReclamoActivity extends AppCompatActivity {
+public class ListadoReclamosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reclamo);
-
         RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
 
         List<Reclamo> reclamoList = new LinkedList<>();

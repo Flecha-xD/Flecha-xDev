@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
    android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".NormativaActivity">
+    tools:context="proingsoftware.activities.NormativaActivity">
 
     <RelativeLayout
         android:layout_weight="1.7"

@@ -1,4 +1,4 @@
-package com.Adapters;
+package proingsoftware.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
-import com.model.Producto;
+import proingsoftware.model.Producto;
 
 import java.util.List;
 

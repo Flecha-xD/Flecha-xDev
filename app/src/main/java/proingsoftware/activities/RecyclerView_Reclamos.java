@@ -1,7 +1,6 @@
-package com;
+package proingsoftware.activities;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -11,11 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.model.Reclamo;
+import com.R;
+
+import proingsoftware.model.Reclamo;
 
 import java.util.List;
 
-public class RecyclerView_Reclamos {
+public class RecyclerView_Reclamos { //en teoria ya esta
 
     private Context mContext;
     private ReclamoAdapter mReclamoAdapter;

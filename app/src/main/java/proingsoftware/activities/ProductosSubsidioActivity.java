@@ -1,17 +1,17 @@
-package com.activities;
+package proingsoftware.activities;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.Adapters.SubsidioAdapter;
+import proingsoftware.Adapters.SubsidioAdapter;
 import com.R;
-import com.model.Producto;
+import proingsoftware.model.Producto;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SubsidioActivity extends AppCompatActivity {
+public class ProductosSubsidioActivity extends AppCompatActivity { //en teoria ya esta
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

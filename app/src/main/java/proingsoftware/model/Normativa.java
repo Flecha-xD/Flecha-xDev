@@ -1,4 +1,4 @@
-package com.model;
+package proingsoftware.model;
 
 public class Normativa {
     private String nombre;

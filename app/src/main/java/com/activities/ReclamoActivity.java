@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.Adapters.ReclamoAdapter;
+import com.R;
 import com.model.Reclamo;
 
 import java.util.LinkedList;

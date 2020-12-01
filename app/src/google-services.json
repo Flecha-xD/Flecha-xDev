@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "794294831240",
+    "firebase_url": "https://flecha-xd.firebaseio.com",
+    "project_id": "flecha-xd",
+    "storage_bucket": "flecha-xd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794294831240:android:4bdc93f93f25dc942eb73d",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794294831240-sikjibknl0not9d02qbhkieusie56h8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.application",
+            "certificate_hash": "ed7d3e960117522bd7d26297f5304509dc2f2281"
+          }
+        },
+        {
+          "client_id": "794294831240-u42a19eqmrdeoom5fca6p1vanjfla9g7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBX4zFZxQQ7G6dnJDr_Ax1PUeoGv4pNahQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794294831240-u42a19eqmrdeoom5fca6p1vanjfla9g7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

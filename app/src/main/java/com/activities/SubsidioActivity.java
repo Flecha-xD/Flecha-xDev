@@ -1,4 +1,4 @@
-package com;
+package com.activities;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.Adapters.SubsidioAdapter;
+import com.R;
 import com.model.Producto;
 import java.util.LinkedList;
 import java.util.List;

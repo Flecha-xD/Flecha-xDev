@@ -7,11 +7,11 @@ public class Reclamo {
     private String descripcion;
     private int foto;
 
-    public Libro(String nombre, String descripcion, int foto, String prodserv) {
+    public Reclamo(String nombre, String descripcion, String prodserv , int foto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.foto = foto;
         this.prodserv = prodserv;
+        this.foto = foto;
     }
 
     public String getDescripcion() {

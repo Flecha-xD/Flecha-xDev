@@ -1,22 +1,27 @@
 package com;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.model.Producto;
 
 import java.util.List;
 
 public class RecyclerView_Config {
 
     private Context mContext;
-    private ProductoAdapter mProductoAdapter;
+    private SubsidioAdapter mSubsidioAdapter;
 
 
-    public void setConfig (RecyclerView recyclerView,Context context,List<Producto> producto, List <String> keys ){
+    public void setConfig (RecyclerView recyclerView, Context context, List<Producto> producto, List <String> keys ){
         mContext = context;
         mSubsidioAdapter = new SubsidioAdapter(producto ,keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
@@ -27,7 +32,7 @@ public class RecyclerView_Config {
         private TextView mnombre;
         private TextView mdescripcion;
         private TextView mprecio;
-        private Image mfoto;
+        private ImageView mfoto;
 
         private String key;
 
@@ -37,22 +42,22 @@ public class RecyclerView_Config {
             mnombre = (TextView) itemView.findViewById(R.id.nombre);
             mdescripcion = (TextView) itemView.findViewById(R.id.descripcion);
             mprecio = (TextView) itemView.findViewById(R.id.precio);
-            mfoto = (TextView) itemView.findViewById(R.id.foto);
+            mfoto = (ImageView) itemView.findViewById(R.id.foto);
 
         }
 
         public void  bind(Producto producto , String key){
             mprecio.setText(producto.getPrecio());
-            mnombre.setText(producto.getNombre);
-            mdescripcion.setText(producto.getDescripcion);
-            mfoto.setImage(producto.getFoto);
+            mnombre.setText(producto.getNombre());
+            mdescripcion.setText(producto.getDescripcion());
+            mfoto.setImageResource(producto.getFoto());
             this.key = key;
             }
 
 
     }
 
-    class SubsidioAdapter extends RecyclerView.Adapter<SubsidioItemView> {
+    class SubsidioAdapter extends RecyclerView.Adapter<ProductoItemView> {
         private List <Producto> mProductoList;
         private List <String> mKeys;
 
@@ -63,12 +68,12 @@ public class RecyclerView_Config {
 
         @NonNull
         @Override
-        public SubsidioItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new SubsidioItemView(parent);
+        public ProductoItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new ProductoItemView(parent);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull SubsidioItemView holder, int position) {
+        public void onBindViewHolder(@NonNull ProductoItemView holder, int position) {
             holder.bind(mProductoList.get(position),mKeys.get(position));
         }
 

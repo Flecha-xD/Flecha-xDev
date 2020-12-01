@@ -1,11 +1,12 @@
-package com;
+package com.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.Adapters.SubsidioAdapter;
+import com.R;
 import com.model.Producto;
 import java.util.LinkedList;
 import java.util.List;

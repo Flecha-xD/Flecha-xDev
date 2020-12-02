@@ -9,12 +9,22 @@
     android:weightSum="10"
     tools:context="proingsoftware.activities.DescribirReclamoActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_weight="1.7">
+        android:layout_height="100dp"
+        android:background="@color/colorOrange"
+        android:gravity="center">
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="REGISTRO DE RECLAMO"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
+
 
     <EditText
         android:id="@+id/descripqueja"
@@ -23,7 +33,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="130dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/round_box"
         android:hint="descripción"

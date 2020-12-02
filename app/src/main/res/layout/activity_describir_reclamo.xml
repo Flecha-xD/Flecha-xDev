@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:weightSum="10"
+    tools:context="proingsoftware.activities.DescribirReclamoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_weight="1.7">
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/descripqueja"
+        android:layout_width="280dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/round_box"
+        android:hint="descripción"
+        android:inputType="text"
+        android:maxLength="400"
+        android:paddingStart="110dp"
+        android:singleLine="true"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/instruccion"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descripqueja"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:paddingTop="15dp"
+        android:text="Añade una fotografía para completar
+tu denuncia"
+        android:textColor="@color/white" />
+
+         <ImageButton
+        android:layout_width="95dp"
+        android:layout_below="@id/instruccion"
+        android:layout_height="95dp"
+        android:scaleType="fitCenter"
+        android:id="@+id/camaraButton"
+        android:background="@drawable/camara"
+             android:layout_marginStart="80dp"
+        />
+
+
+    <ImageButton
+        android:id="@+id/galeriaButton"
+
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/instruccion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/galeria"
+        android:scaleType="fitCenter" />
+
+    <ImageView
+        android:id="@+id/imagetoupload"
+        android:layout_width="88dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/camaraButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/enviarreclamoButton"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/imagetoupload"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginEnd="145dp"
+        android:background="@drawable/round_button_aqua"
+
+
+        android:text="Enviar"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

@@ -9,7 +9,7 @@
     tools:context="proingsoftware.activities.ProductosSubsidioActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewMenu"
+        android:id="@+id/recyclerViewSubsidio"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </androidx.recyclerview.widget.RecyclerView>

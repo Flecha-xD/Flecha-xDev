@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:weightSum="10"
+    tools:context="proingsoftware.activities.VerReclamoActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorOrange"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="RECLAMO"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageprod"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+      android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="20dp"
+
+
+        />
+
+    <TextView
+        android:id="@+id/nombrereclamo"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="titulo"
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/propietario"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="simpson"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/depto"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="La paz"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/fecha"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="ayer"
+        android:textColor="@color/white"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:text="nasdjnlafbddsbfdblsafbldsbf"
+        android:textColor="@color/white"
+        android:layout_marginTop="2dp"/>
+
+    <Button
+        android:id="@+id/atenderButton"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button_aqua"
+        android:text="Atender"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:layout_margin="25dp"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/descartarButton"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/round_button_aqua"
+        android:text="Descartar"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:layout_marginBottom="35dp"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

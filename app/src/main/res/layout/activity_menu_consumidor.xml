@@ -9,54 +9,64 @@
     android:background="@color/colorPrimary"
     tools:context="proingsoftware.activities.MenuConsumidorActivity">
 
-<RelativeLayout
-        android:layout_weight="1.7"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp" >
-    </RelativeLayout>
+        android:layout_height="100dp"
+        android:background="@color/colorOrange"
+        android:gravity="center">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="DEFENSA DEL CONSUMIDOR"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold">
+        </TextView>
+    </RelativeLayout>
 
     <GridLayout
         android:id="@+id/menuGrid"
-        android:columnCount="2"
-        android:rowCount="2"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
-        android:layout_weight="8"
         android:layout_width="match_parent"
-        android:layout_marginTop="25dp"
+        android:layout_height="477dp"
+        android:layout_marginTop="40dp"
+        android:layout_weight="8"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
         android:padding="14dp"
-        android:layout_height="wrap_content">
+        android:rowCount="2">
 
         <!--- reclamo-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
+            android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="@color/colorAccent"
-            >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Reclamos"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -68,30 +78,30 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
+            android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="@color/colorAccent"
-            >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Subsidio"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -103,30 +113,30 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
+            android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="@color/colorAccent"
-            >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Contacto"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
@@ -137,31 +147,31 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
+            android:layout_columnWeight="1"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp"
+            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="@color/colorAccent"
-            >
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <TextView
-                    android:text="Normativa"
+                    android:layout_width="wrap_content"
 
+                    android:layout_height="wrap_content"
+                    android:text="Normativa"
                     android:textAlignment="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

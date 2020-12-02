@@ -1,6 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="proingsoftware.activities.ConfiguracionActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_weight="1.7"
+        android:layout_width="match_parent"
+        android:layout_height="75dp" >
+    </RelativeLayout>
+
+    <Switch
+        android:id="@+id/nightMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="130dp"
+        android:layout_gravity="center"
+        android:checked="false"
+        android:text="Modo Oscuro:                         "
+        android:textColor="@android:color/white"
+        android:track="@drawable/switcher" />
+
+    <Switch
+        android:id="@+id/saveInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+
+        android:text="Guardar Información:            "
+        android:checked="false"
+        android:track="@drawable/switcher"
+        />
+
+
+    <Button
+        android:text="Historial de Reclamos"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:layout_height="50dp"
+        android:layout_marginTop="45dp"
+        android:id="@+id/historialButton"
+        android:background="@drawable/round_button_aqua"
+        android:textAllCaps="false"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Versión 1.1"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="40dp"
+       />
+
+    <Button
+        android:text="Admin"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:layout_width="120dp"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_height="40dp"
+        android:layout_marginTop="125dp"
+        android:id="@+id/adminButton"
+        android:background="@drawable/round_button_orange"
+        />
+
+
+</LinearLayout>

@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="10"
-    tools:context="proingsoftware.activities.HacerReclamoActivity">
+    tools:context="proingsoftware.activities.IngresoFuncionarioActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,12 +16,12 @@
 
     </RelativeLayout>
     <EditText
-        android:id="@+id/nombre"
+        android:id="@+id/nombrefunc"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="@drawable/round_box"
-        android:hint="Nombre Completo"
+        android:hint="Nombre Funcionario"
         android:inputType="text"
         android:maxLength="50"
         android:paddingStart="55dp"
@@ -29,7 +29,7 @@
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
         android:layout_marginTop="50dp"
-     />
+        />
 
     <GridLayout
         android:id="@+id/menuGrid"
@@ -41,7 +41,7 @@
 
 
         <EditText
-            android:id="@+id/carnet"
+            android:id="@+id/carnetfunc"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_row="0"
@@ -58,7 +58,7 @@
             android:textColorHint="@color/colorAccent" />
 
         <EditText
-            android:id="@+id/extension"
+            android:id="@+id/extensionfunc"
             android:gravity="center"
             android:layout_marginStart="15dp"
             android:layout_width="70dp"
@@ -77,13 +77,13 @@
             android:textColorHint="@color/colorAccent" />
     </GridLayout>
     <EditText
-        android:id="@+id/celular"
+        android:id="@+id/celularfunc"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="@drawable/round_box"
         android:hint="Número Celular"
-        android:inputType="text"
+        android:inputType="number"
         android:maxLength="8"
         android:paddingStart="64dp"
         android:textColor="@color/colorAccent"
@@ -92,7 +92,22 @@
         android:layout_marginTop="20dp"
         />
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/codigofunc"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Código"
+        android:inputType="numberPassword"
+        android:maxLength="12"
+        android:paddingStart="97dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/emailfunc"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -100,56 +115,41 @@
         android:hint="Correo Electrónico"
         android:inputType="textEmailAddress"
         android:maxLength="40"
-        android:paddingStart="53dp"
+        android:paddingStart="55dp"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
         android:layout_marginTop="20dp"
         />
     <EditText
-        android:id="@+id/dpto"
+        android:id="@+id/contrasenia"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="@drawable/round_box"
-        android:hint="Departamento"
-        android:inputType="text"
-        android:maxLength="10"
-        android:paddingStart="69dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:singleLine="true"
-        android:layout_marginTop="20dp"
-        />
-    <EditText
-        android:id="@+id/prodserv"
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/round_box"
-        android:hint="Producto/Servicio"
-        android:inputType="text"
-        android:maxLength="20"
-        android:paddingStart="54dp"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="80dp"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
         android:layout_marginTop="20dp"
         />
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/recuerdameFuncionario"
         android:textColor="#ffffff"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_marginStart="115dp"
         android:layout_marginEnd="115dp"
         android:layout_height="25dp"
-        android:gravity="center"
-        android:text="Producto del Subsidio"
+        android:layout_gravity="center"
+        android:text="Recuérdame"
         android:buttonTint="#ffffff"
         android:layout_marginTop="20dp"
- />
+        />
     <Button
-        android:text="Siguiente"
+        android:text="Acceder"
         android:textAllCaps="false"
         android:textAlignment="center"
         android:textColor="@android:color/white"
@@ -157,7 +157,7 @@
         android:layout_gravity="center"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/logoutButton"
+        android:id="@+id/accederFuncionario"
         android:background="@drawable/round_button_aqua"
 
 

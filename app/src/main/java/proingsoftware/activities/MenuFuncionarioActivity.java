@@ -20,7 +20,6 @@ public class MenuFuncionarioActivity extends AppCompatActivity { //reparar el bo
     GridLayout menuGrid;
     Button logout;
     SharedPreferences sharedPreferences;
-    CheckBox checkBox;
     Intent mainIntent;
 
     @Override

@@ -147,7 +147,7 @@
         android:layout_marginTop="20dp"
         />
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/essubsi"
         android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_marginStart="115dp"
@@ -158,17 +158,18 @@
         android:buttonTint="#ffffff"
         android:layout_marginTop="20dp"
  />
+
     <Button
-        android:text="Siguiente"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:layout_width="120dp"
+        android:id="@+id/siguienteButton"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:id="@+id/logoutButton"
         android:background="@drawable/round_button_aqua"
+        android:text="Siguiente"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
 
 
         />

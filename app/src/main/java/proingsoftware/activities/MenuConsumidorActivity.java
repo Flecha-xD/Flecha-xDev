@@ -27,15 +27,10 @@ public class MenuConsumidorActivity extends AppCompatActivity { //reparar el xml
         config= (ImageButton) findViewById(R.id.configbutton);
         config.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("checkBoxValue", false);
-                editor.apply();
-                editor.commit();
                 mainIntent = new Intent(MenuConsumidorActivity.this, ConfiguracionActivity.class);
                 startActivity(mainIntent);
             }
         });
-        sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
         menuGrid = (GridLayout) findViewById(R.id.menuGrid);
         setSingleEvent(menuGrid);
 

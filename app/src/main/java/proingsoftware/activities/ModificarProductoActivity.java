@@ -1,4 +1,6 @@
 package proingsoftware.activities;
 
-public class ModificarProductoActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ModificarProductoActivity extends AppCompatActivity {
 }

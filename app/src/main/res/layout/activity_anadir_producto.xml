@@ -1,6 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:weightSum="10"
+    tools:context="proingsoftware.activities.AnadirProductoActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:background="@color/colorOrange">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="28dp"
+            android:text="NUEVO PRODUCTO"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            > </TextView>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/nombreprod"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Nombre del Producto"
+        android:inputType="text"
+        android:maxLength="50"
+        android:paddingStart="40dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="40dp"
+        />
+
+    <GridLayout
+        android:id="@+id/menuGrid"
+        android:layout_width="240dp"
+        android:layout_gravity="center"
+        android:layout_height="70dp"
+        android:columnCount="2"
+        android:columnOrderPreserved="false">
+
+
+        <EditText
+            android:id="@+id/precio"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/round_box"
+            android:gravity="center"
+            android:hint="Precio Bs."
+            android:inputType="number"
+            android:maxLength="8"
+            android:paddingStart="4dp"
+            android:singleLine="true"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/codprod"
+            android:gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/round_box"
+            android:hint="Código"
+            android:inputType="numberPassword"
+            android:maxLength="5"
+            android:paddingStart="2dp"
+            android:singleLine="true"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+    </GridLayout>
+    <EditText
+        android:id="@+id/descProd"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:background="@drawable/round_box"
+        android:hint="Descripción"
+        android:inputType="text"
+        android:maxLength="400"
+        android:paddingStart="76dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"
+        />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:paddingTop="20dp">
+    <ImageButton
+        android:id="@+id/galeriaButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/galeria"
+        android:scaleType="fitCenter" />
+
+    <ImageView
+        android:id="@+id/imagetoupload"
+        android:layout_width="200dp"
+        android:layout_height="140dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="70dp"
+/>
+</RelativeLayout>
+    <EditText
+        android:id="@+id/contrasenia"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="80dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:id="@+id/addprod"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_button_aqua"
+        android:text="Añadir"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        />
+
+</LinearLayout>

@@ -1,5 +1,7 @@
 package proingsoftware.activities;
 
-public class AnadirProductoActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class AnadirProductoActivity extends AppCompatActivity {
 
 }

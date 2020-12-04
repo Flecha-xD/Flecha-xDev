@@ -23,13 +23,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ModificarProductoActivity extends AppCompatActivity {
     private final static int SELECT_PHOTO = 12345;
-    Context context = getApplicationContext();
     Button cambiar;
     ImageView imagenElegida;
     ImageButton galeria;
     Intent cambiarIntent;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+   //  FirebaseDatabase database = FirebaseDatabase.getInstance();
+   //  DatabaseReference myRef = database.getReference("message");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,18 +58,18 @@ public class ModificarProductoActivity extends AppCompatActivity {
                 if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
                         //compare todos los datos
-                        Toast toast = Toast.makeText(context, "Producto Añadido", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
                         toast.show();
                         cambiarIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);
                         startActivity(cambiarIntent);
                     } else {
 
-                        Toast toast = Toast.makeText(context, "Algún dato vacío", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(getApplicationContext(), "Algún dato vacío", Toast.LENGTH_LONG);
                         toast.show();
 
                     }
                 } else {
-                    Toast toast = Toast.makeText(context, "Contraseña equivocada", Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Contraseña equivocada", Toast.LENGTH_LONG);
                     toast.show();
 
                 }

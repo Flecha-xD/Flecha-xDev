@@ -4,6 +4,7 @@
     <color name="colorBackGround">#E80A0C24</color>
     <color name="colorPrimary">#296993</color>
     <color name="colorPrimaryDark">#2a6a92</color>
+    <color name="colorPrimaryDarker">#215371</color>
     <color name="colorAccent">#00aca4</color>
     <color name="colorGray">#dde8e0</color>
     <color name="colorNoColor">#00FFFFFF</color>

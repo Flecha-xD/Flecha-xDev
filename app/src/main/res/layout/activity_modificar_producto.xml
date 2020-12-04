@@ -106,7 +106,7 @@
         android:layout_height="150dp"
         android:paddingTop="20dp">
         <ImageButton
-            android:id="@+id/galeriaButton"
+            android:id="@+id/galeria3Button"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="70dp"
@@ -115,7 +115,7 @@
             android:scaleType="fitCenter" />
 
         <ImageView
-            android:id="@+id/imagetoupload"
+            android:id="@+id/imagetoupload3"
             android:layout_width="200dp"
             android:layout_height="140dp"
             android:layout_alignParentStart="true"
@@ -125,7 +125,7 @@
             />
     </RelativeLayout>
     <EditText
-        android:id="@+id/contrasenia"
+        android:id="@+id/contrasenia2"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="50dp"
@@ -159,7 +159,7 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/modprod"
+            android:id="@+id/delprod"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"

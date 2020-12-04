@@ -5,17 +5,11 @@ import androidx.cardview.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import proingsoftware.Adapters.NormativaAdapter;
 
 import com.R;
 
-import proingsoftware.model.Normativa;
-import java.util.LinkedList;
-import java.util.List;
-
-public class NormativaActivity extends AppCompatActivity { // falta acomodar a la pantalla de información
+public class SeleccionNormativaActivity extends AppCompatActivity { // falta acomodar a la pantalla de información
 
     Intent intent;
     GridLayout menuGrid;
@@ -40,16 +34,16 @@ public class NormativaActivity extends AppCompatActivity { // falta acomodar a l
 
                     if (cardIndex == 0) {
 
-                        intent = new Intent(NormativaActivity.this, InformacionActivity.class);
+                        intent = new Intent(SeleccionNormativaActivity.this, InformacionActivity.class);
                         intent.putExtra("info", "Accediendo a Código de Ley....." );
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
-                        intent = new Intent(NormativaActivity.this, InformacionActivity.class);
+                        intent = new Intent(SeleccionNormativaActivity.this, InformacionActivity.class);
                         intent.putExtra("info", "Accediendo Reglamento de Supermercados....." );
                         startActivity(intent);
 
                     }else if(cardIndex == 2){
-                        intent = new Intent(NormativaActivity.this, InformacionActivity.class);
+                        intent = new Intent(SeleccionNormativaActivity.this, InformacionActivity.class);
                         intent.putExtra("info", "Accediendo A Reglamento de Publicidad....." );
                         startActivity(intent);
                     }

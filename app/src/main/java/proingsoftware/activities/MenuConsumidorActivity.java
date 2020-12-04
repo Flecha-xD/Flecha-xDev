@@ -56,7 +56,7 @@ public class MenuConsumidorActivity extends AppCompatActivity { //reparar el xml
                         intent = new Intent(MenuConsumidorActivity.this, ContactoConsumidorActivity.class);
                         startActivity(intent);
                     }else if (cardIndex == 3){
-                        intent = new Intent(MenuConsumidorActivity.this, NormativaActivity.class);
+                        intent = new Intent(MenuConsumidorActivity.this, SeleccionNormativaActivity.class);
                         startActivity(intent);
                     }
                 }

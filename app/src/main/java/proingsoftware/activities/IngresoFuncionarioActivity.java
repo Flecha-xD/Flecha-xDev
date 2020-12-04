@@ -15,13 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class IngresoFuncionarioActivity extends AppCompatActivity {
-    Context context = getApplicationContext();
     Button login;
     Intent loginIntent;
     CheckBox checkBox;
     SharedPreferences sharedPreferences;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+   // FirebaseDatabase database = FirebaseDatabase.getInstance();
+   // DatabaseReference myRef = database.getReference("message");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,8 +82,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
     public void ToastLoginFail() {
         CharSequence text = "Datos Equivocados";
         int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
+        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
         toast.show();
 
     }
@@ -93,8 +91,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
 
         CharSequence text = "Contraseña equivocada";
         int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
+        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
         toast.show();
 
     }

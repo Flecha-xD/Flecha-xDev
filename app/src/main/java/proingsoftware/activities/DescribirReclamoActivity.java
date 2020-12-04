@@ -27,16 +27,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class DescribirReclamoActivity extends AppCompatActivity {
-    Context context = getApplicationContext();
+
     Button reclamar;
     Intent enviarReclamo;
+    SharedPreferences sharedPreferences;
     private static final int CAMERA_REQUEST = 1888;
     private final static int SELECT_PHOTO = 12345;
     private ImageView imageView;
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
-    SharedPreferences sharedPreferences;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    // SharedPreferences sharedPreferences;
+    // FirebaseDatabase database = FirebaseDatabase.getInstance();
+   //  DatabaseReference myRef = database.getReference("message");
     ImageButton camara, galeria;
 
     @Override
@@ -63,11 +64,11 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                     enviarReclamo = new Intent(DescribirReclamoActivity.this, MenuConsumidorActivity.class);
                     startActivity(enviarReclamo);
                     CharSequence text = "Su reclamo será atendido lo antes posible";
-                    Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
+                    Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
                     toast.show();
                 } else {
                     CharSequence text = "Datos Incompletos";
-                    Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
                     toast.show();
                 }
 

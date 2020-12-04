@@ -57,7 +57,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.NormativaActivity"
+            android:name="proingsoftware.activities.SeleccionNormativaActivity"
             android:label="NORMATIVAS"
             android:screenOrientation="portrait">
         </activity>

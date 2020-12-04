@@ -19,7 +19,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
     Intent loginIntent;
     CheckBox checkBox;
     SharedPreferences sharedPreferences;
-   // FirebaseDatabase database = FirebaseDatabase.getInstance();
+   //  FirebaseDatabase database = FirebaseDatabase.getInstance();
    // DatabaseReference myRef = database.getReference("message");
 
     @Override

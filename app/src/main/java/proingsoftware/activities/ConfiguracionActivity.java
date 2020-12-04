@@ -48,10 +48,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         historialReclamos = (Button) findViewById(R.id.historialButton);
         admin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.apply();
-                editor.commit();
-                mainIntent = new Intent(ConfiguracionActivity.this, MenuFuncionarioActivity.class);
+                mainIntent = new Intent(ConfiguracionActivity.this, IngresoFuncionarioActivity.class);
                 startActivity(mainIntent);
             }
         });

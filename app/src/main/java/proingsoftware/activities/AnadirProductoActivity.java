@@ -26,8 +26,8 @@ public class AnadirProductoActivity extends AppCompatActivity {
     ImageView imagenElegida;
     ImageButton galeria;
     Intent anadirIntent;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    // FirebaseDatabase database = FirebaseDatabase.getInstance();
+    // DatabaseReference myRef = database.getReference("message");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

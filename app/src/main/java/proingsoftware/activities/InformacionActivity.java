@@ -9,7 +9,6 @@ import com.R;
 
 import proingsoftware.Adapters.NormativaAdapter;
 import proingsoftware.model.Normativa;
-import proingsoftware.model.Producto;
 import java.util.LinkedList;
 import java.util.List;
 

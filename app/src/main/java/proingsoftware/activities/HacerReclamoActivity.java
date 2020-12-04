@@ -15,13 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class HacerReclamoActivity extends AppCompatActivity {
-    Context context = getApplicationContext();
     Button enviar;
     Intent seguirIntent;
     CheckBox checkBox;
     SharedPreferences sharedPreferences;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    // FirebaseDatabase database = FirebaseDatabase.getInstance();
+    // DatabaseReference myRef = database.getReference("message");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +50,14 @@ public class HacerReclamoActivity extends AppCompatActivity {
                         correo != null && depto != null && razon != null) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (checkBox.isChecked()) {
                         CharSequence text = "Producto del Subsidio";
-                        Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
                         toast.show();
                     }
                     seguirIntent = new Intent(HacerReclamoActivity.this, DescribirReclamoActivity.class);
                     startActivity(seguirIntent);
                                 } else {
                     CharSequence text = "Datos Incompletos";
-                    Toast toast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
                     toast.show();
                 }
 

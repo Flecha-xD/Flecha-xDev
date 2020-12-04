@@ -14,34 +14,89 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name="proingsoftware.activities.MenuConsumidorActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name="proingsoftware.activities.ProductosSubsidioActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity
-            android:name="proingsoftware.activities.ContactoConsumidorActivity"
-            android:label="CONTACTO"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.ListadoReclamosActivity"
-            android:label="RECLAMO"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.NormativaActivity"
-            android:label="NORMATIVA"
-            android:screenOrientation="portrait"></activity>
-
-        <activity
-            android:name="proingsoftware.activities.MenuFuncionarioActivity"
+            android:name="proingsoftware.activities.SplashScreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="proingsoftware.activities.ContactoFuncionarioActivity"
+            android:label="CONTACTO FUNCIONARIO"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.MenuConsumidorActivity"
+            android:label="MENU CONSUMIDOR"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.ConfiguracionActivity"
+            android:label="CONFIGURACIONES"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.MenuFuncionarioActivity"
+            android:label="MENU FUNCIONARIO"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.ProductosSubsidioActivity"
+            android:label="SUBSIDIO"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.ContactoConsumidorActivity"
+            android:label="CONTACTO CONSUMIDOR"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.ListadoReclamosActivity"
+            android:label="RECLAMOS"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.NormativaActivity"
+            android:label="NORMATIVAS"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.VerReclamoActivity"
+            android:label="VER RECLAMO"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.IngresoFuncionarioActivity"
+            android:label="LOGIN FUNCIONARIO"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.InformacionActivity"
+            android:label="INFORMACIÓN"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.HacerReclamoActivity"
+            android:label="RECLAMAR INFO"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.DescribirReclamoActivity"
+            android:label="DECLAMAR DESCRIPCION"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.AnadirProductoActivity"
+            android:label="NORMATIVAS"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.ModificarProductoActivity"
+            android:label="NORMATIVAS"
+            android:screenOrientation="portrait">
+        </activity>
+
     </application>
 
 </manifest>

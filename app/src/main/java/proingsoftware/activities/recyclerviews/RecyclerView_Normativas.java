@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.recyclerviews;
 
 import android.content.Context;
 import android.view.LayoutInflater;

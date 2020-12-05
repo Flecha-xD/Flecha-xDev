@@ -5,13 +5,13 @@ public class Producto {
     private String nombre;
     private String descripcion;
     private int foto;
-    private int precio;
+    private String precio;
 
-    public Producto(String nombre, String descripcion, int foto, int precio) {
+    public Producto(String nombre, String descripcion, String precio, int foto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.foto = foto;
         this.precio = precio;
+        this.foto = foto;
     }
 
     public String getDescripcion() {
@@ -25,7 +25,7 @@ public class Producto {
     public int getFoto() {
         return foto;
     }
-    public int getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 }

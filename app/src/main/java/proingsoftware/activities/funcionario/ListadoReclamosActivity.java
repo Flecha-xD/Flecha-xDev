@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.funcionario;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;

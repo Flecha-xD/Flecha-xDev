@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.funcionario;
 
 import android.content.Intent;
 import android.os.Bundle;

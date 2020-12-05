@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.consumidor;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,7 +18,6 @@ public class ContactoConsumidorActivity extends AppCompatActivity { //en teoria,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto_consumidor);
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
         menuGrid = (GridLayout) findViewById(R.id.menuGrid);
         setSingleEvent(menuGrid);
     }
@@ -33,10 +32,9 @@ public class ContactoConsumidorActivity extends AppCompatActivity { //en teoria,
                 public void onClick(View view) {
 
                     if (cardIndex == 0) {
-                        Uri uri = Uri.fromParts("telefono", "22141040", null);
-                        Intent newIntent = new Intent(Intent.ACTION_CALL, uri);
-                        newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(newIntent);
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:22141040"));
+                        startActivity(intent);
                     }else if(cardIndex == 1 ){
                         Intent intent=new Intent(Intent.ACTION_SEND);
                         intent.putExtra(Intent.EXTRA_EMAIL, "Minjusticia@Justicia.Gob.Bo");

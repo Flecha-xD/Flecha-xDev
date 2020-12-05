@@ -1,18 +1,19 @@
-package proingsoftware.activities;
+package proingsoftware.activities.funcionario;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.R;
+
+import proingsoftware.activities.consumidor.MenuConsumidorActivity;
+import proingsoftware.activities.consumidor.ProductosSubsidioActivity;
 
 public class MenuFuncionarioActivity extends AppCompatActivity { //reparar el boton y xml
 

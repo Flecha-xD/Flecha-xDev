@@ -7,7 +7,7 @@
    android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="10"
-    tools:context="proingsoftware.activities.SeleccionNormativaActivity">
+    tools:context="proingsoftware.activities.consumidor.SeleccionNormativaActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

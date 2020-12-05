@@ -57,10 +57,10 @@ public class ReclamoAdapter extends RecyclerView.Adapter<ReclamoAdapter.ReclamoV
 
         public ReclamoViewHolder(View itemView) {
             super(itemView);
-            this.imageView = itemView.findViewById(R.id.foto);
-            this.textView1 = itemView.findViewById(R.id.nombre);
-            this.textView2 = itemView.findViewById(R.id.descripcion);
-            this.textView3 = itemView.findViewById(R.id.prodserv);
+            this.imageView = itemView.findViewById(R.id.fotoRec);
+            this.textView1 = itemView.findViewById(R.id.nombreRec);
+            this.textView2 = itemView.findViewById(R.id.prodservRec);
+            this.textView3 = itemView.findViewById(R.id.descripcionRec);
 
 
         }

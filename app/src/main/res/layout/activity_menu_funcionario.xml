@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@color/colorPrimary"
-    tools:context="proingsoftware.activities.MenuFuncionarioActivity">
+    tools:context="proingsoftware.activities.funcionario.MenuFuncionarioActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -98,7 +98,7 @@
 
                 <TextView
                     android:text="Añadir Producto Subsidio"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -133,7 +133,7 @@
 
                 <TextView
                     android:text="Modificar Producto Subsidio"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -167,7 +167,7 @@
 
                 <TextView
                     android:text="Historial de Reclamos"
-                    android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"

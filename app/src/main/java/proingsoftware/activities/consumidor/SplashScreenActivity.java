@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.consumidor;
 
 import android.app.Activity;
 import android.content.Intent;

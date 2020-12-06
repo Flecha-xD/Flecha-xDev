@@ -1,10 +1,13 @@
 package proingsoftware.activities;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +21,7 @@ public class RecyclerView_ProductosSubsidio { //en teoria ya esta
 
     private Context mContext;
     private SubsidioAdapter mSubsidioAdapter;
+    private RecyclerView productList;
 
 
     public void setConfig (RecyclerView recyclerView, Context context, List<Producto> producto, List <String> keys ){

@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.consumidor;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.cardview.widget.CardView;
@@ -18,7 +18,7 @@ public class SeleccionNormativaActivity extends AppCompatActivity { // falta aco
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_normativa);
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewInfo);
         menuGrid = (GridLayout) findViewById(R.id.menuGrid);
         setSingleEvent(menuGrid);
     }

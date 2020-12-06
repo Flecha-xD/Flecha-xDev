@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.recyclerviews;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -39,10 +39,10 @@ public class RecyclerView_Reclamos { //en teoria ya esta
         public ReclamoItemView(ViewGroup parent){
             super(LayoutInflater.from(mContext).inflate(R.layout.reclamo_item, parent,false));
 
-            mnombre = (TextView) itemView.findViewById(R.id.nombre);
-            mdescripcion = (TextView) itemView.findViewById(R.id.descripcion);
-            mprodserv= (TextView) itemView.findViewById(R.id.prodserv);
-            mfoto = (ImageView) itemView.findViewById(R.id.foto);
+            mnombre = (TextView) itemView.findViewById(R.id.nombreRec);
+            mdescripcion = (TextView) itemView.findViewById(R.id.descripcionRec);
+            mprodserv= (TextView) itemView.findViewById(R.id.prodservRec);
+            mfoto = (ImageView) itemView.findViewById(R.id.fotoRec);
 
         }
 

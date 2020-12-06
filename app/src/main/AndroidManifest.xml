@@ -15,70 +15,70 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name="proingsoftware.activities.SplashScreenActivity">
+            android:name="proingsoftware.activities.consumidor.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="proingsoftware.activities.ContactoFuncionarioActivity"
+            android:name="proingsoftware.activities.funcionario.ContactoFuncionarioActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.MenuConsumidorActivity"
+            android:name="proingsoftware.activities.consumidor.MenuConsumidorActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.ConfiguracionActivity"
+            android:name="proingsoftware.activities.consumidor.ConfiguracionActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.MenuFuncionarioActivity"
+            android:name="proingsoftware.activities.funcionario.MenuFuncionarioActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.ProductosSubsidioActivity"
+            android:name="proingsoftware.activities.consumidor.ProductosSubsidioActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.ContactoConsumidorActivity"
+            android:name="proingsoftware.activities.consumidor.ContactoConsumidorActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.ListadoReclamosActivity"
+            android:name="proingsoftware.activities.funcionario.ListadoReclamosActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.SeleccionNormativaActivity"
+            android:name="proingsoftware.activities.consumidor.SeleccionNormativaActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.VerReclamoActivity"
+            android:name="proingsoftware.activities.funcionario.VerReclamoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.IngresoFuncionarioActivity"
+            android:name="proingsoftware.activities.funcionario.IngresoFuncionarioActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.InformacionActivity"
+            android:name="proingsoftware.activities.consumidor.InformacionActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.HacerReclamoActivity"
+            android:name="proingsoftware.activities.consumidor.HacerReclamoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.DescribirReclamoActivity"
+            android:name="proingsoftware.activities.consumidor.DescribirReclamoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.AnadirProductoActivity"
+            android:name="proingsoftware.activities.funcionario.AnadirProductoActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name="proingsoftware.activities.ModificarProductoActivity"
+            android:name="proingsoftware.activities.funcionario.ModificarProductoActivity"
             android:screenOrientation="portrait">
         </activity>
 

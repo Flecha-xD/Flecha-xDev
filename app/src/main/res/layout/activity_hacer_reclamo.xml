@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="10"
-    tools:context="proingsoftware.activities.HacerReclamoActivity">
+    tools:context="proingsoftware.activities.consumidor.HacerReclamoActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

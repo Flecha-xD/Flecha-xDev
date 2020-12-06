@@ -1,13 +1,10 @@
-package proingsoftware.activities;
+package proingsoftware.activities.recyclerviews;
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,47 +17,45 @@ import java.util.List;
 public class RecyclerView_ProductosSubsidio { //en teoria ya esta
 
     private Context mContext;
-    private SubsidioAdapter mSubsidioAdapter;
-    private RecyclerView productList;
+    private RecyclerView_ProductosSubsidio.SubsidioAdapter mSubsidioAdapter;
 
 
-    public void setConfig (RecyclerView recyclerView, Context context, List<Producto> producto, List <String> keys ){
+    public void setConfig (RecyclerView recyclerView, Context context, List<Producto> productos, List <String> keys ){
         mContext = context;
-        mSubsidioAdapter = new SubsidioAdapter(producto ,keys);
+        mSubsidioAdapter = new RecyclerView_ProductosSubsidio.SubsidioAdapter(productos ,keys);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(mSubsidioAdapter);
     }
 
-    class ProductoItemView  extends RecyclerView.ViewHolder{
+    class SubsidioItemView extends RecyclerView.ViewHolder{
         private TextView mnombre;
         private TextView mdescripcion;
         private TextView mprecio;
         private ImageView mfoto;
-
         private String key;
 
-        public ProductoItemView(ViewGroup parent){
+        public SubsidioItemView(ViewGroup parent){
             super(LayoutInflater.from(mContext).inflate(R.layout.producto_item, parent,false));
 
-            mnombre = (TextView) itemView.findViewById(R.id.nombre);
-            mdescripcion = (TextView) itemView.findViewById(R.id.descripcion);
-            mprecio = (TextView) itemView.findViewById(R.id.precio);
-            mfoto = (ImageView) itemView.findViewById(R.id.foto);
+            mnombre = (TextView) itemView.findViewById(R.id.nombreSub);
+            mdescripcion = (TextView) itemView.findViewById(R.id.descSub);
+            mprecio= (TextView) itemView.findViewById(R.id.precioSub);
+            mfoto = (ImageView) itemView.findViewById(R.id.fotoSub);
 
         }
 
-        public void  bind(Producto producto , String key){
-            mprecio.setText(producto.getPrecio());
+        public void  bind(Producto producto, String key){
             mnombre.setText(producto.getNombre());
             mdescripcion.setText(producto.getDescripcion());
+            mprecio.setText(producto.getPrecio());
             mfoto.setImageResource(producto.getFoto());
             this.key = key;
-            }
+        }
 
 
     }
 
-    class SubsidioAdapter extends RecyclerView.Adapter<ProductoItemView> {
+    class SubsidioAdapter extends RecyclerView.Adapter<RecyclerView_ProductosSubsidio.SubsidioItemView> {
         private List <Producto> mProductoList;
         private List <String> mKeys;
 
@@ -71,12 +66,12 @@ public class RecyclerView_ProductosSubsidio { //en teoria ya esta
 
         @NonNull
         @Override
-        public ProductoItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ProductoItemView(parent);
+        public RecyclerView_ProductosSubsidio.SubsidioItemView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new SubsidioItemView(parent);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull ProductoItemView holder, int position) {
+        public void onBindViewHolder(@NonNull RecyclerView_ProductosSubsidio.SubsidioItemView holder, int position) {
             holder.bind(mProductoList.get(position),mKeys.get(position));
         }
 
@@ -87,4 +82,3 @@ public class RecyclerView_ProductosSubsidio { //en teoria ya esta
     }
 
 }
-

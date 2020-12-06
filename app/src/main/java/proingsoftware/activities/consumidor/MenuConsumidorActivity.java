@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.consumidor;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

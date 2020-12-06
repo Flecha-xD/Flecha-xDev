@@ -1,4 +1,4 @@
-package proingsoftware.activities;
+package proingsoftware.activities.funcionario;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,7 +19,6 @@ public class ContactoFuncionarioActivity extends AppCompatActivity { //en teoria
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto_funcionario);
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
         menuGrid = (GridLayout) findViewById(R.id.menuGrid);
         setSingleEvent(menuGrid);
     }
@@ -34,12 +33,11 @@ public class ContactoFuncionarioActivity extends AppCompatActivity { //en teoria
                 public void onClick(View view) {
 
                     if (cardIndex == 0) {
-                        Uri uri = Uri.fromParts("telefono", "70576881", null); //poner una variable para el unmerodesde bdd
-                        Intent newIntent = new Intent(Intent.ACTION_CALL, uri);
-                        newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(newIntent);
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:70576881"));
+                        startActivity(intent);
                     }else if(cardIndex == 1 ){
-                        Uri uri = Uri.fromParts("Buscando Distribuidor", "70576881", null); //poner una variable para el unmerodesde bdd
+                        Uri uri = Uri.fromParts("Buscando Distribuidor", "2240006", null); //poner una variable para el unmerodesde bdd
                         Intent newIntent = new Intent(Intent.ACTION_CALL, uri);
                         newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(newIntent);

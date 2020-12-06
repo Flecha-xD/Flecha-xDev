@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@color/colorPrimary"
-    tools:context="proingsoftware.activities.MenuConsumidorActivity">
+    tools:context="proingsoftware.activities.consumidor.MenuConsumidorActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

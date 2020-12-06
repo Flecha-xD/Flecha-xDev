@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="10"
-    tools:context="proingsoftware.activities.AnadirProductoActivity">
+    tools:context="proingsoftware.activities.funcionario.AnadirProductoActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -57,10 +57,10 @@ public class SubsidioAdapter extends RecyclerView.Adapter<SubsidioAdapter.Subsid
 
         public SubsidioViewHolder(View itemView) {
             super(itemView);
-            this.imageView = itemView.findViewById(R.id.foto);
-            this.textView1 = itemView.findViewById(R.id.descripcion);
-            this.textView2 = itemView.findViewById(R.id.nombre);
-            this.textView3 = itemView.findViewById(R.id.precio);
+            this.imageView = itemView.findViewById(R.id.fotoSub);
+            this.textView1 = itemView.findViewById(R.id.descSub);
+            this.textView2 = itemView.findViewById(R.id.nombreSub);
+            this.textView3 = itemView.findViewById(R.id.precioSub);
 
         }
     }

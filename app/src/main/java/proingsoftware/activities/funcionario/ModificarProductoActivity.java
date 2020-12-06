@@ -1,6 +1,5 @@
-package proingsoftware.activities;
+package proingsoftware.activities.funcionario;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -18,25 +17,24 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.R;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class ModificarProductoActivity extends AppCompatActivity {
     private final static int SELECT_PHOTO = 12345;
-    Button cambiar;
+    Button anadir, borrar;
     ImageView imagenElegida;
     ImageButton galeria;
-    Intent cambiarIntent;
-   //  FirebaseDatabase database = FirebaseDatabase.getInstance();
-   //  DatabaseReference myRef = database.getReference("message");
+    Intent anadirIntent;
+    // FirebaseDatabase database = FirebaseDatabase.getInstance();
+    // DatabaseReference myRef = database.getReference("message");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modificar_producto);
-        cambiar = findViewById(R.id.actprod);
-        galeria = findViewById(R.id.galeria3Button);
-        imagenElegida = findViewById(R.id.imagetoupload3);
+        setContentView(R.layout.activity_anadir_producto);
+        anadir = findViewById(R.id.addprod);
+        borrar = findViewById(R.id.delprod);
+        galeria = findViewById(R.id.galeria2Button);
+        imagenElegida = findViewById(R.id.imagetoupload2);
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,22 +44,20 @@ public class ModificarProductoActivity extends AppCompatActivity {
             }
         });
         final String contra = "4602546025"; //hardcodeado
-        cambiar.setOnClickListener(new View.OnClickListener() {
+        anadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nombre = ((EditText) findViewById(R.id.nombreprod)).getText().toString();
                 String descripcion = ((EditText) findViewById(R.id.descProd)).getText().toString();
                 String precio = ((EditText) findViewById(R.id.precio)).getText().toString();
                 String codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
-                String password = ((EditText) findViewById(R.id.contrasenia2)).getText().toString();
+                String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
 
                 if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
                         //compare todos los datos
-                        Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
-                        toast.show();
-                        cambiarIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);
-                        startActivity(cambiarIntent);
+                        anadirIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);
+                        startActivity(anadirIntent);
                     } else {
 
                         Toast toast = Toast.makeText(getApplicationContext(), "Algún dato vacío", Toast.LENGTH_LONG);
@@ -78,7 +74,31 @@ public class ModificarProductoActivity extends AppCompatActivity {
         })
         ;
 
+        borrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
+
+                if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                    Toast toast = Toast.makeText(getApplicationContext(), "Producto borrado", Toast.LENGTH_SHORT);
+                    toast.show();
+                    anadirIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);
+                    startActivity(anadirIntent);
+                } else {
+
+                    Toast toast = Toast.makeText(getApplicationContext(), "Introduzca la contraseña", Toast.LENGTH_SHORT);
+                    toast.show();
+
+                }
+
+
+            }
+        })
+        ;
+
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

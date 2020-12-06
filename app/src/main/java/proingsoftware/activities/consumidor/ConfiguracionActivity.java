@@ -1,16 +1,19 @@
-package proingsoftware.activities;
+package proingsoftware.activities.consumidor;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+
+import proingsoftware.activities.funcionario.IngresoFuncionarioActivity;
+import proingsoftware.activities.funcionario.ListadoReclamosActivity;
+
 public class ConfiguracionActivity extends AppCompatActivity {
 
     Button admin, historialReclamos;
@@ -54,11 +57,12 @@ public class ConfiguracionActivity extends AppCompatActivity {
         });
         historialReclamos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.apply();
-                editor.commit();
+                //SharedPreferences.Editor editor = sharedPreferences.edit();
+                //editor.apply();
+                //editor.commit();
                 mainIntent = new Intent(ConfiguracionActivity.this, ListadoReclamosActivity.class);
                 startActivity(mainIntent);
+                finish();
             }
         });
 

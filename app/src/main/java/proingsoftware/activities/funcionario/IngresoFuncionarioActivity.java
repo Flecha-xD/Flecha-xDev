@@ -32,7 +32,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
             startActivity(loginIntent);
         }
 
-        final String sergio = "4612546125";
+        final String sergio = "46125";
         final String fernanda = "4602546025";
         final String thepassword = "12345";
 

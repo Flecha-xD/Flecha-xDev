@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import proingsoftware.firebase.Firebase;
 
 public class HacerReclamoActivity extends AppCompatActivity {
     Button enviar;
@@ -17,7 +21,7 @@ public class HacerReclamoActivity extends AppCompatActivity {
     CheckBox checkBox;
     SharedPreferences sharedPreferences;
     // FirebaseDatabase database = FirebaseDatabase.getInstance();
-    // DatabaseReference myRef = database.getReference("message");
+    DatabaseReference dataBase = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,5 +66,11 @@ public class HacerReclamoActivity extends AppCompatActivity {
         })
         ;
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //DatabaseReference nombreRef =dataBase.child()
     }
 }

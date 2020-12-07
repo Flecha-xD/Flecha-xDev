@@ -1,6 +1,7 @@
 package proingsoftware.activities.consumidor;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -21,9 +22,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -38,45 +44,58 @@ public class DescribirReclamoActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     private static final int CAMERA_REQUEST = 1888;
     private final static int SELECT_PHOTO = 12345;
-    private ImageView imageView;
+
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
-    // SharedPreferences sharedPreferences;
+
     // FirebaseDatabase database = FirebaseDatabase.getInstance();
    //  DatabaseReference myRef = database.getReference("message");
-    ImageButton camara, galeria;
+    ImageButton camara;
+    //Fer
+    //ImageButton galeria;
 
-    private FirebaseStorage storage = FirebaseStorage.getInstance();
-    private Uri photo;
-    private View imageContainer;
+    //Sergio (galeria imageview)
+    ImageView galeria;
 
-    private class UploadImageOnClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
-            imageContainer.setDrawingCacheEnabled(true);
-            imageContainer.buildDrawingCache();
-            Bitmap bitmap = imageContainer.getDrawingCache();
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100,baos);
-            imageContainer.setDrawingCacheEnabled(false);
-            byte[] data = baos.toByteArray();
+    private ImageView imageView;
+    private FirebaseStorage storage;
+    private StorageReference mStorageReference;
+    public Uri photoURI;
 
-            String path = "reclamosFotos/" + UUID.randomUUID() + ".png";
-            StorageReference reclamosFotosRef = storage.getReference(path);
-        }
-    }
+    //Sergio alternativa 2
+    //private View imageContainer;
+
+    //Sergio alternativa2
+//    private class UploadImageOnClickListener implements View.OnClickListener {
+//        @Override
+//        public void onClick(View view) {
+//            imageContainer.setDrawingCacheEnabled(true);
+//            imageContainer.buildDrawingCache();
+//            Bitmap bitmap = imageContainer.getDrawingCache();
+//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+//            bitmap.compress(Bitmap.CompressFormat.PNG, 100,baos);
+//            imageContainer.setDrawingCacheEnabled(false);
+//            byte[] data = baos.toByteArray();
+//
+//            String path = "reclamosFotos/" + UUID.randomUUID() + ".png";
+//            StorageReference reclamosFotosRef = storage.getReference(path);
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        storage = FirebaseStorage.getInstance();
+        mStorageReference = FirebaseStorage.getInstance().getReference();
+
         setContentView(R.layout.activity_describir_reclamo);
-
-        imageView =findViewById(R.id.imagetupload);
-
-        //this.imageView = (ImageView) this.findViewById(R.id.imagetoupload);
+        this.imageView = (ImageView) this.findViewById(R.id.imagetoupload);
         sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
         ;
         camara = (ImageButton) findViewById(R.id.camaraButton);
-        galeria = (ImageButton) findViewById(R.id.galeriaButton);
+        //Fer
+        //galeria = (ImageButton) findViewById(R.id.galeriaButton);
+        //Sergio (galeria imageview)
+        galeria =findViewById(R.id.galeriaImageView);
 
         reclamar = findViewById(R.id.enviarreclamoButton);
 
@@ -107,17 +126,15 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-//                photoPickerIntent.setType("image/*");
-//                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
-                choosePhoto();
+                //Fer
+                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
+
+                //Sergio
+                //choosePhoto();
             }
         });
-
-
-
-
-
 
         camara.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -150,30 +167,80 @@ public class DescribirReclamoActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // Sergio
+        //        if (requestCode == 1 && resultCode == RESULT_OK && data!=null && data.getData()!=null ){
+//            photo = data.getData();
+//            imageView.setImageURI(photo);
+//            uploadPicture();
+//        }
+
+        //Fer
         if (resultCode == RESULT_OK && data != null) {
             if (requestCode == CAMERA_REQUEST ) {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
+                photoURI = data.getData();
                 imageView.setImageBitmap(photo); //esta photo debe ser guardada en la bdd
+                imageView.setImageURI(photoURI);
             }
             if (requestCode == SELECT_PHOTO) {
                 Uri pickedImage = data.getData();
                 String[] filePath = {MediaStore.Images.Media.DATA};
-                Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
-                cursor.moveToFirst();
-                String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-                Bitmap photo = BitmapFactory.decodeFile(imagePath, options);
-                imageView.setImageBitmap(photo); //IGUAL ESTA FOTO DEBERIA ALMACENARSE
-                cursor.close();
+//                Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
+//                cursor.moveToFirst();
+//                String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
+//                BitmapFactory.Options options = new BitmapFactory.Options();
+//                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+//                Bitmap photo = BitmapFactory.decodeFile(imagePath, options);
+//                imageView.setImageBitmap(photo); //IGUAL ESTA FOTO DEBERIA ALMACENARSE
+//                cursor.close();
+
+                //TODO carrusel de fotos
+
+                photoURI = pickedImage;
+                imageView.setImageURI(photoURI);
+
+                uploadPicture();
             }
         }
     }
 
-    private void choosePhoto() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, 1);
+    //Sergio
+    private void uploadPicture() {
+
+        final ProgressDialog pd = new ProgressDialog(this);
+        pd.setTitle("Cargando Imagen...");
+        pd.show();
+        final String randomName = UUID.randomUUID().toString();
+        StorageReference riversRef = mStorageReference.child("reclamos/images/" + randomName);
+
+        riversRef.putFile(photoURI)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        pd.dismiss();
+                        Snackbar.make(findViewById(android.R.id.content), "Imagen cargada", Snackbar.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                       pd.dismiss();
+                       Toast.makeText(getApplicationContext(),  "Error al cargar imagen", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                        double porcentaje =  (100.00 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                        pd.setMessage("Porcentaje: " + (int) porcentaje + "%");
+                    }
+                });
     }
+
+//    private void choosePhoto() {
+//        Intent intent = new Intent();
+//        intent.setType("image/*");
+//        intent.setAction(Intent.ACTION_GET_CONTENT);
+//        startActivityForResult(intent, 1);
+//    }
  }

@@ -21,6 +21,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageMetadata;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.util.UUID;
+
+import proingsoftware.firebase.Firebase;
 
 public class DescribirReclamoActivity extends AppCompatActivity {
 
@@ -36,11 +45,34 @@ public class DescribirReclamoActivity extends AppCompatActivity {
    //  DatabaseReference myRef = database.getReference("message");
     ImageButton camara, galeria;
 
+    private FirebaseStorage storage = FirebaseStorage.getInstance();
+    private Uri photo;
+    private View imageContainer;
+
+    private class UploadImageOnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            imageContainer.setDrawingCacheEnabled(true);
+            imageContainer.buildDrawingCache();
+            Bitmap bitmap = imageContainer.getDrawingCache();
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100,baos);
+            imageContainer.setDrawingCacheEnabled(false);
+            byte[] data = baos.toByteArray();
+
+            String path = "reclamosFotos/" + UUID.randomUUID() + ".png";
+            StorageReference reclamosFotosRef = storage.getReference(path);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_describir_reclamo);
-        this.imageView = (ImageView) this.findViewById(R.id.imagetoupload);
+
+        imageView =findViewById(R.id.imagetupload);
+
+        //this.imageView = (ImageView) this.findViewById(R.id.imagetoupload);
         sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
         ;
         camara = (ImageButton) findViewById(R.id.camaraButton);
@@ -75,9 +107,10 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-                photoPickerIntent.setType("image/*");
-                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
+//                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+//                photoPickerIntent.setType("image/*");
+//                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
+                choosePhoto();
             }
         });
 
@@ -135,5 +168,12 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                 cursor.close();
             }
         }
+    }
+
+    private void choosePhoto() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, 1);
     }
  }

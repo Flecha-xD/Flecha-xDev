@@ -83,7 +83,7 @@ tu denuncia"
         android:scaleType="fitCenter" />
 
     <ImageView
-        android:id="@+id/imagetoupload"
+        android:id="@+id/imagetupload"
         android:layout_width="88dp"
         android:layout_height="200dp"
         android:layout_below="@id/camaraButton"

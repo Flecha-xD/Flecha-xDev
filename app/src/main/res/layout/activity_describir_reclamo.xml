@@ -69,10 +69,8 @@ tu denuncia"
              android:layout_marginStart="80dp"
         />
 
-
-    <ImageButton
-        android:id="@+id/galeriaButton"
-
+    <ImageView
+        android:id="@+id/galeriaImageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_below="@id/instruccion"
@@ -81,9 +79,20 @@ tu denuncia"
         android:layout_marginEnd="80dp"
         android:background="@drawable/galeria"
         android:scaleType="fitCenter" />
+<!--    -->
+<!--    <ImageButton-->
+<!--        android:id="@+id/galeriaButton"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:layout_below="@id/instruccion"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="7dp"-->
+<!--        android:layout_marginEnd="80dp"-->
+<!--        android:background="@drawable/galeria"-->
+<!--        android:scaleType="fitCenter" />-->
 
     <ImageView
-        android:id="@+id/imagetupload"
+        android:id="@+id/imagetoupload"
         android:layout_width="88dp"
         android:layout_height="200dp"
         android:layout_below="@id/camaraButton"

@@ -30,11 +30,11 @@ public class ModificarProductoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anadir_producto);
-        anadir = findViewById(R.id.addprod);
+        setContentView(R.layout.activity_modificar_producto);
+        anadir = findViewById(R.id.actprod);
         borrar = findViewById(R.id.delprod);
-        galeria = findViewById(R.id.galeria2Button);
-        imagenElegida = findViewById(R.id.imagetoupload2);
+        galeria = findViewById(R.id.galeria3Button);
+        imagenElegida = findViewById(R.id.imagetoupload3);
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

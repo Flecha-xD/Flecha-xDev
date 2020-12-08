@@ -12,8 +12,10 @@ import androidx.cardview.widget.CardView;
 
 import com.R;
 
-public class MenuConsumidorActivity extends AppCompatActivity { //reparar el xml
+import proingsoftware.activities.funcionario.AnadirProductoActivity;
+import proingsoftware.activities.funcionario.ModificarProductoActivity;
 
+public class MenuConsumidorActivity extends AppCompatActivity { //reparar el xml
     Intent intent;
     GridLayout menuGrid;
     ImageButton config;

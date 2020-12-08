@@ -46,9 +46,11 @@ public class HacerReclamoActivity extends AppCompatActivity {
                 String correo = ((EditText) findViewById(R.id.email)).getText().toString();
                 String depto = ((EditText) findViewById(R.id.dpto)).getText().toString();
                 String razon = ((EditText) findViewById(R.id.prodserv)).getText().toString();
+                String descripcion = ((EditText) findViewById(R.id.descripQueja)).getText().toString();
 
                 if (nombre != null && ci != null && ext != null && cel != null &&
-                        correo != null && depto != null && razon != null) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                        correo != null && depto != null && razon != null && descripcion != null) {
+                    //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (checkBox.isChecked()) {
                         CharSequence text = "Producto del Subsidio";
                         Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);

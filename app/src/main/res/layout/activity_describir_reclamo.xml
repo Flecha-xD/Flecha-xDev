@@ -22,33 +22,18 @@
             android:text="REGISTRO DE RECLAMO"
             android:textColor="@color/white"
             android:textSize="24dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+
+        </TextView>
     </RelativeLayout>
 
-
-    <EditText
-        android:id="@+id/descripqueja"
-        android:layout_width="280dp"
-        android:layout_height="150dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/round_box"
-        android:hint="descripción"
-        android:inputType="text"
-        android:maxLength="400"
-        android:paddingStart="110dp"
-        android:singleLine="true"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent" />
 
     <TextView
         android:id="@+id/instruccion"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/descripqueja"
+
+        android:layout_marginTop="110dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:gravity="center"
@@ -94,13 +79,13 @@ tu denuncia"
     <ImageView
         android:id="@+id/imagetoupload"
         android:layout_width="88dp"
-        android:layout_height="200dp"
+        android:layout_height="310dp"
         android:layout_below="@id/camaraButton"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="70dp"
         android:layout_marginEnd="70dp"
-        android:layout_marginBottom="15dp" />
+        android:layout_marginBottom="30dp" />
 
     <Button
         android:id="@+id/enviarreclamoButton"
@@ -117,6 +102,7 @@ tu denuncia"
         android:text="Enviar"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:layout_marginBottom="90dp"
         android:textColor="@android:color/white" />
 
 </RelativeLayout>

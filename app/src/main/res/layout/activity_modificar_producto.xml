@@ -56,7 +56,7 @@
             android:layout_height="50dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="9dp"
             android:background="@drawable/round_box"
             android:gravity="center"
             android:hint="Precio Bs."
@@ -76,7 +76,6 @@
             android:layout_row="0"
             android:layout_column="1"
             android:layout_gravity="center"
-            android:layout_marginTop="19dp"
             android:background="@drawable/round_box"
             android:hint="Código"
             android:inputType="numberPassword"
@@ -99,7 +98,6 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="20dp"
         />
     <RelativeLayout
         android:layout_width="match_parent"
@@ -117,7 +115,7 @@
         <ImageView
             android:id="@+id/imagetoupload3"
             android:layout_width="200dp"
-            android:layout_height="140dp"
+            android:layout_height="150dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="170dp"
@@ -150,12 +148,14 @@
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
             android:background="@drawable/round_button_aqua"
             android:text="Actualizar"
             android:textAlignment="center"
             android:textAllCaps="false"
+            android:layout_alignEnd="@id/delprod"
+            android:layout_marginBottom="100dp"
             android:textColor="@android:color/white" />
 
         <Button
@@ -164,8 +164,9 @@
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_gravity="center"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="100dp"
             android:background="@drawable/round_button_aqua"
             android:text="Borrar"
             android:textAlignment="center"

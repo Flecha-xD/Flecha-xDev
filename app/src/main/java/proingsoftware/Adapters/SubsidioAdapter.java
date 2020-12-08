@@ -1,16 +1,20 @@
 package proingsoftware.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
+
+import proingsoftware.activities.funcionario.ModificarProductoActivity;
 import proingsoftware.model.Producto;
 
 import java.util.List;
@@ -40,6 +44,12 @@ public class SubsidioAdapter extends RecyclerView.Adapter<SubsidioAdapter.Subsid
         subsidioViewHolder.textView1.setText(this.productoList.get(position).getNombre());
         subsidioViewHolder.textView2.setText(this.productoList.get(position).getDescripcion());
         subsidioViewHolder.textView3.setText(this.productoList.get(position).getPrecio());
+        subsidioViewHolder.carta.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                context.startActivity(new
+                        Intent(context, ModificarProductoActivity.class));
+            }
+        });
     }
 
     @Override
@@ -53,6 +63,7 @@ public class SubsidioAdapter extends RecyclerView.Adapter<SubsidioAdapter.Subsid
         TextView textView1;
         TextView textView2;
         TextView textView3;
+        LinearLayout carta;
 
 
         public SubsidioViewHolder(View itemView) {
@@ -61,6 +72,7 @@ public class SubsidioAdapter extends RecyclerView.Adapter<SubsidioAdapter.Subsid
             this.textView1 = itemView.findViewById(R.id.descSub);
             this.textView2 = itemView.findViewById(R.id.nombreSub);
             this.textView3 = itemView.findViewById(R.id.precioSub);
+            this.carta = itemView.findViewById(R.id.carta);
 
         }
     }

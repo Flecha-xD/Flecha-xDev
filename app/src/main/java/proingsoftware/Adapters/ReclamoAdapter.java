@@ -1,6 +1,6 @@
 package proingsoftware.Adapters;
 
-import android.content.Context;
+import  android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +21,15 @@ import proingsoftware.model.Reclamo;
 import java.util.List;
 
 public class ReclamoAdapter extends RecyclerView.Adapter<ReclamoAdapter.ReclamoViewHolder> {
+    public void setPermitido(boolean permitido) {
+        this.permitido = permitido;
+    }
 
+    public boolean isPermitido() {
+        return permitido;
+    }
+
+    public boolean permitido;
     private Context context;
     private List<Reclamo> reclamoList;
     private LayoutInflater inflater;
@@ -45,13 +53,17 @@ public class ReclamoAdapter extends RecyclerView.Adapter<ReclamoAdapter.ReclamoV
         reclamoViewHolder.textView1.setText(this.reclamoList.get(position).getNombre());
         reclamoViewHolder.textView2.setText(this.reclamoList.get(position).getDescripcion());
         reclamoViewHolder.textView3.setText(this.reclamoList.get(position).getProdServ());
+
+        if (permitido)
         reclamoViewHolder.tarjeta.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 context.startActivity(new
                         Intent(context, VerReclamoActivity.class));
             }
+
         });
     }
+
 
     @Override
     public int getItemCount() {

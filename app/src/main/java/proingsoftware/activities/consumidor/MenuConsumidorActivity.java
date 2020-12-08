@@ -49,16 +49,20 @@ public class MenuConsumidorActivity extends AppCompatActivity { //reparar el xml
                     if (cardIndex == 0) {
 
                         intent = new Intent(MenuConsumidorActivity.this, HacerReclamoActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
                         intent = new Intent(MenuConsumidorActivity.this, ProductosSubsidioActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
 
                     }else if(cardIndex == 2){
                         intent = new Intent(MenuConsumidorActivity.this, ContactoConsumidorActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }else if (cardIndex == 3){
                         intent = new Intent(MenuConsumidorActivity.this, SeleccionNormativaActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }
                 }

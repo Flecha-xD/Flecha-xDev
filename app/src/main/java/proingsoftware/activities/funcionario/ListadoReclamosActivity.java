@@ -1,5 +1,6 @@
 package proingsoftware.activities.funcionario;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,10 +14,14 @@ import java.util.List;
 public class ListadoReclamosActivity extends AppCompatActivity {
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_reclamos);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
+        Intent mIntent = getIntent();
+        String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
+
 
         List<Reclamo> reclamoList = new LinkedList<>();
         reclamoList.add (new Reclamo ("Vencido","Leche en Lata", "Subsidio", R.drawable.lechelata));
@@ -27,6 +32,12 @@ public class ListadoReclamosActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        if (previousActivity.equals("FUNCIONARIO")){
+            adapter.setPermitido(true);
+        } else if (previousActivity.equals("CONSUMIDOR")){
+            adapter.setPermitido(false);
+        }
+
     }
 
 }

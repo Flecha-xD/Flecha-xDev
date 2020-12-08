@@ -57,20 +57,20 @@ public class MenuFuncionarioActivity extends AppCompatActivity { //reparar el bo
                     if (cardIndex == 0) {
 
                         intent = new Intent(MenuFuncionarioActivity.this, ListadoReclamosActivity.class); //muestra todos los no resueltos
-                        intent.putExtra("info", "Accediendo asistencia....." );
+                        intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
                         intent = new Intent(MenuFuncionarioActivity.this, AnadirProductoActivity.class);
-                        intent.putExtra("info", "Accediendo Parqueo....." );
+                        intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
 
                     }else if(cardIndex == 2){
                         intent = new Intent(MenuFuncionarioActivity.this, ProductosSubsidioActivity.class);
-                        intent.putExtra("info", "Accediendo A Notas....." );
+                        intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }else if (cardIndex == 3){
                         intent = new Intent(MenuFuncionarioActivity.this, ListadoReclamosActivity.class); //Filtra con firebase
-                        intent.putExtra("info", "Accediendo A Biblioteda....." );
+                        intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }
                 }

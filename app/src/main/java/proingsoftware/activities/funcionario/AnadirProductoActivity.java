@@ -40,7 +40,7 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 String descripcion = ((EditText) findViewById(R.id.descProd)).getText().toString();
                 String precio = ((EditText) findViewById(R.id.precio)).getText().toString();
                 String codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
-                String password = ((EditText) findViewById(R.id.contrasenia2)).getText().toString();
+                String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
 
                 if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)

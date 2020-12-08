@@ -1,5 +1,6 @@
 package proingsoftware.activities.consumidor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,6 +19,8 @@ public class ProductosSubsidioActivity extends AppCompatActivity { //en teoria y
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subsidio);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewSubsidio);
+        Intent mIntent = getIntent();
+        String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
         List<Producto> productoList = new LinkedList<>();
         productoList.add (new Producto ("Quintal de Harina", "Emapa, producto boliviano", "50", R.drawable.harina));
         productoList.add (new Producto ("Chocolate Breick", "Chocolate en tableta", "16", R.drawable.breick));
@@ -28,6 +31,12 @@ public class ProductosSubsidioActivity extends AppCompatActivity { //en teoria y
         SubsidioAdapter adapter = new SubsidioAdapter(this, productoList);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        if (previousActivity.equals("FUNCIONARIO")){
+            adapter.setPermitido(true);
+        }else if (previousActivity.equals("CONSUMIDOR")) {
+            adapter.setPermitido(false);
+        }
+
     }
 
 }

@@ -21,6 +21,11 @@ import java.util.List;
 
 public class SubsidioAdapter extends RecyclerView.Adapter<SubsidioAdapter.SubsidioViewHolder> {
 
+    public void setPermitido(boolean permitido) {
+        this.permitido = permitido;
+    }
+
+    private boolean permitido;
     private Context context;
     private List<Producto> productoList;
     private LayoutInflater inflater;
@@ -44,12 +49,13 @@ public class SubsidioAdapter extends RecyclerView.Adapter<SubsidioAdapter.Subsid
         subsidioViewHolder.textView1.setText(this.productoList.get(position).getNombre());
         subsidioViewHolder.textView2.setText(this.productoList.get(position).getDescripcion());
         subsidioViewHolder.textView3.setText(this.productoList.get(position).getPrecio());
+        if (permitido){
         subsidioViewHolder.carta.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view) {
                 context.startActivity(new
                         Intent(context, ModificarProductoActivity.class));
             }
-        });
+        });}
     }
 
     @Override

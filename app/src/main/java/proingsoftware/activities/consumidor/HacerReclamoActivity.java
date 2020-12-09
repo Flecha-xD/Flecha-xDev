@@ -8,20 +8,41 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.UUID;
 
 import proingsoftware.firebase.Firebase;
+import proingsoftware.model.Reclamo;
+import proingsoftware.model.ReclamoFirebase;
 
 public class HacerReclamoActivity extends AppCompatActivity {
     Button enviar;
     Intent seguirIntent;
     CheckBox checkBox;
     SharedPreferences sharedPreferences;
-    // FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference dataBase = FirebaseDatabase.getInstance().getReference();
+
+    //Firebase variables
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reclamoRef = database.getReference();
+    //Reclamos text variables
+//    DatabaseReference nombreCompletoRef = reclamoRef.child("Nombre");
+//    DatabaseReference carnetRef = reclamoRef.child("Carnet");
+//    DatabaseReference extensionRef = reclamoRef.child("Extension");
+//    DatabaseReference celularRef = reclamoRef.child("Celular");
+//    DatabaseReference correoRef = reclamoRef.child("Correo");
+//    DatabaseReference departamentoRef = reclamoRef.child("Departamento");
+//    DatabaseReference productoRef = reclamoRef.child("Producto");
+//    DatabaseReference descripcionRef = reclamoRef.child("Descripcion");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +72,18 @@ public class HacerReclamoActivity extends AppCompatActivity {
                 if (nombre != null && ci != null && ext != null && cel != null &&
                         correo != null && depto != null && razon != null && descripcion != null) {
                     //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                    String id = UUID.randomUUID().toString();
+                    ReclamoFirebase reclamo = new ReclamoFirebase(id,nombre,ci,ext,cel,correo,depto,razon,descripcion);
+                    reclamoRef.child("Reclamos").child(id).setValue(reclamo);
+                    id = UUID.randomUUID().toString();
+//                    nombreCompletoRef.setValue(nombre);
+//                    carnetRef.setValue(ci);
+//                    extensionRef.setValue(ext);
+//                    celularRef.setValue(cel);
+//                    correoRef.setValue(correo);
+//                    departamentoRef.setValue(depto);
+//                    productoRef.setValue(razon);
+//                    descripcionRef.setValue(descripcion);
                     if (checkBox.isChecked()) {
                         CharSequence text = "Producto del Subsidio";
                         Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
@@ -58,7 +91,7 @@ public class HacerReclamoActivity extends AppCompatActivity {
                     }
                     seguirIntent = new Intent(HacerReclamoActivity.this, DescribirReclamoActivity.class);
                     startActivity(seguirIntent);
-                                } else {
+                } else {
                     CharSequence text = "Datos Incompletos";
                     Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
                     toast.show();
@@ -69,10 +102,7 @@ public class HacerReclamoActivity extends AppCompatActivity {
         ;
 
     }
+    private void crearReclamos(int cont){
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        //DatabaseReference nombreRef =dataBase.child()
     }
 }

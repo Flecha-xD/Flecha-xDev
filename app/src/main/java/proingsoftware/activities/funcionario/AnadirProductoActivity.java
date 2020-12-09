@@ -1,6 +1,5 @@
 package proingsoftware.activities.funcionario;
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -19,7 +18,7 @@ import com.R;
 
 public class AnadirProductoActivity extends AppCompatActivity {
     private final static int SELECT_PHOTO = 12345;
-    Button cambiar;
+    Button anadir;
     ImageView imagenElegida;
     ImageButton galeria;
     Intent cambiarIntent;
@@ -29,27 +28,19 @@ public class AnadirProductoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modificar_producto);
-        cambiar = findViewById(R.id.actprod);
-        galeria = findViewById(R.id.galeria3Button);
-        imagenElegida = findViewById(R.id.imagetoupload3);
-        galeria.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-                photoPickerIntent.setType("image/*");
-                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
-            }
-        });
+        setContentView(R.layout.activity_anadir_producto);
+        anadir = findViewById(R.id.addprod1);
+        galeria = findViewById(R.id.galeria2Button);
+        imagenElegida = findViewById(R.id.imagetoupload2);
         final String contra = "4602546025"; //hardcodeado
-        cambiar.setOnClickListener(new View.OnClickListener() {
+        anadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nombre = ((EditText) findViewById(R.id.nombreprod)).getText().toString();
                 String descripcion = ((EditText) findViewById(R.id.descProd)).getText().toString();
                 String precio = ((EditText) findViewById(R.id.precio)).getText().toString();
                 String codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
-                String password = ((EditText) findViewById(R.id.contrasenia2)).getText().toString();
+                String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
 
                 if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
@@ -73,7 +64,14 @@ public class AnadirProductoActivity extends AppCompatActivity {
             }
         })
         ;
-
+        galeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
+            }
+        });
     }
 
     @Override

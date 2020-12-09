@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
-
 import proingsoftware.activities.funcionario.IngresoFuncionarioActivity;
 import proingsoftware.activities.funcionario.ListadoReclamosActivity;
 
@@ -18,7 +17,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
 
     Button admin, historialReclamos;
     SharedPreferences sharedPreferences;
-    Intent mainIntent;
+    Intent intent;
     Switch modoEmo, saveData;
 
     @Override
@@ -51,8 +50,9 @@ public class ConfiguracionActivity extends AppCompatActivity {
         historialReclamos = (Button) findViewById(R.id.historialButton);
         admin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                mainIntent = new Intent(ConfiguracionActivity.this, IngresoFuncionarioActivity.class);
-                startActivity(mainIntent);
+                intent = new Intent(ConfiguracionActivity.this, IngresoFuncionarioActivity.class);
+
+                startActivity(intent);
             }
         });
         historialReclamos.setOnClickListener(new View.OnClickListener() {
@@ -60,8 +60,9 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 //SharedPreferences.Editor editor = sharedPreferences.edit();
                 //editor.apply();
                 //editor.commit();
-                mainIntent = new Intent(ConfiguracionActivity.this, ListadoReclamosActivity.class);
-                startActivity(mainIntent);
+                intent = new Intent(ConfiguracionActivity.this, ListadoReclamosActivity.class);
+                intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
+                startActivity(intent);
                 finish();
             }
         });

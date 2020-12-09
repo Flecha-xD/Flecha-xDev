@@ -30,11 +30,11 @@ public class ModificarProductoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anadir_producto);
-        anadir = findViewById(R.id.addprod);
+        setContentView(R.layout.activity_modificar_producto);
+        anadir = findViewById(R.id.actprod);
         borrar = findViewById(R.id.delprod);
-        galeria = findViewById(R.id.galeria2Button);
-        imagenElegida = findViewById(R.id.imagetoupload2);
+        galeria = findViewById(R.id.galeria3Button);
+        imagenElegida = findViewById(R.id.imageact);
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,11 +47,11 @@ public class ModificarProductoActivity extends AppCompatActivity {
         anadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre = ((EditText) findViewById(R.id.nombreprod)).getText().toString();
-                String descripcion = ((EditText) findViewById(R.id.descProd)).getText().toString();
-                String precio = ((EditText) findViewById(R.id.precio)).getText().toString();
-                String codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
-                String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
+                String nombre = ((EditText) findViewById(R.id.nombreprodact)).getText().toString();
+                String descripcion = ((EditText) findViewById(R.id.descact)).getText().toString();
+                String precio = ((EditText) findViewById(R.id.precioact)).getText().toString();
+                String codigo = ((EditText) findViewById(R.id.codact)).getText().toString();
+                String password = ((EditText) findViewById(R.id.contraseniaact)).getText().toString();
 
                 if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
@@ -77,7 +77,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
         borrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
+                String password = ((EditText) findViewById(R.id.contraseniaact)).getText().toString();
 
                 if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     Toast toast = Toast.makeText(getApplicationContext(), "Producto borrado", Toast.LENGTH_SHORT);

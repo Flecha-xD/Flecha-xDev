@@ -5,16 +5,13 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -75,19 +72,15 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         reclamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String descrip = ((EditText) findViewById(R.id.descripqueja)).getText().toString();
 
-                if (descrip != null) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
-                    if (sharedPreferences.getBoolean("DatoCheckbox", true)) {
-                        descrip = "PRODUCTO SUBSIDIO:" + descrip;
-                    }
+                if (imageView != null) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     enviarReclamo = new Intent(DescribirReclamoActivity.this, MenuConsumidorActivity.class);
                     startActivity(enviarReclamo);
                     CharSequence text = "Su reclamo será atendido lo antes posible";
                     Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
                     toast.show();
                 } else {
-                    CharSequence text = "Datos Incompletos";
+                    CharSequence text = "Debe adjuntar una imagen";
                     Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
                     toast.show();
                 }

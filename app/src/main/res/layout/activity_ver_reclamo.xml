@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="10"
-    tools:context="proingsoftware.activities.recyclerviews.RecyclerView_Reclamos">
+    tools:context="proingsoftware.activities.funcionario.VerReclamoActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-      android:layout_marginTop="50dp"
+      android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="20dp"
@@ -90,7 +90,7 @@
         android:text="Atender"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:layout_margin="25dp"
+        android:layout_margin="15dp"
         android:textColor="@android:color/white" />
 
     <Button
@@ -102,7 +102,7 @@
         android:text="Descartar"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="100dp"
         android:textColor="@android:color/white" />
 
 </LinearLayout>

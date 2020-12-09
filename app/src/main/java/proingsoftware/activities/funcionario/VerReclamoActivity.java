@@ -14,8 +14,8 @@ public class VerReclamoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_reclamo);
-        atender = (Button) findViewById(R.id.adminButton);
-        ignorar = (Button) findViewById(R.id.historialButton);
+        atender = (Button) findViewById(R.id.atenderButton);
+        ignorar = (Button) findViewById(R.id.descartarButton);
         atender.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 mainIntent = new Intent(VerReclamoActivity.this, ContactoFuncionarioActivity.class);

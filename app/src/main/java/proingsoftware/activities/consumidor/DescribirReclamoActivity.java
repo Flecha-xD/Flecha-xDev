@@ -44,39 +44,14 @@ public class DescribirReclamoActivity extends AppCompatActivity {
 
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
 
-    // FirebaseDatabase database = FirebaseDatabase.getInstance();
-   //  DatabaseReference myRef = database.getReference("message");
     ImageButton camara;
-    //Fer
-    //ImageButton galeria;
 
-    //Sergio (galeria imageview)
     ImageView galeria;
 
     private ImageView imageView;
     private FirebaseStorage storage;
     private StorageReference mStorageReference;
     public Uri photoURI;
-
-    //Sergio alternativa 2
-    //private View imageContainer;
-
-    //Sergio alternativa2
-//    private class UploadImageOnClickListener implements View.OnClickListener {
-//        @Override
-//        public void onClick(View view) {
-//            imageContainer.setDrawingCacheEnabled(true);
-//            imageContainer.buildDrawingCache();
-//            Bitmap bitmap = imageContainer.getDrawingCache();
-//            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//            bitmap.compress(Bitmap.CompressFormat.PNG, 100,baos);
-//            imageContainer.setDrawingCacheEnabled(false);
-//            byte[] data = baos.toByteArray();
-//
-//            String path = "reclamosFotos/" + UUID.randomUUID() + ".png";
-//            StorageReference reclamosFotosRef = storage.getReference(path);
-//        }
-//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,9 +64,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
         ;
         camara = (ImageButton) findViewById(R.id.camaraButton);
-        //Fer
-        //galeria = (ImageButton) findViewById(R.id.galeriaButton);
-        //Sergio (galeria imageview)
+
         galeria =findViewById(R.id.galeriaImageView);
 
         reclamar = findViewById(R.id.enviarreclamoButton);
@@ -119,13 +92,9 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Fer
                 Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
                 photoPickerIntent.setType("image/*");
                 startActivityForResult(photoPickerIntent, SELECT_PHOTO);
-
-                //Sergio
-                //choosePhoto();
             }
         });
 
@@ -160,14 +129,6 @@ public class DescribirReclamoActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        // Sergio
-        //        if (requestCode == 1 && resultCode == RESULT_OK && data!=null && data.getData()!=null ){
-//            photo = data.getData();
-//            imageView.setImageURI(photo);
-//            uploadPicture();
-//        }
-
-        //Fer
         if (resultCode == RESULT_OK && data != null) {
             if (requestCode == CAMERA_REQUEST ) {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
@@ -178,15 +139,6 @@ public class DescribirReclamoActivity extends AppCompatActivity {
             if (requestCode == SELECT_PHOTO) {
                 Uri pickedImage = data.getData();
                 String[] filePath = {MediaStore.Images.Media.DATA};
-//                Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
-//                cursor.moveToFirst();
-//                String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
-//                BitmapFactory.Options options = new BitmapFactory.Options();
-//                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-//                Bitmap photo = BitmapFactory.decodeFile(imagePath, options);
-//                imageView.setImageBitmap(photo); //IGUAL ESTA FOTO DEBERIA ALMACENARSE
-//                cursor.close();
-
                 //TODO carrusel de fotos
 
                 photoURI = pickedImage;
@@ -230,10 +182,4 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                 });
     }
 
-//    private void choosePhoto() {
-//        Intent intent = new Intent();
-//        intent.setType("image/*");
-//        intent.setAction(Intent.ACTION_GET_CONTENT);
-//        startActivityForResult(intent, 1);
-//    }
  }

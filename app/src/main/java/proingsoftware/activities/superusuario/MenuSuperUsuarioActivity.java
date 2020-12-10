@@ -1,4 +1,4 @@
-package proingsoftware.activities.funcionario;
+package proingsoftware.activities.superusuario;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -6,43 +6,37 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import com.R;
-
 import proingsoftware.activities.consumidor.MenuConsumidorActivity;
 import proingsoftware.activities.consumidor.ProductosSubsidioActivity;
+import proingsoftware.activities.funcionario.ListadoReclamosActivity;
 
-public class MenuFuncionarioActivity extends AppCompatActivity {
-
+public class MenuSuperUsuarioActivity extends AppCompatActivity {
     Intent intent;
-    GridLayout menuGrid;
-    Button logout;
+    GridLayout sumenuGrid;
+    Button logoutSU;
     SharedPreferences sharedPreferences;
     Intent mainIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_funcionario);
-
-        sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
-
-        logout= (Button) findViewById(R.id.logoutButton);
-        logout.setOnClickListener(new View.OnClickListener(){
+        setContentView(R.layout.activity_menu_superusuarios);
+        logoutSU= (Button) findViewById(R.id.SUlogoutButton);
+        logoutSU.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean("checkBoxValue", false);
                 editor.apply();
                 editor.commit();
-                mainIntent = new Intent(MenuFuncionarioActivity.this, MenuConsumidorActivity.class);
+                mainIntent = new Intent(MenuSuperUsuarioActivity.this, MenuConsumidorActivity.class);
                 startActivity(mainIntent);
             }
         });
-        menuGrid = (GridLayout) findViewById(R.id.menuGrid);
-        setSingleEvent(menuGrid);
+        sumenuGrid = (GridLayout) findViewById(R.id.SUmenuGrid);
+        setSingleEvent(sumenuGrid);
 
     }
     private void setSingleEvent(GridLayout mainGrid) {
@@ -56,20 +50,20 @@ public class MenuFuncionarioActivity extends AppCompatActivity {
 
                     if (cardIndex == 0) {
 
-                        intent = new Intent(MenuFuncionarioActivity.this, ListadoReclamosActivity.class); //muestra todos los no resueltos
-                        intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
+                        intent = new Intent(MenuSuperUsuarioActivity.this, CrearCambiarFuncionarioActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "CREAR");
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
-                        intent = new Intent(MenuFuncionarioActivity.this, AnadirProductoActivity.class);
-                        intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
+                        intent = new Intent(MenuSuperUsuarioActivity.this, CrearCambiarFuncionarioActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "CAMBIAR");
                         startActivity(intent);
 
                     }else if(cardIndex == 2){
-                        intent = new Intent(MenuFuncionarioActivity.this, ProductosSubsidioActivity.class);
-                        intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
+                        intent = new Intent(MenuSuperUsuarioActivity.this, ProductosSubsidioActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "SUPERUSER");
                         startActivity(intent);
                     }else if (cardIndex == 3){
-                        intent = new Intent(MenuFuncionarioActivity.this, ListadoReclamosActivity.class); //Filtra con firebase
+                        intent = new Intent(MenuSuperUsuarioActivity.this, ListadoReclamosActivity.class);
                         intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }

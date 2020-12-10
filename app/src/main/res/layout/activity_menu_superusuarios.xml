@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@color/colorPrimary"
-    tools:context="proingsoftware.activities.funcionario.MenuFuncionarioActivity">
+    tools:context="proingsoftware.activities.superusuario.MenuSuperUsuarioActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="ATENCIÓN AL CLIENTE"
+            android:text="SUPERUSUARIO"
             android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold">
@@ -27,7 +27,7 @@
     </RelativeLayout>
 
     <GridLayout
-        android:id="@+id/menuGrid"
+        android:id="@+id/SUmenuGrid"
         android:layout_width="match_parent"
         android:layout_height="477dp"
         android:layout_marginTop="40dp"
@@ -37,9 +37,6 @@
         android:columnOrderPreserved="false"
         android:padding="14dp"
         android:rowCount="2">
-
-
-    <!--- ver reclamo-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -62,11 +59,11 @@
                 >
 
                 <TextView
-                    android:text="Ver Reclamos"
+                    android:text="Añadir Funcionario"
                     android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
-                    android:gravity="center"
                     android:textStyle="bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -75,8 +72,6 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-
-        <!--- añadir subsidio-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -98,7 +93,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Añadir Producto Subsidio"
+                    android:text="Modificar Funcionario"
                     android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
@@ -111,7 +106,6 @@
 
 
         </androidx.cardview.widget.CardView>
-        <!--- modificar subsidio-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -133,7 +127,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Modificar Producto Subsidio"
+                    android:text="Eliminar Funcionario"
                     android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
@@ -145,7 +139,6 @@
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-        <!--- historial de reclamos-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -167,7 +160,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:text="Historial de Reclamos"
+                    android:text="Reclamos Finalizados"
                     android:gravity="center"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
@@ -189,7 +182,7 @@
         android:layout_gravity="center"
         android:layout_height="50dp"
         android:layout_marginBottom="15dp"
-        android:id="@+id/logoutButton"
+        android:id="@+id/SUlogoutButton"
         android:background="@drawable/round_button_aqua"
         android:textAllCaps="false"
 

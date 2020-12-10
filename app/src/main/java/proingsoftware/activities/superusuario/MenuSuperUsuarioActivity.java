@@ -59,7 +59,7 @@ public class MenuSuperUsuarioActivity extends AppCompatActivity {
                         startActivity(intent);
 
                     }else if(cardIndex == 2){
-                        intent = new Intent(MenuSuperUsuarioActivity.this, ProductosSubsidioActivity.class);
+                        intent = new Intent(MenuSuperUsuarioActivity.this, BorrarUsuarioActivity.class);
                         intent.putExtra("FROM_ACTIVITY", "SUPERUSER");
                         startActivity(intent);
                     }else if (cardIndex == 3){

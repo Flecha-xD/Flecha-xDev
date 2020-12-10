@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:weightSum="10"
+    tools:context="proingsoftware.activities.superusuario.BorrarUsuarioActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:background="@color/colorOrange"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="ELIMINAR FUNCIONARIO"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold">
+
+        </TextView>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/advertencia"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:text="Eliminar a un funcionario implica su
+desvinculamiento total con la aplicación móvil del Ministerio de Defensa de los Derechos
+del Usuario y Consumidor. Motivos como el ascenso, degradación, reemplazo, despido o renuncia, conllevan
+su retiro del sistema como un usuario activo."
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/sucodfunborrar"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Código Funcionario"
+        android:inputType="numberPassword"
+        android:maxLength="12"
+        android:paddingStart="50dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+
+
+    <EditText
+        android:id="@+id/sucodsuborrar"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Código Administrador"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="40dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+    <EditText
+        android:id="@+id/supasssuborrar"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Contraseña Administrador"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="20dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+
+    <Button
+        android:text="Eliminar"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:layout_width="120dp"
+        android:layout_gravity="center"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/eliminar"
+        android:background="@drawable/round_button_aqua"
+
+
+        />
+
+</LinearLayout>

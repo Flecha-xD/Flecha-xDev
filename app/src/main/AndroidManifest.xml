@@ -68,6 +68,18 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
+            android:name="proingsoftware.activities.superusuario.MenuSuperUsuarioActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.superusuario.BorrarUsuarioActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="proingsoftware.activities.superusuario.CrearCambiarFuncionarioActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
             android:name="proingsoftware.activities.consumidor.HacerReclamoActivity"
             android:screenOrientation="portrait">
         </activity>

@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.R;
 
 import proingsoftware.activities.consumidor.MenuConsumidorActivity;
+import proingsoftware.activities.superusuario.MenuSuperUsuarioActivity;
 
 public class IngresoFuncionarioActivity extends AppCompatActivity {
     Button login;
@@ -35,6 +36,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
         final String sergio = "46125";
         final String fernanda = "4602546025";
         final String thepassword = "12345";
+        final String superAdminHardcode = "111";
 
         checkBox = findViewById(R.id.recuerdameFuncionario);
         login = findViewById(R.id.accederFuncionario);
@@ -49,9 +51,10 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
                 String correo = ((EditText) findViewById(R.id.emailfunc)).getText().toString();
                 String codigo = ((EditText) findViewById(R.id.codigofunc)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contrasenia)).getText().toString();
-
-
-                if ((codigo.equals(fernanda) || codigo.equals(sergio)) &&
+                if (codigo.equals(superAdminHardcode)){
+                    loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
+                    startActivity(loginIntent);
+                }else if  ((codigo.equals(fernanda) || codigo.equals(sergio)) &&
                         (nombre != null && ci != null && ext != null && cel != null && correo != null ) //validacion momentanea
                 ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     //compare todos los datos

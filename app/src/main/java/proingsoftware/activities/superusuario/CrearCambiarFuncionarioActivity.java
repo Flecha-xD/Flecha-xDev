@@ -16,7 +16,7 @@ public class CrearCambiarFuncionarioActivity extends AppCompatActivity{
         Button guardar;
         Intent intent, mIntent;
         CheckBox checkBox;
-        TextView encabezado = (TextView)findViewById(R.id.SUtag);;
+        TextView encabezado ;
         Toast toast;
         SharedPreferences sharedPreferences;
         //  FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -30,6 +30,7 @@ public class CrearCambiarFuncionarioActivity extends AppCompatActivity{
             mIntent = getIntent();
             String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
             checkBox = findViewById(R.id.sumodoAdmin);
+            encabezado = findViewById(R.id.SUtag);
             if (previousActivity.equals("CREAR")){
                 encabezado.setText("CREAR FUNCIONARIO");
             } else if (previousActivity.equals("CAMBIAR")){

@@ -73,7 +73,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (imageView != null) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                if (imageView != null) {
                     enviarReclamo = new Intent(DescribirReclamoActivity.this, MenuConsumidorActivity.class);
                     startActivity(enviarReclamo);
                     CharSequence text = "Su reclamo será atendido lo antes posible";
@@ -133,14 +133,12 @@ public class DescribirReclamoActivity extends AppCompatActivity {
             if (requestCode == CAMERA_REQUEST ) {
                 Bitmap photo = (Bitmap) data.getExtras().get("data");
                 photoURI = data.getData();
-                imageView.setImageBitmap(photo); //esta photo debe ser guardada en la bdd
+                imageView.setImageBitmap(photo);
                 imageView.setImageURI(photoURI);
             }
             if (requestCode == SELECT_PHOTO) {
                 Uri pickedImage = data.getData();
                 String[] filePath = {MediaStore.Images.Media.DATA};
-                //TODO carrusel de fotos
-
                 photoURI = pickedImage;
                 imageView.setImageURI(photoURI);
 
@@ -149,7 +147,6 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         }
     }
 
-    //Sergio
     private void uploadPicture() {
 
         final ProgressDialog pd = new ProgressDialog(this);

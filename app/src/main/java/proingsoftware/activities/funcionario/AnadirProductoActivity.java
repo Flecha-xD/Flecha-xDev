@@ -15,6 +15,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
+
+import proingsoftware.model.ProductoFirebase;
+import proingsoftware.model.ReclamoFirebase;
 
 public class AnadirProductoActivity extends AppCompatActivity {
     private final static int SELECT_PHOTO = 12345;
@@ -22,8 +29,10 @@ public class AnadirProductoActivity extends AppCompatActivity {
     ImageView imagenElegida;
     ImageButton galeria;
     Intent cambiarIntent;
-    //  FirebaseDatabase database = FirebaseDatabase.getInstance();
-    //  DatabaseReference myRef = database.getReference("message");
+
+    //Firebase variables
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference subsidioRef = database.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +51,14 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 String codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
 
-                if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                //TODO arreglar y verificar condicion
+                if (password.equals("1")) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
                         //compare todos los datos
+                        String id = UUID.randomUUID().toString();
+                        ProductoFirebase producto = new ProductoFirebase(id,nombre,descripcion,precio,codigo);
+                        subsidioRef.child("Productos Subsidio").child(id).setValue(producto);
+                        id = UUID.randomUUID().toString();
                         Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
                         toast.show();
                         cambiarIntent = new Intent(AnadirProductoActivity.this, MenuFuncionarioActivity.class);

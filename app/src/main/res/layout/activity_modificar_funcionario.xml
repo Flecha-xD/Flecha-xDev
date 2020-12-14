@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:weightSum="10"
-    tools:context="proingsoftware.activities.superusuario.CrearCambiarFuncionarioActivity">
+    tools:context="proingsoftware.activities.superusuario.ModificarFuncionarioActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,13 +20,76 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text=""
+            android:text="EDITAR INFO FUNCIONARIO"
             android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold">
 
         </TextView>
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="CODIGO DEL FUNCIONARIO A CAMBIAR"></TextView>
+
+    <EditText
+        android:id="@+id/sucodigo"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Código"
+        android:inputType="numberPassword"
+        android:maxLength="12"
+        android:paddingStart="97dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="CONTRASENA PARA REALIZAR LOS CAMBIOS"></TextView>
+
+    <EditText
+        android:id="@+id/supassword"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Contraseña Administrador"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="20dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="DATOS A CAMBIAR"></TextView>
 
     <EditText
         android:id="@+id/sunombre"
@@ -41,7 +104,7 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         />
 
     <GridLayout
@@ -104,21 +167,7 @@
         android:singleLine="true"
         android:layout_marginTop="4dp"
         />
-    <EditText
-        android:id="@+id/sucodigo"
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:background="@drawable/round_box"
-        android:hint="Código"
-        android:inputType="numberPassword"
-        android:maxLength="12"
-        android:paddingStart="97dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:singleLine="true"
-        android:layout_marginTop="13dp"
-        />
+
     <EditText
         android:id="@+id/sumail"
         android:layout_gravity="center"
@@ -149,34 +198,19 @@
         android:singleLine="true"
         android:layout_marginTop="13dp"
         />
-    <EditText
-        android:id="@+id/supassword"
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:background="@drawable/round_box"
-        android:hint="Contraseña Administrador"
-        android:inputType="textPassword"
-        android:maxLength="15"
-        android:paddingStart="20dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:singleLine="true"
-        android:layout_marginTop="13dp"
-        />
 
-    <CheckBox
-        android:id="@+id/sumodoAdmin"
-        android:textColor="#ffffff"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="115dp"
-        android:layout_marginEnd="115dp"
-        android:layout_height="25dp"
-        android:layout_gravity="center"
-        android:text="MODO ADMIN"
-        android:buttonTint="#ffffff"
-        android:layout_marginTop="15dp"
-        />
+<!--    <CheckBox-->
+<!--        android:id="@+id/sumodoAdmin"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_marginStart="115dp"-->
+<!--        android:layout_marginEnd="115dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:text="MODO ADMIN"-->
+<!--        android:buttonTint="#ffffff"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        />-->
     <Button
         android:text="Guardar"
         android:textAllCaps="false"

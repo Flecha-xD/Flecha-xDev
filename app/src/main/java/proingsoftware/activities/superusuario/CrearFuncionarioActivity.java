@@ -11,31 +11,38 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class CrearCambiarFuncionarioActivity extends AppCompatActivity{
+import java.util.UUID;
+
+import proingsoftware.model.Admin;
+
+public class CrearFuncionarioActivity extends AppCompatActivity{
         Button guardar;
         Intent intent, mIntent;
         CheckBox checkBox;
         TextView encabezado ;
         Toast toast;
         SharedPreferences sharedPreferences;
-        //  FirebaseDatabase database = FirebaseDatabase.getInstance();
-        // DatabaseReference myRef = database.getReference("message");
 
+        //Firebase variables
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference adminRef = database.getReference();
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_crearcambiar_funcionario);
+            setContentView(R.layout.activity_crear_funcionario);
             final String passHardcodeo = "1234";
             mIntent = getIntent();
-            String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
             checkBox = findViewById(R.id.sumodoAdmin);
             encabezado = findViewById(R.id.SUtag);
-            if (previousActivity.equals("CREAR")){
-                encabezado.setText("CREAR FUNCIONARIO");
-            } else if (previousActivity.equals("CAMBIAR")){
-                encabezado.setText("MODIFICAR FUNCIONARIO");
-            }
+//            String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
+//            if (previousActivity.equals("CREAR")){
+//                encabezado.setText("CREAR FUNCIONARIO");
+//            } else if (previousActivity.equals("CAMBIAR")){
+//                encabezado.setText("MODIFICAR FUNCIONARIO");
+//            }
             guardar = findViewById(R.id.suguardar);
             guardar.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -53,17 +60,21 @@ public class CrearCambiarFuncionarioActivity extends AppCompatActivity{
                         if (nombre != null && ci != null && ext != null && cel != null && correo != null && codigo != null) { //todos los datos llenos
                             //idealmente aqui una linea compara que el codigo que da el ministerio sea unico pero sino nayproblema
                             if (checkBox.isChecked()) {
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putBoolean("checkBoxValue", checkBox.isChecked());
-                                editor.apply();
-                                editor.commit();
+//                                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                                editor.putBoolean("checkBoxValue", checkBox.isChecked());
+//                                editor.apply();
+//                                editor.commit();
                                 //aca se debe guardar el valor del checkbox
+                                String id = UUID.randomUUID().toString();
+                                Admin admin = new Admin(id,nombre,ci,ext,cel,codigo,correo,password);
+                                adminRef.child("Funcionarios").child("Funcionario: " + codigo).setValue(admin);
+                                id = UUID.randomUUID().toString();
                                 toast = Toast.makeText(getApplicationContext(), "Otorgados Permisos Administrativos", Toast.LENGTH_SHORT);
                                 toast.show();
                             }
                             toast = Toast.makeText(getApplicationContext(), "Funcionario creado", Toast.LENGTH_SHORT);
                             toast.show();
-                            intent = new Intent(CrearCambiarFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
+                            intent = new Intent(CrearFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
                             startActivity(intent);
                         } else {
                             toast = Toast.makeText(getApplicationContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT);

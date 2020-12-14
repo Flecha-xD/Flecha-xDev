@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    android:weightSum="10"
+    tools:context="proingsoftware.activities.superusuario.CrearFuncionarioActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:background="@color/colorOrange"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/SUtag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CREAR NUEVO FUNCIONARIO"
+            android:textColor="@color/white"
+            android:textSize="24dp"
+            android:textStyle="bold">
+
+        </TextView>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/sunombre"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Nombre Funcionario"
+        android:inputType="text"
+        android:maxLength="50"
+        android:paddingStart="55dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="40dp"
+        />
+
+    <GridLayout
+        android:id="@+id/menuGrid"
+        android:layout_width="240dp"
+        android:layout_gravity="center"
+        android:layout_height="70dp"
+        android:columnCount="2"
+        android:columnOrderPreserved="false">
+
+
+        <EditText
+            android:id="@+id/suci"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/round_box"
+            android:gravity="center"
+            android:hint="C.I."
+            android:inputType="number"
+            android:maxLength="7"
+            android:paddingStart="4dp"
+            android:singleLine="true"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/suext"
+            android:gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_width="70dp"
+            android:layout_height="45dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/round_box"
+            android:hint="Ext."
+            android:inputType="textCapCharacters"
+            android:maxLength="4"
+            android:paddingStart="2dp"
+            android:singleLine="true"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+    </GridLayout>
+    <EditText
+        android:id="@+id/sucel"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Número Celular"
+        android:inputType="number"
+        android:maxLength="8"
+        android:paddingStart="64dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="4dp"
+        />
+    <EditText
+        android:id="@+id/sucodigo"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Código"
+        android:inputType="numberPassword"
+        android:maxLength="12"
+        android:paddingStart="97dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+    <EditText
+        android:id="@+id/sumail"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Correo Electrónico"
+        android:inputType="textEmailAddress"
+        android:maxLength="40"
+        android:paddingStart="55dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+    <EditText
+        android:id="@+id/supasswordfuncionario"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Contraseña Funcionario"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="35dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+    <EditText
+        android:id="@+id/supassword"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Contraseña Administrador"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="20dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="13dp"
+        />
+
+    <CheckBox
+        android:id="@+id/sumodoAdmin"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="115dp"
+        android:layout_marginEnd="115dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:text="MODO ADMIN"
+        android:buttonTint="#ffffff"
+        android:layout_marginTop="15dp"
+        />
+    <Button
+        android:text="Guardar"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:layout_width="120dp"
+        android:layout_gravity="center"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/suguardar"
+        android:background="@drawable/round_button_aqua"
+
+
+        />
+
+</LinearLayout>

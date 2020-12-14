@@ -3,6 +3,7 @@ package proingsoftware.activities.superusuario;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -29,8 +30,13 @@ public class CrearCambiarFuncionarioActivity extends AppCompatActivity{
             final String passHardcodeo = "1234";
             mIntent = getIntent();
             String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
+            SharedPreferences settings = getSharedPreferences("mysettings", 0);
+            SharedPreferences.Editor editor = settings.edit();
             checkBox = findViewById(R.id.sumodoAdmin);
             encabezado = findViewById(R.id.SUtag);
+            boolean checkBoxValue = checkBox.isChecked();
+            editor.putBoolean("Modo Admin", checkBoxValue);
+            editor.commit();;
             if (previousActivity.equals("CREAR")){
                 encabezado.setText("CREAR FUNCIONARIO");
             } else if (previousActivity.equals("CAMBIAR")){

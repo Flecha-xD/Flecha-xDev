@@ -1,0 +1,14 @@
+okas entonces:
+
+DONE
+
+consumidores postean reclamos. (POST)
+admins crean productos (POST)
+superadmin crea y modifica funcionarios (POST, PUT)
+TODO
+consumidores  leen productos del subsidio. (GET)
+admins eliminan reclamos. (DELETE)
+admins leen, editan, y eliminan productos del subsidio. (GET, PUT, DELETE)
+superadmin elimina funcionarios. (DELETE)
+todos, absolutamente todos, leen los reclamos (GET)
+

@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.R;
 import proingsoftware.activities.funcionario.IngresoFuncionarioActivity;
 import proingsoftware.activities.funcionario.ListadoReclamosActivity;
+import proingsoftware.activities.funcionario.MenuFuncionarioActivity;
+import proingsoftware.activities.superusuario.MenuSuperUsuarioActivity;
 
 public class ConfiguracionActivity extends AppCompatActivity {
 
@@ -46,15 +48,16 @@ public class ConfiguracionActivity extends AppCompatActivity {
                                 "Sus datos no se cargarán automáticamente", Toast.LENGTH_LONG).show();
                     }
                 });
+        //TODO volver a arreglar el intent cuando se termine el desarrollo
         admin = (Button) findViewById(R.id.adminButton);
-        historialReclamos = (Button) findViewById(R.id.historialButton);
         admin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                intent = new Intent(ConfiguracionActivity.this, IngresoFuncionarioActivity.class);
+                intent = new Intent(ConfiguracionActivity.this, MenuSuperUsuarioActivity.class);
 
                 startActivity(intent);
             }
         });
+        historialReclamos = (Button) findViewById(R.id.historialButton);
         historialReclamos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 //SharedPreferences.Editor editor = sharedPreferences.edit();

@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import com.R;
 import proingsoftware.activities.consumidor.MenuConsumidorActivity;
-import proingsoftware.activities.consumidor.ProductosSubsidioActivity;
 import proingsoftware.activities.funcionario.ListadoReclamosActivity;
 
 public class MenuSuperUsuarioActivity extends AppCompatActivity {
@@ -50,11 +49,11 @@ public class MenuSuperUsuarioActivity extends AppCompatActivity {
 
                     if (cardIndex == 0) {
 
-                        intent = new Intent(MenuSuperUsuarioActivity.this, CrearCambiarFuncionarioActivity.class);
+                        intent = new Intent(MenuSuperUsuarioActivity.this, CrearFuncionarioActivity.class);
                         intent.putExtra("FROM_ACTIVITY", "CREAR");
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
-                        intent = new Intent(MenuSuperUsuarioActivity.this, CrearCambiarFuncionarioActivity.class);
+                        intent = new Intent(MenuSuperUsuarioActivity.this, ModificarFuncionarioActivity.class);
                         intent.putExtra("FROM_ACTIVITY", "CAMBIAR");
                         startActivity(intent);
 

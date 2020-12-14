@@ -1,101 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com">
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="16" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera" android:required="false"></uses-feature>
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com">
+<uses-sdk
+    android:minSdkVersion="14"
+    android:targetSdkVersion="16" />
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true">
-        <activity
-            android:name="proingsoftware.activities.consumidor.SplashScreenActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.funcionario.ContactoFuncionarioActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.MenuConsumidorActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.ConfiguracionActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.funcionario.MenuFuncionarioActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.ProductosSubsidioActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.ContactoConsumidorActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.funcionario.ListadoReclamosActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.SeleccionNormativaActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.funcionario.VerReclamoActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.funcionario.IngresoFuncionarioActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.InformacionActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.superusuario.MenuSuperUsuarioActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.superusuario.BorrarUsuarioActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.superusuario.CrearCambiarFuncionarioActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.HacerReclamoActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.consumidor.DescribirReclamoActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.funcionario.AnadirProductoActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity
-            android:name="proingsoftware.activities.funcionario.ModificarProductoActivity"
-            android:screenOrientation="portrait">
-        </activity>
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.INTERNET" />
 
-    </application>
+<uses-feature
+    android:name="android.hardware.camera"
+    android:required="false"></uses-feature>
+
+<application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true">
+    <activity android:name="proingsoftware.activities.consumidor.SplashScreenActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="proingsoftware.activities.funcionario.ContactoFuncionarioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.MenuConsumidorActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.ConfiguracionActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.funcionario.MenuFuncionarioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.ProductosSubsidioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.ContactoConsumidorActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.funcionario.ListadoReclamosActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.SeleccionNormativaActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.funcionario.VerReclamoActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.funcionario.IngresoFuncionarioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.InformacionActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.superusuario.MenuSuperUsuarioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.superusuario.BorrarUsuarioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.superusuario.CrearFuncionarioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.superusuario.ModificarFuncionarioActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.HacerReclamoActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.consumidor.DescribirReclamoActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.funcionario.AnadirProductoActivity"
+        android:screenOrientation="portrait"></activity>
+    <activity
+        android:name="proingsoftware.activities.funcionario.ModificarProductoActivity"
+        android:screenOrientation="portrait"></activity>
+
+</application>
 
 </manifest>

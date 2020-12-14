@@ -11,3 +11,4 @@ admins eliminan reclamos. (DELETE)
 admins leen, editan, y eliminan productos del subsidio. (GET, PUT, DELETE)
 superadmin elimina funcionarios. (DELETE)
 todos, absolutamente todos, leen los reclamos (GET)
+

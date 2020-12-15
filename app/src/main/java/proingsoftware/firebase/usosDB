@@ -5,6 +5,8 @@ DONE
 consumidores postean reclamos. (POST)
 admins crean productos (POST)
 superadmin crea y modifica funcionarios (POST, PUT)
+superadmin crea superadmin(POST)
+
 TODO
 consumidores  leen productos del subsidio. (GET)
 admins eliminan reclamos. (DELETE)

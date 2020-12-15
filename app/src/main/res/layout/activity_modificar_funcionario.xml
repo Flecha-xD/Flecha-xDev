@@ -35,7 +35,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="12dp"
         android:textStyle="bold"
         android:text="CODIGO DEL FUNCIONARIO A CAMBIAR"></TextView>
 
@@ -61,7 +61,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="12dp"
         android:textStyle="bold"
         android:text="CONTRASENA PARA REALIZAR LOS CAMBIOS"></TextView>
 
@@ -87,7 +87,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="12dp"
         android:textStyle="bold"
         android:text="DATOS A CAMBIAR"></TextView>
 

@@ -9,8 +9,9 @@ public class Admin {
     private String codigo;
     private String correo;
     private String password;
+    private boolean esAdmin;
 
-    public Admin(String id,String nombre, String ci, String ext, String phone, String codigo, String correo, String password) {
+    public Admin(String id,String nombre, String ci, String ext, String phone, String codigo, String correo, String password, boolean esAdmin) {
         this.id = id;
         this.nombre = nombre;
         this.ci = ci;
@@ -19,6 +20,7 @@ public class Admin {
         this.codigo = codigo;
         this.correo = correo;
         this.password = password;
+        this.esAdmin = esAdmin;
     }
 
     public Admin(){
@@ -87,5 +89,13 @@ public class Admin {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEsAdmin() {
+        return esAdmin;
+    }
+
+    public void setEsAdmin(boolean esAdmin) {
+        this.esAdmin = esAdmin;
     }
 }

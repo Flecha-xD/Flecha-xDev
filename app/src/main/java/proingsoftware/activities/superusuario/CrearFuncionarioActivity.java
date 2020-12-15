@@ -60,22 +60,24 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
                         if (nombre != null && ci != null && ext != null && cel != null && correo != null && codigo != null) { //todos los datos llenos
                             //idealmente aqui una linea compara que el codigo que da el ministerio sea unico pero sino nayproblema
                             if (checkBox.isChecked()) {
-//                                SharedPreferences.Editor editor = sharedPreferences.edit();
-//                                editor.putBoolean("checkBoxValue", checkBox.isChecked());
-//                                editor.apply();
-//                                editor.commit();
-                                //aca se debe guardar el valor del checkbox
+                                //post un superadmin
                                 String id = UUID.randomUUID().toString();
-                                Admin admin = new Admin(id,nombre,ci,ext,cel,codigo,correo,password);
+                                Admin admin = new Admin(id,nombre,ci,ext,cel,codigo,correo,password,checkBox.isChecked());
                                 adminRef.child("Funcionarios").child("Funcionario: " + codigo).setValue(admin);
                                 id = UUID.randomUUID().toString();
                                 toast = Toast.makeText(getApplicationContext(), "Otorgados Permisos Administrativos", Toast.LENGTH_SHORT);
                                 toast.show();
+                            } else {
+                                //post un funcionario
+                                String id2 = UUID.randomUUID().toString();
+                                Admin admin2 = new Admin(id2, nombre, ci, ext, cel, codigo, correo, password, false);
+                                adminRef.child("Funcionarios").child("Funcionario: " + codigo).setValue(admin2);
+                                id2 = UUID.randomUUID().toString();
+                                toast = Toast.makeText(getApplicationContext(), "Funcionario creado", Toast.LENGTH_SHORT);
+                                toast.show();
+                                intent = new Intent(CrearFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
+                                startActivity(intent);
                             }
-                            toast = Toast.makeText(getApplicationContext(), "Funcionario creado", Toast.LENGTH_SHORT);
-                            toast.show();
-                            intent = new Intent(CrearFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
-                            startActivity(intent);
                         } else {
                             toast = Toast.makeText(getApplicationContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT);
                             toast.show();

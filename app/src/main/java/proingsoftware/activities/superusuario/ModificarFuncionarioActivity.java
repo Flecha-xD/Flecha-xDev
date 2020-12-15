@@ -69,9 +69,7 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
 
                 if (passwordSuperUser.equals(passHardcodeo)) {
                     if (nombre != null && ci != null && ext != null && cel != null && correo != null && codigo != null) { //todos los datos llenos
-                        //idealmente aqui una linea compara que el codigo que da el ministerio sea unico pero sino nayproblema
-
-                        // TODO set los datos nuevos en el firebase
+                        //idealmente aqui una linea compara que el codigo que da el ministerio sea unico pero sino nayproblem
                         // update info
                         HashMap hashMap = new HashMap();
                         hashMap.put("nombre", nombre);

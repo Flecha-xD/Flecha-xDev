@@ -8,8 +8,17 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import proingsoftware.activities.consumidor.MenuConsumidorActivity;
 import proingsoftware.activities.superusuario.MenuSuperUsuarioActivity;
@@ -20,12 +29,26 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
     CheckBox checkBox;
     SharedPreferences sharedPreferences;
    //  FirebaseDatabase database = FirebaseDatabase.getInstance();
-   // DatabaseReference myRef = database.getReference("message");
+    private DatabaseReference mdataBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingreso_funcionario);
+     /*   mdataBase = FirebaseDatabase.getInstance().getReference();
+        mdataBase.child("Funcionarios").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    String codigo = snapshot.child("codigoFuncionario").getValue().toString();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        }) */
         sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
         boolean lastCheckBoxValue = sharedPreferences.getBoolean("checkBoxValue", false);
         if (lastCheckBoxValue) {
@@ -33,8 +56,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
             startActivity(loginIntent);
         }
 
-        final String sergio = "46125";
-        final String fernanda = "4602546025";
+        final String usuario = "46125";
         final String thepassword = "12345";
         final String superAdminHardcode = "111";
 
@@ -54,7 +76,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
                 if (codigo.equals(superAdminHardcode)){
                     loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
                     startActivity(loginIntent);
-                }else if  ((codigo.equals(fernanda) || codigo.equals(sergio)) &&
+                }else if  ((codigo.equals(usuario)) &&
                         (nombre != null && ci != null && ext != null && cel != null && correo != null ) //validacion momentanea
                 ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     //compare todos los datos
@@ -77,8 +99,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
             }
         })
         ;
-
-    }
+   }
 
 
     public void ToastLoginFail() {

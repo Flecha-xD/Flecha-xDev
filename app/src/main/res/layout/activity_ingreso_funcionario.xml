@@ -22,7 +22,9 @@
             android:text="INICIO DE SESIÓN"
             android:textColor="@color/white"
             android:textSize="24dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+
+        </TextView>
     </RelativeLayout>
 
     <EditText

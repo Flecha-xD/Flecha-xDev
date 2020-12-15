@@ -67,6 +67,8 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
                                 id = UUID.randomUUID().toString();
                                 toast = Toast.makeText(getApplicationContext(), "Otorgados Permisos Administrativos", Toast.LENGTH_SHORT);
                                 toast.show();
+                                intent = new Intent(CrearFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
+                                startActivity(intent);
                             } else {
                                 //post un funcionario
                                 String id2 = UUID.randomUUID().toString();
@@ -92,4 +94,3 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
         }
 
         }
-

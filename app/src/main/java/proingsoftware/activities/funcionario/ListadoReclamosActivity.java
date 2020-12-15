@@ -22,7 +22,6 @@ public class ListadoReclamosActivity extends AppCompatActivity {
         Intent mIntent = getIntent();
         String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
 
-
         List<Reclamo> reclamoList = new LinkedList<>();
         reclamoList.add (new Reclamo ("Vencido","Leche en Lata", "Subsidio", R.drawable.lechelata));
         reclamoList.add (new Reclamo ("Abierto","Harina", "Subsidio", R.drawable.harina));

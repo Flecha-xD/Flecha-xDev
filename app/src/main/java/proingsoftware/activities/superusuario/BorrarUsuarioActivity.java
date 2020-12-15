@@ -96,6 +96,7 @@ public class BorrarUsuarioActivity  extends AppCompatActivity {
                         toast.show();
                     }
                 });
+//prueba
 
 //                COND: passwordSuperUser.equals(contrasenaSuperAdminDB)
                 if (passwordSuperUser.equals(contrasenaSuperAdminDB)) {

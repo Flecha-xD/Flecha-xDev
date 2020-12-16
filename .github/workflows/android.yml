@@ -23,11 +23,8 @@ jobs:
       - name: Build Gradlew
         run: ./gradlew assembleRelease
       - uses: actions/checkout@v2
-
           - run: mkdir -p app\build\outputs\apk\release
-
           - run: echo hello > app\build\outputs\apk\release\app-release-unsigned.apk
-
           - uses: actions/upload-artifact@v2
             with:
               name: my-artifact

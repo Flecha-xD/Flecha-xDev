@@ -28,16 +28,12 @@ public class ListadoReclamosActivity extends AppCompatActivity {
     private ReclamoFirebaseAdapter adapter;
     Toast toast;
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_reclamos);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewMenu);
         Intent mIntent = getIntent();
         String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
-        //Firebase variables
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference reclamoRef = database.getReference();
 
         List<ReclamoFirebase> reclamoList = new LinkedList<>();
 
@@ -65,6 +61,12 @@ public class ListadoReclamosActivity extends AppCompatActivity {
 //        reclamoList.add (new Reclamo ("Sobreprecio","Hipermaxi", "Servicio", R.drawable.hipermaxi));
 //        reclamoList.add (new Reclamo ("Sobreprecio","Vacuna de fiebre", "Servicio", R.drawable.salud));
 //        ReclamoAdapter adapter = new ReclamoAdapter(this, reclamoList);
+        List<Reclamo> reclamoList = new LinkedList<>();
+        reclamoList.add (new Reclamo ("Vencido","Leche en Lata", "Subsidio", R.drawable.lechelata));
+        reclamoList.add (new Reclamo ("Abierto","Harina", "Subsidio", R.drawable.harina));
+        reclamoList.add (new Reclamo ("Sobreprecio","Hipermaxi", "Servicio", R.drawable.hipermaxi));
+        reclamoList.add (new Reclamo ("Sobreprecio","Vacuna de fiebre", "Servicio", R.drawable.salud));
+        ReclamoAdapter adapter = new ReclamoAdapter(this, reclamoList);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

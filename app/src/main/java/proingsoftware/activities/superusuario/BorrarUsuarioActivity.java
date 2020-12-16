@@ -25,6 +25,7 @@ public class BorrarUsuarioActivity  extends AppCompatActivity {
     Intent intent;
     Toast toast;
 
+
     private String codigoSuperAdminDB ="-1";
     private String contrasenaSuperAdminDB="-1";
     private String codigoFuncionarioDB="-1";

@@ -7,7 +7,7 @@ public class ProductoFirebase {
     private String nombre;
     private String descripcion;
     private String codigo;
-    private URI foto;
+    private String foto;
     private String precio;
 
 //    String id
@@ -20,7 +20,11 @@ public class ProductoFirebase {
         //this.foto = foto;
     }
     public ProductoFirebase(){
-        //Necesario para firebase no borrar
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.codigo = codigo;
+        //this.foto = foto;
     }
 
     public String getNombre() {
@@ -47,11 +51,11 @@ public class ProductoFirebase {
         this.codigo = codigo;
     }
 
-    public URI getFoto() {
+    public String getFoto() {
         return foto;
     }
 
-    public void setFoto(URI foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 

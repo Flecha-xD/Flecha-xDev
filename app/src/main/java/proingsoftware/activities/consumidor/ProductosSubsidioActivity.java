@@ -1,34 +1,58 @@
 package proingsoftware.activities.consumidor;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
-import proingsoftware.Adapters.SubsidioAdapter;
-import proingsoftware.model.Producto;
-import java.util.LinkedList;
-import java.util.List;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import proingsoftware.Adapters.MisReclamoFirebaseAdapter;
+import proingsoftware.Adapters.SubsidioFirebaseAdapter;
+import proingsoftware.model.ProductoFirebase;
+import proingsoftware.model.ReclamoFirebase;
+
+import java.util.ArrayList;
 
 public class ProductosSubsidioActivity extends AppCompatActivity { //en teoria ya esta
+    private SubsidioFirebaseAdapter adapter;
+    DatabaseReference reference;
+    RecyclerView recyclerView;
+    ArrayList<ProductoFirebase> list;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subsidio);
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewSubsidio);
-        List<Producto> productoList = new LinkedList<>();
-        productoList.add (new Producto ("Quintal de Harina", "Emapa, producto boliviano", "50", R.drawable.harina));
-        productoList.add (new Producto ("Chocolate Breick", "Chocolate en tableta", "16", R.drawable.breick));
-        productoList.add (new Producto ("Cereal Kellongs", "CornFlakes tradicional, hojuelas de maiz tostadas", "30", R.drawable.confleis));
-        productoList.add (new Producto ("Maple de Huevo", "Maple con 30 unidades medianas", "26", R.drawable.huevo));
-        productoList.add (new Producto ("Miel Irupana", "Pote de miel irupana con propoleo", "45", R.drawable.miel));
-        productoList.add (new Producto ("Cereal Sublime", "Cereal tradicional de trigo con chocolate", "32", R.drawable.sublime));
-        SubsidioAdapter adapter = new SubsidioAdapter(this, productoList);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewSubsidio);
+        recyclerView.setLayoutManager( new LinearLayoutManager(this));
+        reference = FirebaseDatabase.getInstance().getReference().child("Productos Subsidio");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list = new ArrayList<ProductoFirebase>();
+                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
+                {
+                    ProductoFirebase p = dataSnapshot1.getValue(ProductoFirebase.class);
+                    list.add(p);
+                }
+                adapter = new SubsidioFirebaseAdapter(ProductosSubsidioActivity.this,list);
+                recyclerView.setAdapter(adapter);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProductosSubsidioActivity.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

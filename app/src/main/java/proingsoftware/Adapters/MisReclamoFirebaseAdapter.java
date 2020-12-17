@@ -1,31 +1,27 @@
 package proingsoftware.Adapters;
 
-import  android.content.Context;
-import android.content.Intent;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
 
-import proingsoftware.activities.funcionario.ModificarProductoActivity;
-import proingsoftware.model.ReclamoFirebase;
-
 import java.util.ArrayList;
 
-public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebaseAdapter.MyViewHolder> {
+import proingsoftware.model.ReclamoFirebase;
+
+public class MisReclamoFirebaseAdapter extends RecyclerView.Adapter<MisReclamoFirebaseAdapter.MyViewHolder> {
 
     Context context;
     ArrayList<ReclamoFirebase> reclamos;
 
-    public ReclamoFirebaseAdapter(Context c , ArrayList<ReclamoFirebase> p)
+    public MisReclamoFirebaseAdapter(Context c , ArrayList<ReclamoFirebase> p)
     {
         context = c;
         reclamos = p;
@@ -43,11 +39,6 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
         holder.nombre.setText(reclamos.get(position).getNombre());
         holder.prodserv.setText(reclamos.get(position).getProducto());
       //  Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
-            holder.tarjeta.setOnClickListener(new View.OnClickListener(){
-                public void onClick(View view) {
-                    context.startActivity(new
-                            Intent(context, ModificarProductoActivity.class));	          }
-            });
     }
 
     @Override
@@ -58,7 +49,6 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
     class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView nombre, descripcion, prodserv;
-        LinearLayout tarjeta;
       //  ImageView fotoRec;
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -66,7 +56,6 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
             descripcion = (TextView) itemView.findViewById(R.id.descripcionRec);
             prodserv= (TextView) itemView.findViewById(R.id.prodservRec);
          //   fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);
-            tarjeta= (LinearLayout)itemView.findViewById(R.id.tarjetaReclamo);
          }
     }
 }

@@ -13,7 +13,6 @@ import androidx.cardview.widget.CardView;
 import com.R;
 
 import proingsoftware.activities.consumidor.MenuConsumidorActivity;
-import proingsoftware.activities.consumidor.ProductosSubsidioActivity;
 
 public class MenuFuncionarioActivity extends AppCompatActivity {
 
@@ -56,7 +55,7 @@ public class MenuFuncionarioActivity extends AppCompatActivity {
 
                     if (cardIndex == 0) {
 
-                        intent = new Intent(MenuFuncionarioActivity.this, ListadoReclamosActivity.class); //muestra todos los no resueltos
+                        intent = new Intent(MenuFuncionarioActivity.this, VerTodosReclamosActivity.class); //muestra todos los no resueltos
                         intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
@@ -69,7 +68,7 @@ public class MenuFuncionarioActivity extends AppCompatActivity {
                         intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }else if (cardIndex == 3){
-                        intent = new Intent(MenuFuncionarioActivity.this, ListadoReclamosActivity.class); //Filtra con firebase
+                        intent = new Intent(MenuFuncionarioActivity.this, VerTodosReclamosActivity.class); //Filtra con firebase
                         intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }

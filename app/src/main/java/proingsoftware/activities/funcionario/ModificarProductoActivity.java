@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
     Button anadir, borrar;
     ImageView imagenElegida;
     ImageButton galeria;
+    TextView codigoProducto;
     Intent anadirIntent;
     Toast toast;
     //Firebase variables
@@ -44,6 +46,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
         borrar = findViewById(R.id.delprod);
         galeria = findViewById(R.id.galeria3Button);
         imagenElegida = findViewById(R.id.imageact);
+        codigoProducto = findViewById(R.id.codact);
         galeria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +62,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
                 String nombre = ((EditText) findViewById(R.id.nombreprodact)).getText().toString();
                 String descripcion = ((EditText) findViewById(R.id.descact)).getText().toString();
                 String precio = ((EditText) findViewById(R.id.precioact)).getText().toString();
-                String codigo = ((EditText) findViewById(R.id.codact)).getText().toString();
+                //String codigo = ((EditText) findViewById(R.id.codact)).getText().toString();
                 String codigoFunc =  ((EditText) findViewById(R.id.codigofuncEP)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaact)).getText().toString();
 
@@ -96,7 +99,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
                 });
 
                 if (password.equals(passFuncionarioDB) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
-                    if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
+                    if (nombre != null && descripcion != null && precio != null ) {//validacion momentanea)
                         //compare todos los datos
                         anadirIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);
                         startActivity(anadirIntent);

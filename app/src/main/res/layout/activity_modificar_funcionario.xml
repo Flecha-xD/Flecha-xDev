@@ -28,42 +28,21 @@
         </TextView>
     </RelativeLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        android:text="CODIGO DEL FUNCIONARIO A CAMBIAR"></TextView>
-
     <EditText
-        android:id="@+id/sucodigo"
+        android:id="@+id/SUCodEditFunc"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="45dp"
         android:background="@drawable/round_box"
-        android:hint="Código"
+        android:hint="Código Administrador"
         android:inputType="numberPassword"
         android:maxLength="12"
-        android:paddingStart="97dp"
+        android:paddingStart="40dp"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="27dp"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        android:text="CONTRASENA PARA REALIZAR LOS CAMBIOS"></TextView>
 
     <EditText
         android:id="@+id/supassword"
@@ -89,7 +68,26 @@
         android:textColor="@color/white"
         android:textSize="12dp"
         android:textStyle="bold"
-        android:text="DATOS A CAMBIAR"></TextView>
+        android:text="DATOS A CAMBIAR">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/codigofunc"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Código Funcionario"
+        android:inputType="numberPassword"
+        android:maxLength="12"
+        android:paddingStart="50dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="5dp"
+        />
+
 
     <EditText
         android:id="@+id/sunombre"
@@ -100,7 +98,7 @@
         android:hint="Nombre Funcionario"
         android:inputType="text"
         android:maxLength="50"
-        android:paddingStart="55dp"
+        android:paddingStart="48dp"
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
@@ -111,7 +109,7 @@
         android:id="@+id/menuGrid"
         android:layout_width="240dp"
         android:layout_gravity="center"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:columnCount="2"
         android:columnOrderPreserved="false">
 
@@ -122,7 +120,7 @@
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/round_box"
             android:gravity="center"
             android:hint="C.I."
@@ -142,7 +140,7 @@
             android:layout_row="0"
             android:layout_column="1"
             android:layout_gravity="center"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/round_box"
             android:hint="Ext."
             android:inputType="textCapCharacters"

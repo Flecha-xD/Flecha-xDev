@@ -62,8 +62,7 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
                 String codigo = ((EditText) findViewById(R.id.sucodigo)).getText().toString();
                 String password = ((EditText) findViewById(R.id.supasswordfuncionario)).getText().toString();
                 String passwordSuperUser = ((EditText) findViewById(R.id.supassword)).getText().toString();
-//              Codigo del superusuario
-//                String codAdmin = ((EditText) findViewById(R.id.supassword)).getText().toString();
+               String codAdmin = ((EditText) findViewById(R.id.SUCodEditFunc)).getText().toString();
                 //get CODIGO func from db
                 adminRef.child("Funcionarios").child("Funcionario: " + codAdmin).child("codigo").addValueEventListener(new ValueEventListener() {
                     @Override

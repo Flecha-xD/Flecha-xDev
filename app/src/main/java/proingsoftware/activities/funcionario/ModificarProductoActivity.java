@@ -19,11 +19,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+
+import proingsoftware.activities.superusuario.ModificarFuncionarioActivity;
 
 public class ModificarProductoActivity extends AppCompatActivity {
     private final static int SELECT_PHOTO = 12345;
@@ -62,7 +67,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
                 String nombre = ((EditText) findViewById(R.id.nombreprodact)).getText().toString();
                 String descripcion = ((EditText) findViewById(R.id.descact)).getText().toString();
                 String precio = ((EditText) findViewById(R.id.precioact)).getText().toString();
-                //String codigo = ((EditText) findViewById(R.id.codact)).getText().toString();
+                String codigo = ((EditText) findViewById(R.id.codact)).getText().toString();
                 String codigoFunc =  ((EditText) findViewById(R.id.codigofuncEP)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaact)).getText().toString();
 
@@ -101,6 +106,19 @@ public class ModificarProductoActivity extends AppCompatActivity {
                 if (password.equals(passFuncionarioDB) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null ) {//validacion momentanea)
                         //compare todos los datos
+                        // update info
+                        HashMap hashMap = new HashMap();
+                        hashMap.put("nombre", nombre);
+                        hashMap.put("descripcion", descripcion);
+                        hashMap.put("precio", precio);
+
+
+                        productoRef.child("Productos Subsidio").child("Producto: " + codigo).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                            @Override
+                            public void onSuccess(Object o) {
+                                Toast.makeText(ModificarProductoActivity.this, "Se actualizo la info", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                         anadirIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);
                         startActivity(anadirIntent);
                     } else {

@@ -52,7 +52,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         admin = (Button) findViewById(R.id.adminButton);
         admin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                intent = new Intent(ConfiguracionActivity.this, MenuSuperUsuarioActivity.class);
+                intent = new Intent(ConfiguracionActivity.this, MenuFuncionarioActivity.class);
 
                 startActivity(intent);
             }

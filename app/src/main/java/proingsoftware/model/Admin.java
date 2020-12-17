@@ -67,13 +67,13 @@ public class Admin {
         this.phone = phone;
     }
 
-//    public String getCodigo() {
-//        return codigo;
-//    }
-//
-//    public void setCodigo(String codigo) {
-//        this.codigo = codigo;
-//    }
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
     public String getCorreo() {
         return correo;

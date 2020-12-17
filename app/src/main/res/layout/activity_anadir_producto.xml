@@ -124,6 +124,21 @@
 />
 </RelativeLayout>
     <EditText
+        android:id="@+id/codigofuncprod"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Codigo funcionario"
+        android:inputType="number"
+        android:maxLength="15"
+        android:paddingStart="55dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
         android:id="@+id/contraseniaAdd"
         android:layout_gravity="center"
         android:layout_width="250dp"

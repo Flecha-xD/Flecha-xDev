@@ -13,10 +13,15 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.UUID;
 
@@ -29,10 +34,12 @@ public class AnadirProductoActivity extends AppCompatActivity {
     ImageView imagenElegida;
     ImageButton galeria;
     Intent cambiarIntent;
+    Toast toast;
 
     //Firebase variables
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference subsidioRef = database.getReference();
+    private String funcionarioPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +56,31 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 String descripcion = ((EditText) findViewById(R.id.descProd)).getText().toString();
                 String precio = ((EditText) findViewById(R.id.precio)).getText().toString();
                 String codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
+                String codigofunc = ((EditText) findViewById(R.id.codigofuncprod)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
 
                 //TODO arreglar y verificar condicion
-                if (password.equals("1")) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                subsidioRef.child("Funcionarios").child("Funcionario: " + codigofunc).child("password").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //Si existe el funcionario
+                        if(snapshot.exists() ){
+                            funcionarioPass = snapshot.getValue().toString();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        toast = Toast.makeText(getApplicationContext(), "Error al conectar con la base de datos", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+                if (password.equals(funcionarioPass)) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
                         //compare todos los datos
-                        String id = UUID.randomUUID().toString();
-                        ProductoFirebase producto = new ProductoFirebase(id,nombre,descripcion,precio,codigo);
-                        subsidioRef.child("Productos Subsidio").child(id).setValue(producto);
-                        id = UUID.randomUUID().toString();
+
+                        ProductoFirebase producto = new ProductoFirebase(nombre,descripcion,precio,codigo);
+                        subsidioRef.child("Productos Subsidio").child("Producto " + codigo).setValue(producto);
+
                         Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
                         toast.show();
                         cambiarIntent = new Intent(AnadirProductoActivity.this, MenuFuncionarioActivity.class);

@@ -26,7 +26,6 @@ import proingsoftware.activities.superusuario.MenuSuperUsuarioActivity;
 public class IngresoFuncionarioActivity extends AppCompatActivity {
     Button login;
     Intent loginIntent;
-    CheckBox checkBox;
     SharedPreferences sharedPreferences;
    //  FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference mdataBase;
@@ -49,18 +48,10 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
 
             }
         }) */
-        sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
-        boolean lastCheckBoxValue = sharedPreferences.getBoolean("checkBoxValue", false);
-        if (lastCheckBoxValue) {
-            loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuFuncionarioActivity.class);
-            startActivity(loginIntent);
-        }
-
-        final String usuario = "46125";
+          final String usuario = "46125";
         final String thepassword = "12345";
         final String superAdminHardcode = "111";
 
-        checkBox = findViewById(R.id.recuerdameFuncionario);
         login = findViewById(R.id.accederFuncionario);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -81,12 +72,6 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
                 ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     //compare todos los datos
                     if (thepassword.equals(password)) {
-                        if (checkBox.isChecked()) {
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putBoolean("checkBoxValue", checkBox.isChecked());
-                            editor.apply();
-                            editor.commit();
-                        }
                         loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuFuncionarioActivity.class);
                         startActivity(loginIntent);
                     } else {

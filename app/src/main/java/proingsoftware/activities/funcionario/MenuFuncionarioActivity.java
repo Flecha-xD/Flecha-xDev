@@ -65,7 +65,7 @@ public class MenuFuncionarioActivity extends AppCompatActivity {
                         startActivity(intent);
 
                     }else if(cardIndex == 2){
-                        intent = new Intent(MenuFuncionarioActivity.this, ProductosSubsidioActivity.class);
+                        intent = new Intent(MenuFuncionarioActivity.this, ModificarProductoActivity.class);
                         intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }else if (cardIndex == 3){

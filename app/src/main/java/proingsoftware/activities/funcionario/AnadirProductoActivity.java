@@ -1,5 +1,6 @@
 package proingsoftware.activities.funcionario;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -17,11 +18,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.UUID;
 
@@ -35,8 +43,10 @@ public class AnadirProductoActivity extends AppCompatActivity {
     ImageButton galeria;
     Intent cambiarIntent;
     Toast toast;
-
+    public Uri photoURI;
     //Firebase variables
+    FirebaseStorage storage;
+    StorageReference mStorageReference;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference subsidioRef = database.getReference();
     private String funcionarioPass;
@@ -110,22 +120,57 @@ public class AnadirProductoActivity extends AppCompatActivity {
         });
     }
 
+
+    //mostar foto en pantalla
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == SELECT_PHOTO && resultCode == RESULT_OK && data != null) {
-            Uri pickedImage = data.getData();
-            String[] filePath = { MediaStore.Images.Media.DATA };
-            Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
-            cursor.moveToFirst();
-            String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
-
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-            Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
-            imagenElegida.setImageBitmap(bitmap);
-            cursor.close();
+        if (resultCode == RESULT_OK && data != null) {
+            if (requestCode == SELECT_PHOTO) {
+                Uri pickedImage = data.getData();
+                String[] filePath = {MediaStore.Images.Media.DATA};
+                photoURI = pickedImage;
+                imagenElegida.setClipToOutline(true);
+                imagenElegida.setImageURI(photoURI);
+                //  uploadPicture();
+            }
         }
+    }
+
+
+    //codigo para subir la fotografía al storage de producots/images
+
+    private void uploadPicture() {
+
+        final ProgressDialog pd = new ProgressDialog(this);
+        pd.setTitle("Cargando Imagen...");
+        pd.show();
+        final String randomName = UUID.randomUUID().toString();
+        StorageReference riversRef = mStorageReference.child("productos/images/" + randomName);
+
+        riversRef.putFile(photoURI)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        pd.dismiss();
+                        Snackbar.make(findViewById(android.R.id.content), "Imagen cargada", Snackbar.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        pd.dismiss();
+                        Toast.makeText(getApplicationContext(),  "Error al cargar imagen", Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                        double porcentaje =  (100.00 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
+                        pd.setMessage("Porcentaje: " + (int) porcentaje + "%");
+                    }
+                });
     }
 
 }

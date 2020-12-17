@@ -25,6 +25,86 @@
             android:textStyle="bold"></TextView>
     </RelativeLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:text="CODIGO DEL PRODUCTO A CAMBIAR"></TextView>
+
+    <EditText
+        android:id="@+id/codact"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Codigo Producto"
+        android:inputType="numberPassword"
+        android:maxLength="15"
+        android:paddingStart="55dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:text="CONTRASENA PARA REALIZAR LOS CAMBIOS"></TextView>
+    <EditText
+        android:id="@+id/codigofuncEP"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Codigo Funcionario"
+        android:inputType="numberPassword"
+        android:maxLength="15"
+        android:paddingStart="55dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/contraseniaact"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingStart="80dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:text="DATOS A CAMBIAR"></TextView>
+
     <EditText
         android:id="@+id/nombreprodact"
         android:layout_gravity="center"
@@ -38,58 +118,31 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="10dp"
         />
 
-    <GridLayout
-        android:id="@+id/menuGrid"
-        android:layout_width="240dp"
+    <EditText
+        android:id="@+id/precioact"
         android:layout_gravity="center"
-        android:layout_height="70dp"
-        android:columnCount="2"
-        android:columnOrderPreserved="false">
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_box"
+        android:hint="Precio Bs."
+        android:inputType="number"
+        android:maxLength="50"
+        android:paddingStart="90dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        />
 
-
-        <EditText
-            android:id="@+id/precioact"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_marginTop="9dp"
-            android:background="@drawable/round_box"
-            android:gravity="center"
-            android:hint="Precio Bs."
-            android:inputType="number"
-            android:maxLength="8"
-            android:paddingStart="4dp"
-            android:singleLine="true"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
-
-        <EditText
-            android:id="@+id/codact"
-            android:gravity="center"
-            android:layout_marginStart="15dp"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_gravity="center"
-            android:background="@drawable/round_box"
-            android:hint="Código"
-            android:inputType="numberPassword"
-            android:maxLength="5"
-            android:paddingStart="2dp"
-            android:singleLine="true"
-            android:textColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent" />
-    </GridLayout>
     <EditText
         android:id="@+id/descact"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/round_box"
         android:hint="Descripción"
         android:inputType="text"
@@ -108,7 +161,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="70dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/galeria"
             android:scaleType="fitCenter" />
 
@@ -122,21 +175,7 @@
             android:layout_marginEnd="70dp"
             />
     </RelativeLayout>
-    <EditText
-        android:id="@+id/contraseniaact"
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:background="@drawable/round_box"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:maxLength="15"
-        android:paddingStart="80dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:singleLine="true"
-        android:layout_marginTop="20dp"
-        />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -148,7 +187,7 @@
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
             android:background="@drawable/round_button_aqua"
             android:text="Actualizar"
@@ -165,7 +204,7 @@
             android:layout_alignParentStart="true"
             android:layout_gravity="center"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="100dp"
             android:background="@drawable/round_button_aqua"
             android:text="Borrar"

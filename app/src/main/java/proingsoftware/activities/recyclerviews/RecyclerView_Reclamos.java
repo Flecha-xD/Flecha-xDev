@@ -16,7 +16,7 @@ import proingsoftware.model.Reclamo;
 
 import java.util.List;
 
-public class RecyclerView_Reclamos { //en teoria ya esta
+public class RecyclerView_Reclamos {
 
     private Context mContext;
     private ReclamoAdapter mReclamoAdapter;

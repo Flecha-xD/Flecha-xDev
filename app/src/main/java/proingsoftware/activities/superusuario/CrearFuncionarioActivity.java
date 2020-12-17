@@ -25,7 +25,6 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
         TextView encabezado ;
         Toast toast;
         SharedPreferences sharedPreferences;
-
         //Firebase variables
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference adminRef = database.getReference();
@@ -52,9 +51,10 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
                     String ext = ((EditText) findViewById(R.id.suext)).getText().toString();
                     String cel = ((EditText) findViewById(R.id.sucel)).getText().toString();
                     String correo = ((EditText) findViewById(R.id.sumail)).getText().toString();
-                    String codigo = ((EditText) findViewById(R.id.sucodigo)).getText().toString();
+                    String codigo = ((EditText) findViewById(R.id.sucodigofuncionario)).getText().toString();
                     String password = ((EditText) findViewById(R.id.supasswordfuncionario)).getText().toString();
                     String passwordSuperUser = ((EditText) findViewById(R.id.supassword)).getText().toString();
+                    String codigoSuperUser = ((EditText) findViewById(R.id.sucodigo)).getText().toString();
 
                     if (passwordSuperUser.equals(passHardcodeo)) {
                         if (nombre != null && ci != null && ext != null && cel != null && correo != null && codigo != null) { //todos los datos llenos

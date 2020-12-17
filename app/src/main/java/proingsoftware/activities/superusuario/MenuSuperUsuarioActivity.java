@@ -11,12 +11,12 @@ import androidx.cardview.widget.CardView;
 import com.R;
 import proingsoftware.activities.consumidor.MenuConsumidorActivity;
 import proingsoftware.activities.funcionario.ListadoReclamosActivity;
+import proingsoftware.activities.funcionario.MenuFuncionarioActivity;
 
 public class MenuSuperUsuarioActivity extends AppCompatActivity {
     Intent intent;
     GridLayout sumenuGrid;
     Button logoutSU;
-    SharedPreferences sharedPreferences;
     Intent mainIntent;
 
     @Override
@@ -26,10 +26,6 @@ public class MenuSuperUsuarioActivity extends AppCompatActivity {
         logoutSU= (Button) findViewById(R.id.SUlogoutButton);
         logoutSU.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean("checkBoxValue", false);
-                editor.apply();
-                editor.commit();
                 mainIntent = new Intent(MenuSuperUsuarioActivity.this, MenuConsumidorActivity.class);
                 startActivity(mainIntent);
             }
@@ -62,7 +58,7 @@ public class MenuSuperUsuarioActivity extends AppCompatActivity {
                         intent.putExtra("FROM_ACTIVITY", "SUPERUSER");
                         startActivity(intent);
                     }else if (cardIndex == 3){
-                        intent = new Intent(MenuSuperUsuarioActivity.this, ListadoReclamosActivity.class);
+                        intent = new Intent(MenuSuperUsuarioActivity.this, MenuFuncionarioActivity.class);
                         intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }

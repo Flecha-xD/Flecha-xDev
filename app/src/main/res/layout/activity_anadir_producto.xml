@@ -28,7 +28,7 @@
         android:id="@+id/nombreprod"
         android:layout_gravity="center"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="46dp"
         android:background="@drawable/round_box"
         android:hint="Nombre del Producto"
         android:inputType="text"
@@ -37,14 +37,14 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         />
 
     <GridLayout
         android:id="@+id/menuGrid"
         android:layout_width="240dp"
         android:layout_gravity="center"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:columnCount="2"
         android:columnOrderPreserved="false">
 
@@ -52,10 +52,10 @@
         <EditText
             android:id="@+id/precio"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="46dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="11dp"
             android:background="@drawable/round_box"
             android:gravity="center"
             android:hint="Precio Bs."
@@ -68,15 +68,15 @@
 
         <EditText
             android:id="@+id/codprod"
-            android:gravity="center"
-            android:layout_marginStart="15dp"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_width="125dp"
+            android:layout_height="46dp"
             android:layout_row="0"
             android:layout_column="1"
             android:layout_gravity="center"
-            android:layout_marginTop="19dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="11dp"
             android:background="@drawable/round_box"
+            android:gravity="center"
             android:hint="Código"
             android:inputType="numberPassword"
             android:maxLength="5"
@@ -89,7 +89,7 @@
         android:id="@+id/descProd"
         android:layout_gravity="center"
         android:layout_width="250dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:background="@drawable/round_box"
         android:hint="Descripción"
         android:inputType="text"
@@ -98,12 +98,12 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         />
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:paddingTop="20dp">
+    android:paddingTop="13dp">
     <ImageButton
         android:id="@+id/galeria2Button"
         android:layout_width="80dp"
@@ -115,19 +115,22 @@
 
     <ImageView
         android:id="@+id/imagetoupload2"
-        android:layout_width="200dp"
+        android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="170dp"
-        android:layout_marginEnd="70dp"
-/>
+        android:layout_marginStart="190dp"
+        android:layout_marginEnd="80dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:background="@drawable/redondeo"
+        />
 </RelativeLayout>
     <EditText
         android:id="@+id/codigofuncprod"
         android:layout_gravity="center"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="46dp"
         android:background="@drawable/round_box"
         android:hint="Codigo funcionario"
         android:inputType="number"
@@ -136,13 +139,13 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="13dp"
         />
     <EditText
         android:id="@+id/contraseniaAdd"
         android:layout_gravity="center"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="46dp"
         android:background="@drawable/round_box"
         android:hint="Contraseña"
         android:inputType="textPassword"
@@ -151,7 +154,7 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="13dp"
         />
     <Button
         android:id="@+id/addprod1"

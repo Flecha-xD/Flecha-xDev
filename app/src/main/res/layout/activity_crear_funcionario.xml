@@ -41,14 +41,14 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         />
 
     <GridLayout
         android:id="@+id/menuGrid"
         android:layout_width="240dp"
         android:layout_gravity="center"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:columnCount="2"
         android:columnOrderPreserved="false">
 
@@ -59,7 +59,7 @@
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="9dp"
             android:background="@drawable/round_box"
             android:gravity="center"
             android:hint="C.I."
@@ -105,21 +105,6 @@
         android:layout_marginTop="4dp"
         />
     <EditText
-        android:id="@+id/sucodigo"
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:layout_height="45dp"
-        android:background="@drawable/round_box"
-        android:hint="Código"
-        android:inputType="numberPassword"
-        android:maxLength="12"
-        android:paddingStart="97dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
-        android:singleLine="true"
-        android:layout_marginTop="13dp"
-        />
-    <EditText
         android:id="@+id/sumail"
         android:layout_gravity="center"
         android:layout_width="250dp"
@@ -132,8 +117,25 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="11dp"
         />
+
+    <EditText
+        android:id="@+id/sucodigofuncionario"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Código Funcionario"
+        android:inputType="numberPassword"
+        android:maxLength="12"
+        android:paddingStart="50dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="11dp"
+        />
+
     <EditText
         android:id="@+id/supasswordfuncionario"
         android:layout_gravity="center"
@@ -147,8 +149,25 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="11dp"
         />
+
+    <EditText
+        android:id="@+id/sucodigo"
+        android:layout_gravity="center"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:background="@drawable/round_box"
+        android:hint="Código Administrador"
+        android:inputType="numberPassword"
+        android:maxLength="12"
+        android:paddingStart="38dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:singleLine="true"
+        android:layout_marginTop="11dp"
+        />
+
     <EditText
         android:id="@+id/supassword"
         android:layout_gravity="center"
@@ -162,7 +181,7 @@
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="11dp"
         />
 
     <CheckBox
@@ -175,7 +194,7 @@
         android:layout_gravity="center"
         android:text="MODO ADMIN"
         android:buttonTint="#ffffff"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         />
     <Button
         android:text="Guardar"
@@ -185,7 +204,7 @@
         android:layout_width="120dp"
         android:layout_gravity="center"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:id="@+id/suguardar"
         android:background="@drawable/round_button_aqua"
 

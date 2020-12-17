@@ -140,6 +140,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                 Uri pickedImage = data.getData();
                 String[] filePath = {MediaStore.Images.Media.DATA};
                 photoURI = pickedImage;
+                imageView.setClipToOutline(true);
                 imageView.setImageURI(photoURI);
 
                 uploadPicture();

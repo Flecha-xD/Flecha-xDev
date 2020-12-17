@@ -96,13 +96,13 @@
         android:columnCount="2"
         android:layout_gravity="center">
 
-    <TextView
+    <EditText
         android:id="@+id/codact"
         android:layout_gravity="center"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:background="@drawable/round_box"
-        android:text="Código producto"
+        android:hint="Codigo producto"
         android:textSize="18dp"
         android:gravity="center"
         android:textColor="@color/colorAccent"

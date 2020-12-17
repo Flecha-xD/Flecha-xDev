@@ -79,7 +79,7 @@ public class AnadirProductoActivity extends AppCompatActivity {
                         //compare todos los datos
 
                         ProductoFirebase producto = new ProductoFirebase(nombre,descripcion,precio,codigo);
-                        subsidioRef.child("Productos Subsidio").child("Producto " + codigo).setValue(producto);
+                        subsidioRef.child("Productos Subsidio").child("Producto: " + codigo).setValue(producto);
 
                         Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
                         toast.show();

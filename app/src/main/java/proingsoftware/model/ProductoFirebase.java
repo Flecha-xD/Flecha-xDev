@@ -3,15 +3,16 @@ package proingsoftware.model;
 import java.net.URI;
 
 public class ProductoFirebase {
-    private String id;
+    //private String id;
     private String nombre;
     private String descripcion;
     private String codigo;
     private URI foto;
     private String precio;
 
-    public ProductoFirebase(String id,String nombre, String descripcion, String precio, String codigo) {
-        this.id = id;
+//    String id
+    public ProductoFirebase(String nombre, String descripcion, String precio, String codigo) {
+        //this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -22,18 +23,43 @@ public class ProductoFirebase {
         //Necesario para firebase no borrar
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public URI getFoto() {
         return foto;
     }
+
+    public void setFoto(URI foto) {
+        this.foto = foto;
+    }
+
     public String getPrecio() {
         return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 }

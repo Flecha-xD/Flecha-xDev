@@ -14,9 +14,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ModificarProductoActivity extends AppCompatActivity {
     private final static int SELECT_PHOTO = 12345;
@@ -24,9 +30,12 @@ public class ModificarProductoActivity extends AppCompatActivity {
     ImageView imagenElegida;
     ImageButton galeria;
     Intent anadirIntent;
-    // FirebaseDatabase database = FirebaseDatabase.getInstance();
-    // DatabaseReference myRef = database.getReference("message");
-
+    Toast toast;
+    //Firebase variables
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference productoRef = database.getReference();
+    private String codigoFuncionarioDB;
+    private String passFuncionarioDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,9 +60,42 @@ public class ModificarProductoActivity extends AppCompatActivity {
                 String descripcion = ((EditText) findViewById(R.id.descact)).getText().toString();
                 String precio = ((EditText) findViewById(R.id.precioact)).getText().toString();
                 String codigo = ((EditText) findViewById(R.id.codact)).getText().toString();
+                String codigoFunc =  ((EditText) findViewById(R.id.codigofuncEP)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaact)).getText().toString();
 
-                if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                //get CODIGO func from db
+                productoRef.child("Funcionarios").child("Funcionario: " + codigoFunc).child("codigo").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //Si existe el superadmin y si el boolean "esAdmin" es true
+                        if(snapshot.exists()){
+                            codigoFuncionarioDB = snapshot.getValue().toString();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        toast = Toast.makeText(getApplicationContext(), "Error al conectar con la base de datos", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+
+                //get PASSWORD SUPERADMIN from db
+                productoRef.child("Funcionarios").child("Funcionario: " + codigoFunc).child("password").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //Si existe el superadmin y si el boolean "esAdmin" es true
+                        if(snapshot.exists() ){
+                            passFuncionarioDB = snapshot.getValue().toString();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        toast = Toast.makeText(getApplicationContext(), "Error al conectar con la base de datos", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+
+                if (password.equals(passFuncionarioDB) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
                         //compare todos los datos
                         anadirIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);

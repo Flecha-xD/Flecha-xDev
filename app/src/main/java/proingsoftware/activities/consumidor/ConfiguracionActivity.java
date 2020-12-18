@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
 
+import proingsoftware.activities.funcionario.IngresoFuncionarioActivity;
 import proingsoftware.activities.funcionario.VerTodosReclamosActivity;
 import proingsoftware.activities.superusuario.MenuSuperUsuarioActivity;
 

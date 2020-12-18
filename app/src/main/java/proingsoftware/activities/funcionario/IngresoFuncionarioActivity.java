@@ -30,7 +30,6 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
     Intent loginIntent;
     Intent superIntent;
     Toast toast;
-    SharedPreferences sharedPreferences;
     //Firebase variables
     FirebaseStorage storage;
     StorageReference mStorageReference;
@@ -65,17 +64,16 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
                 String password = ((EditText) findViewById(R.id.contrasenia)).getText().toString();
 
                 getFromDB(codigo);
-                //Datos llenos (codigo,nombre,ci,ext,cel,correo,password)
-//                if (codigo != null && nombre != null&& ci != null&& ext != null && cel != null&& correo != null && password != null){
-               if ((codigo.equals(funcionarioCodigoDB)) && (nombre.equals(funcionarioNameDB)&& ci.equals(funcionarioCIDB) && ext.equals(funcionarioExtDB) && cel.equals(funcionarioCelDB)&& correo.equals(funcionarioCorreoDB) && password.equals(funcionarioPassDB))){
-                    if(validadorIF){
-                        superIntent = new Intent(IngresoFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
-                        startActivity(superIntent);
-                    } else {
-                        loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuFuncionarioActivity.class);
-                        startActivity(loginIntent);
-                    }
-                }
+               if ((codigo.equals(funcionarioCodigoDB)) && (nombre.equals(funcionarioNameDB)&& ci.equals(funcionarioCIDB) && ext.equals(funcionarioExtDB) && cel.equals(funcionarioCelDB)&& correo.equals(funcionarioCorreoDB) && password.equals(funcionarioPassDB))) {
+                   if (validadorIF) {
+                       superIntent = new Intent(IngresoFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
+                       startActivity(superIntent);
+                   } else {
+                       loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuFuncionarioActivity.class);
+                       startActivity(loginIntent);
+                   }
+               }
+
             }
         });
    }
@@ -88,17 +86,6 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
         login.setEnabled(false);
         loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuConsumidorActivity.class);
         startActivity(loginIntent);
-    }
-
-    public void ToastPasswordFail() {
-
-        CharSequence text = "Contraseña equivocada";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-        toast.show();
-        loginIntent = new Intent(IngresoFuncionarioActivity.this, MenuConsumidorActivity.class);
-        startActivity(loginIntent);
-
     }
 
     public void getFromDB(String codigoFunc){
@@ -126,14 +113,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
                 if(snapshot.exists() ){
                     esAdminDB = (Boolean) snapshot.getValue();
                     validadorIF = esAdminDB.booleanValue();
-
-                    if (validadorIF){
-                        toast = Toast.makeText(getApplicationContext(), "ES SUPERUSUARIO", Toast.LENGTH_SHORT);
-                    }else {
-                        toast = Toast.makeText(getApplicationContext(), "ES FUNCIONARIO NORMAL", Toast.LENGTH_SHORT);
-                    }
-                    toast.show();
-                }
+}
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

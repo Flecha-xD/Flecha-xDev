@@ -36,12 +36,6 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
             mIntent = getIntent();
             checkBox = findViewById(R.id.sumodoAdmin);
             encabezado = findViewById(R.id.SUtag);
-//            String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
-//            if (previousActivity.equals("CREAR")){
-//                encabezado.setText("CREAR FUNCIONARIO");
-//            } else if (previousActivity.equals("CAMBIAR")){
-//                encabezado.setText("MODIFICAR FUNCIONARIO");
-//            }
             guardar = findViewById(R.id.suguardar);
             guardar.setOnClickListener(new View.OnClickListener() {
                 @Override

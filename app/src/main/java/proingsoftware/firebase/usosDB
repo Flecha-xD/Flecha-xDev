@@ -8,6 +8,7 @@ admins editan productos (PUT)
 
 TODO
 consumidores  leen productos del subsidio. (GET)
+LOGIN funcionario (GET)
 admins eliminan reclamos. (DELETE)
 admins leen y eliminan productos del subsidio. (GET, DELETE)
 todos, absolutamente todos, leen los reclamos (GET)

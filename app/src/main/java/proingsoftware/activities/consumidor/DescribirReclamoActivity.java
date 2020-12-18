@@ -60,15 +60,16 @@ public class DescribirReclamoActivity extends AppCompatActivity {
     DatabaseReference reclamoRef = database.getReference();
 
     //Del anterior activity
-    private String id = getIntent().getStringExtra("id");
-    private String nombre = getIntent().getStringExtra("nombre");
-    private String ci = getIntent().getStringExtra("ci");
-    private String ext = getIntent().getStringExtra("ext");
-    private String cel = getIntent().getStringExtra("cel");
-    private String correo = getIntent().getStringExtra("correo");
-    private String depto = getIntent().getStringExtra("dept");
-    private String producto = getIntent().getStringExtra("producto");
-    private String descripcion = getIntent().getStringExtra("descripcion");
+    Bundle extras ;
+    private String id ;
+    private String nombre;
+    private String ci;
+    private String ext;
+    private String cel;
+    private String correo;
+    private String depto;
+    private String producto;
+    private String descripcion;
 
 
     @Override
@@ -80,7 +81,8 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_describir_reclamo);
         this.imageView = (ImageView) this.findViewById(R.id.imagetoupload);
         sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
-        ;
+
+        fillData();
         camara = (ImageButton) findViewById(R.id.camaraButton);
 
         galeria =findViewById(R.id.galeriaImageView);
@@ -132,6 +134,20 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         });
     }
 
+    private void fillData(){
+        extras = getIntent().getExtras();
+        if (extras != null) {
+            id = extras.getString("id");
+            nombre = extras.getString("nombre");
+            ci = extras.getString("ci");
+            ext = extras.getString("ext");
+            cel = extras.getString("cel");
+            correo = extras.getString("correo");
+            depto = extras.getString("dept");
+            producto = extras.getString("producto");
+            descripcion = extras.getString("descripcion");
+        }
+    }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

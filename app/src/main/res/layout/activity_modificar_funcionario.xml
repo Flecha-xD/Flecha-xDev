@@ -73,7 +73,7 @@
     </TextView>
 
     <EditText
-        android:id="@+id/codigofunc"
+        android:id="@+id/codigofuncACAMBIAR"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="45dp"
@@ -197,18 +197,18 @@
         android:layout_marginTop="13dp"
         />
 
-<!--    <CheckBox-->
-<!--        android:id="@+id/sumodoAdmin"-->
-<!--        android:textColor="#ffffff"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_marginStart="115dp"-->
-<!--        android:layout_marginEnd="115dp"-->
-<!--        android:layout_height="25dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:text="MODO ADMIN"-->
-<!--        android:buttonTint="#ffffff"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        />-->
+    <CheckBox
+        android:id="@+id/sumodoAdmin"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="115dp"
+        android:layout_marginEnd="115dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center"
+        android:text="MODO ADMIN"
+        android:buttonTint="#ffffff"
+        android:layout_marginTop="15dp"
+        />
     <Button
         android:text="Guardar"
         android:textAllCaps="false"

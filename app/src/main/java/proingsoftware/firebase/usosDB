@@ -5,10 +5,10 @@ superadmin crea y modifica funcionarios (POST, PUT)
 superadmin crea superadmin(POST)
 superadmin elimina funcionarios. (DELETE)
 admins editan productos (PUT)
+LOGIN funcionario (GET)
 
 TODO
 consumidores  leen productos del subsidio. (GET)
-LOGIN funcionario (GET)
 admins eliminan reclamos. (DELETE)
 admins leen y eliminan productos del subsidio. (GET, DELETE)
 todos, absolutamente todos, leen los reclamos (GET)

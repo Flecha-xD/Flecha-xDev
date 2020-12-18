@@ -18,7 +18,15 @@ public class ReclamoFirebase {
     private boolean fueAtendido;
 
     public ReclamoFirebase(){
-        //Necesario para firebase no borrar
+        this.nombre = nombre;
+        this.ci = ci;
+        this.ext = ext;
+        this.cel = cel;
+        this.correo = correo;
+        this.dept = dept;
+        this.producto = producto;
+        this.descripcion = descripcion;
+        this.foto = foto;
     }
 
     public ReclamoFirebase(String id,String nombre, String ci, String ext, String cel, String correo, String dept, String producto, String descripcion, String foto, boolean fueAtendido) {

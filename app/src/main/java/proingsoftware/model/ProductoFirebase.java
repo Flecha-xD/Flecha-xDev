@@ -18,7 +18,11 @@ public class ProductoFirebase {
         this.foto = foto;
     }
     public ProductoFirebase(){
-        //Necesario para firebase no borrar
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.codigo = codigo;
+        //this.foto = foto;
     }
 
     public String getNombre() {

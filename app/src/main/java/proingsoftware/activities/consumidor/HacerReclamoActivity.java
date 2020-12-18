@@ -22,7 +22,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.UUID;
 
 import proingsoftware.firebase.Firebase;
-import proingsoftware.model.Reclamo;
 import proingsoftware.model.ReclamoFirebase;
 
 public class HacerReclamoActivity extends AppCompatActivity {

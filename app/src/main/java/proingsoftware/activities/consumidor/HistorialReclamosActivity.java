@@ -15,43 +15,42 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import proingsoftware.Adapters.MisReclamoFirebaseAdapter;
-import proingsoftware.Adapters.SubsidioFirebaseAdapter;
-import proingsoftware.model.ProductoFirebase;
-import proingsoftware.model.ReclamoFirebase;
-
 import java.util.ArrayList;
 
-public class ProductosSubsidioActivity extends AppCompatActivity { //en teoria ya esta
-    private SubsidioFirebaseAdapter adapter;
+import proingsoftware.Adapters.MisReclamoFirebaseAdapter;
+import proingsoftware.Adapters.ReclamoFirebaseAdapter;
+import proingsoftware.model.ReclamoFirebase;
+
+public class HistorialReclamosActivity extends AppCompatActivity {
+    private MisReclamoFirebaseAdapter adapter;
     DatabaseReference reference;
     RecyclerView recyclerView;
-    ArrayList<ProductoFirebase> list;
+    ArrayList<ReclamoFirebase> list;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subsidio);
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewSubsidio);
+        setContentView(R.layout.activity_historial_reclamos_consumidor);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMisReclamos);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
-        reference = FirebaseDatabase.getInstance().getReference().child("Productos Subsidio");
+        reference = FirebaseDatabase.getInstance().getReference().child("Reclamos");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list = new ArrayList<ProductoFirebase>();
+                list = new ArrayList<ReclamoFirebase>();
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                 {
-                    ProductoFirebase p = dataSnapshot1.getValue(ProductoFirebase.class);
+                    ReclamoFirebase p = dataSnapshot1.getValue(ReclamoFirebase.class);
                     list.add(p);
                 }
-                adapter = new SubsidioFirebaseAdapter(ProductosSubsidioActivity.this,list);
+                adapter = new MisReclamoFirebaseAdapter(HistorialReclamosActivity.this,list);
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(ProductosSubsidioActivity.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HistorialReclamosActivity.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
             }
         });
     }

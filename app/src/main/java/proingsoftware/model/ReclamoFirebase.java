@@ -15,12 +15,13 @@ public class ReclamoFirebase {
     private String producto;
     private String descripcion;
     private String foto;
+    private boolean fueAtendido;
 
     public ReclamoFirebase(){
         //Necesario para firebase no borrar
     }
 
-    public ReclamoFirebase(String id,String nombre, String ci, String ext, String cel, String correo, String dept, String producto, String descripcion) {
+    public ReclamoFirebase(String id,String nombre, String ci, String ext, String cel, String correo, String dept, String producto, String descripcion, String foto, boolean fueAtendido) {
         this.id = id;
         this.nombre = nombre;
         this.ci = ci;
@@ -30,6 +31,8 @@ public class ReclamoFirebase {
         this.dept = dept;
         this.producto = producto;
         this.descripcion = descripcion;
+        this.foto = foto;
+        this.fueAtendido = fueAtendido;
     }
 
     public String getNombre() {
@@ -102,5 +105,13 @@ public class ReclamoFirebase {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public boolean isFueAtendido() {
+        return fueAtendido;
+    }
+
+    public void setFueAtendido(boolean fueAtendido) {
+        this.fueAtendido = fueAtendido;
     }
 }

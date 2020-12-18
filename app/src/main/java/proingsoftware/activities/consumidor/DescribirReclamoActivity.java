@@ -22,6 +22,8 @@ import com.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageMetadata;
@@ -33,25 +35,41 @@ import java.io.ByteArrayOutputStream;
 import java.util.UUID;
 
 import proingsoftware.firebase.Firebase;
+import proingsoftware.model.ReclamoFirebase;
 
 public class DescribirReclamoActivity extends AppCompatActivity {
 
+    //Funciones
     Button reclamar;
     Intent enviarReclamo;
     SharedPreferences sharedPreferences;
+
+    //Requests
     private static final int CAMERA_REQUEST = 1888;
     private final static int SELECT_PHOTO = 12345;
-
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
-
     ImageButton camara;
-
     ImageView galeria;
-
     private ImageView imageView;
     private FirebaseStorage storage;
     private StorageReference mStorageReference;
     public Uri photoURI;
+
+    //Firebase variables
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reclamoRef = database.getReference();
+
+    //Del anterior activity
+    private String id = getIntent().getStringExtra("id");
+    private String nombre = getIntent().getStringExtra("nombre");
+    private String ci = getIntent().getStringExtra("ci");
+    private String ext = getIntent().getStringExtra("ext");
+    private String cel = getIntent().getStringExtra("cel");
+    private String correo = getIntent().getStringExtra("correo");
+    private String depto = getIntent().getStringExtra("dept");
+    private String producto = getIntent().getStringExtra("producto");
+    private String descripcion = getIntent().getStringExtra("descripcion");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +97,8 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                     CharSequence text = "Su reclamo será atendido lo antes posible";
                     Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
                     toast.show();
+                    ReclamoFirebase reclamo = new ReclamoFirebase(id,nombre,ci,ext,cel,correo,depto,producto,descripcion,"URI DE LA FOTO", false);
+                    reclamoRef.child("Reclamos").child(id).setValue(reclamo);
                 } else {
                     CharSequence text = "Debe adjuntar una imagen";
                     Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);

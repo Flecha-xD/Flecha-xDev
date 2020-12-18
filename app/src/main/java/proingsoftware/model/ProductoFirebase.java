@@ -3,21 +3,19 @@ package proingsoftware.model;
 import java.net.URI;
 
 public class ProductoFirebase {
-    //private String id;
+
     private String nombre;
     private String descripcion;
     private String codigo;
-    private String foto;
     private String precio;
+    private String foto;
 
-//    String id
-    public ProductoFirebase(String nombre, String descripcion, String precio, String codigo) {
-        //this.id = id;
+    public ProductoFirebase(String nombre, String descripcion, String precio, String codigo, String foto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.codigo = codigo;
-        //this.foto = foto;
+        this.foto = foto;
     }
     public ProductoFirebase(){
         this.nombre = nombre;

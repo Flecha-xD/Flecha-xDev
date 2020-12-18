@@ -33,29 +33,16 @@ public class HacerReclamoActivity extends AppCompatActivity {
     //Firebase variables
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reclamoRef = database.getReference();
-    //Reclamos text variables
-//    DatabaseReference nombreCompletoRef = reclamoRef.child("Nombre");
-//    DatabaseReference carnetRef = reclamoRef.child("Carnet");
-//    DatabaseReference extensionRef = reclamoRef.child("Extension");
-//    DatabaseReference celularRef = reclamoRef.child("Celular");
-//    DatabaseReference correoRef = reclamoRef.child("Correo");
-//    DatabaseReference departamentoRef = reclamoRef.child("Departamento");
-//    DatabaseReference productoRef = reclamoRef.child("Producto");
-//    DatabaseReference descripcionRef = reclamoRef.child("Descripcion");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hacer_reclamo);
         sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
-
-        final String sergio = "4612546125";
-        final String fernanda = "4602546025";
-        final String thepassword = "ViceministerioDef";
-
         checkBox = findViewById(R.id.essubsi);
-        enviar = findViewById(R.id.siguienteButton);
 
+        enviar = findViewById(R.id.siguienteButton);
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,23 +59,22 @@ public class HacerReclamoActivity extends AppCompatActivity {
                         correo != null && depto != null && razon != null && descripcion != null) {
                     //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     String id = UUID.randomUUID().toString();
-                    ReclamoFirebase reclamo = new ReclamoFirebase(id,nombre,ci,ext,cel,correo,depto,razon,descripcion);
-                    reclamoRef.child("Reclamos").child(id).setValue(reclamo);
                     id = UUID.randomUUID().toString();
-//                    nombreCompletoRef.setValue(nombre);
-//                    carnetRef.setValue(ci);
-//                    extensionRef.setValue(ext);
-//                    celularRef.setValue(cel);
-//                    correoRef.setValue(correo);
-//                    departamentoRef.setValue(depto);
-//                    productoRef.setValue(razon);
-//                    descripcionRef.setValue(descripcion);
                     if (checkBox.isChecked()) {
                         CharSequence text = "Producto del Subsidio";
                         Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
                         toast.show();
                     }
                     seguirIntent = new Intent(HacerReclamoActivity.this, DescribirReclamoActivity.class);
+                    seguirIntent.putExtra("id", id);
+                    seguirIntent.putExtra("nombre", nombre);
+                    seguirIntent.putExtra("ci", ci);
+                    seguirIntent.putExtra("ext", ext);
+                    seguirIntent.putExtra("cel", cel);
+                    seguirIntent.putExtra("correo", correo);
+                    seguirIntent.putExtra("dept", depto);
+                    seguirIntent.putExtra("producto", razon);
+                    seguirIntent.putExtra("descripcion", descripcion);
                     startActivity(seguirIntent);
                 } else {
                     CharSequence text = "Datos Incompletos";
@@ -99,9 +85,6 @@ public class HacerReclamoActivity extends AppCompatActivity {
             }
         })
         ;
-
-    }
-    private void crearReclamos(int cont){
 
     }
 }

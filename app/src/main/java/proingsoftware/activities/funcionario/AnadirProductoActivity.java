@@ -69,7 +69,6 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 String codigofunc = ((EditText) findViewById(R.id.codigofuncprod)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
 
-                //TODO arreglar y verificar condicion
                 subsidioRef.child("Funcionarios").child("Funcionario: " + codigofunc).child("password").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -88,7 +87,7 @@ public class AnadirProductoActivity extends AppCompatActivity {
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
                         //compare todos los datos
 
-                        ProductoFirebase producto = new ProductoFirebase(nombre,descripcion,precio,codigo);
+                        ProductoFirebase producto = new ProductoFirebase(nombre,descripcion,precio,codigo,"URL DE LA FOTO");
                         subsidioRef.child("Productos Subsidio").child("Producto: " + codigo).setValue(producto);
 
                         Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
@@ -133,14 +132,10 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 photoURI = pickedImage;
                 imagenElegida.setClipToOutline(true);
                 imagenElegida.setImageURI(photoURI);
-                //  uploadPicture();
             }
         }
     }
-
-
     //codigo para subir la fotografía al storage de producots/images
-
     private void uploadPicture() {
 
         final ProgressDialog pd = new ProgressDialog(this);

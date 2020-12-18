@@ -34,7 +34,7 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
     //Firebase variables
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference adminRef = database.getReference();
-    private String codigoSuperDB ="-1";
+    private String codigoSuperDB;
     private String passSuperDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +59,7 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
                 String ext = ((EditText) findViewById(R.id.suext)).getText().toString();
                 String cel = ((EditText) findViewById(R.id.sucel)).getText().toString();
                 String correo = ((EditText) findViewById(R.id.sumail)).getText().toString();
-                String codigo = ((EditText) findViewById(R.id.sucodigo)).getText().toString();
+                String codigo = ((EditText) findViewById(R.id.codigofuncACAMBIAR)).getText().toString();
                 String password = ((EditText) findViewById(R.id.supasswordfuncionario)).getText().toString();
                 String passwordSuperUser = ((EditText) findViewById(R.id.supassword)).getText().toString();
                String codAdmin = ((EditText) findViewById(R.id.SUCodEditFunc)).getText().toString();
@@ -106,6 +106,7 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
                         hashMap.put("phone", cel);
                         hashMap.put("correo", correo);
                         hashMap.put("password", password);
+                        hashMap.put("esAdmin", checkBox.isChecked());
 
                         adminRef.child("Funcionarios").child("Funcionario: " + codigo).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                             @Override
@@ -131,9 +132,6 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
                     toast.show();
                 }
             }
-
-
-            
         });
     }
 }

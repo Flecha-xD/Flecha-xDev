@@ -21,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,6 +45,7 @@ public class AnadirProductoActivity extends AppCompatActivity {
     ImageButton galeria;
     Intent cambiarIntent;
     Toast toast;
+    String foto, nombre, descripcion, precio, codigo;
     public Uri photoURI;
     //Firebase variables
     FirebaseStorage storage;
@@ -56,6 +58,9 @@ public class AnadirProductoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anadir_producto);
+        storage = FirebaseStorage.getInstance();
+        mStorageReference = FirebaseStorage.getInstance().getReference();
+
         anadir = findViewById(R.id.addprod1);
         galeria = findViewById(R.id.galeria2Button);
         imagenElegida = findViewById(R.id.imagetoupload2);
@@ -63,13 +68,12 @@ public class AnadirProductoActivity extends AppCompatActivity {
         anadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre = ((EditText) findViewById(R.id.nombreprod)).getText().toString();
-                String descripcion = ((EditText) findViewById(R.id.descProd)).getText().toString();
-                String precio = ((EditText) findViewById(R.id.precio)).getText().toString();
-                String codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
+                 nombre = ((EditText) findViewById(R.id.nombreprod)).getText().toString();
+                 descripcion = ((EditText) findViewById(R.id.descProd)).getText().toString();
+                 precio = ((EditText) findViewById(R.id.precio)).getText().toString();
+                 codigo = ((EditText) findViewById(R.id.codprod)).getText().toString();
                 String codigofunc = ((EditText) findViewById(R.id.codigofuncprod)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaAdd)).getText().toString();
-
                 subsidioRef.child("Funcionarios").child("Funcionario: " + codigofunc).child("password").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -87,10 +91,7 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 if (password.equals(funcionarioPass)) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
                         //compare todos los datos
-
-                        ProductoFirebase producto = new ProductoFirebase(nombre,descripcion,precio,codigo,"URL DE LA FOTO");
-                        subsidioRef.child("Productos Subsidio").child("Producto: " + codigo).setValue(producto);
-
+                        uploadPicture();
                         Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
                         toast.show();
                         cambiarIntent = new Intent(AnadirProductoActivity.this, MenuFuncionarioActivity.class);
@@ -137,6 +138,7 @@ public class AnadirProductoActivity extends AppCompatActivity {
         }
     }
     //codigo para subir la fotografía al storage de producots/images
+
     private void uploadPicture() {
 
         final ProgressDialog pd = new ProgressDialog(this);
@@ -151,13 +153,10 @@ public class AnadirProductoActivity extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         pd.dismiss();
                         Snackbar.make(findViewById(android.R.id.content), "Imagen cargada", Snackbar.LENGTH_SHORT).show();
-                        mStorageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                String url= uri.toString();
-                                //aca guardar el url
-                            }
-                        });
+                        foto= "https://firebasestorage.googleapis.com/v0/b/flecha-xd.appspot.com/o/productos%2Fimages%2F" +randomName+ "?alt=media&token=43960bb8-c62a-45d4-9110-1a93b1370e94";
+                        ProductoFirebase producto = new ProductoFirebase(nombre,descripcion,precio,codigo, foto);
+                        subsidioRef.child("Productos Subsidio").child("Producto: " + codigo).setValue(producto);
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

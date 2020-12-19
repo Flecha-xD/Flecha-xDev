@@ -22,7 +22,7 @@ public class ProductoFirebase {
         this.descripcion = descripcion;
         this.precio = precio;
         this.codigo = codigo;
-        //this.foto = foto;
+        this.foto = foto;
     }
 
     public String getNombre() {

@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.R;
 
 import proingsoftware.activities.funcionario.IngresoFuncionarioActivity;
+import proingsoftware.activities.funcionario.MenuFuncionarioActivity;
 import proingsoftware.activities.funcionario.VerTodosReclamosActivity;
 import proingsoftware.activities.superusuario.MenuSuperUsuarioActivity;
 
@@ -52,7 +53,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         admin = (Button) findViewById(R.id.adminButton);
         admin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                intent = new Intent(ConfiguracionActivity.this, IngresoFuncionarioActivity.class);
+                intent = new Intent(ConfiguracionActivity.this, MenuFuncionarioActivity.class);
 
                 startActivity(intent);
             }

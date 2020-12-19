@@ -50,7 +50,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
     public Uri photoURI;
     //Firebase variables
     FirebaseStorage storage;
- StorageReference mStorageReference;
+    StorageReference mStorageReference;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference productoRef = database.getReference();
     private String codigoFuncionarioDB;

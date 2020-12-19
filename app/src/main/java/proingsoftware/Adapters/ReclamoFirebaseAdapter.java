@@ -8,6 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import androidx.annotation.NonNull;
@@ -26,6 +33,13 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
 
     Context context;
     ArrayList<ReclamoFirebase> reclamos;
+    ReclamoFirebase reclamoFirebase;
+    Toast toast;
+    Intent intent;
+
+    //Firebase variables
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reclamoRef = database.getReference();
 
     public ReclamoFirebaseAdapter(Context c , ArrayList<ReclamoFirebase> p)
     {
@@ -47,8 +61,20 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
         Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
             holder.tarjeta.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view) {
-                    context.startActivity(new
-                            Intent(context, VerReclamoActivity.class));	          }
+                    intent = new Intent(context, VerReclamoActivity.class);
+                    intent.putExtra("id", reclamos.get(position).getId());
+                    intent.putExtra("nombre", reclamos.get(position).getNombre());
+                    intent.putExtra("ci", reclamos.get(position).getCi());
+                    intent.putExtra("ext", reclamos.get(position).getExt());
+                    intent.putExtra("cel", reclamos.get(position).getCel());
+                    intent.putExtra("correo", reclamos.get(position).getCorreo());
+                    intent.putExtra("dept", reclamos.get(position).getDept());
+                    intent.putExtra("producto", reclamos.get(position).getProducto());
+                    intent.putExtra("descripcion", reclamos.get(position).getDescripcion());
+
+                    intent.putExtra("foto", reclamos.get(position).getFoto());
+                    context.startActivity(intent);
+                }
             });
     }
 
@@ -59,6 +85,12 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
+        String id;
+        String nombre;
+        String ci;
+        String ext;
+        String cel;
+        String correo;
         TextView depto, descripcion, prodserv;
         LinearLayout tarjeta;
         ImageView fotoRec;
@@ -70,5 +102,8 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
             fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);
             tarjeta= (LinearLayout)itemView.findViewById(R.id.tarjetaReclamo);
          }
+    }
+    public void mandarReclamo(ReclamoFirebase reclamo){
+
     }
 }

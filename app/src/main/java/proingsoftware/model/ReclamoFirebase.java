@@ -27,6 +27,7 @@ public class ReclamoFirebase {
         this.producto = producto;
         this.descripcion = descripcion;
         this.foto = foto;
+        this.fueAtendido = fueAtendido;
     }
 
     public ReclamoFirebase(String id,String nombre, String ci, String ext, String cel, String correo, String dept, String producto, String descripcion, String foto, boolean fueAtendido) {

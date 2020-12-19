@@ -26,24 +26,31 @@
 
         </TextView>
     </RelativeLayout>
+<LinearLayout
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="40dp"
+    android:layout_marginEnd="50dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginBottom="20dp"
+    android:gravity="center">
 
     <ImageView
         android:id="@+id/imagereclamoVER"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-      android:layout_marginTop="40dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="20dp"
-        />
+        android:background="@drawable/redondeo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
+</LinearLayout>
     <TextView
         android:id="@+id/nombrereclamoVER"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textSize="18dp"
         android:layout_marginTop="2dp"
+        android:textAllCaps="true"
         android:gravity="center"
         android:textColor="@color/colorOrange" />
     <TextView

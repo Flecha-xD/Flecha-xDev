@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class VerReclamoActivity extends AppCompatActivity {
     Button atender, ignorar;
@@ -99,8 +100,6 @@ public class VerReclamoActivity extends AppCompatActivity {
         reclamoDescripcion.setText(descripcion);
 
         fotoReclamo = findViewById(R.id.imagereclamoVER);
-        //TODO
-        //setear la imagen del url en el reclamo
-
+        Picasso.get().load(foto).into(fotoReclamo);
     }
 }

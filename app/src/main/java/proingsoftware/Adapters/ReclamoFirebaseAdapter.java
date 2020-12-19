@@ -42,7 +42,7 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
         holder.descripcion.setText(reclamos.get(position).getExt());
         holder.nombre.setText(reclamos.get(position).getNombre());
         holder.prodserv.setText(reclamos.get(position).getProducto());
-      //  Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
+        Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
             holder.tarjeta.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view) {
                     context.startActivity(new
@@ -59,13 +59,13 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
     {
         TextView nombre, descripcion, prodserv;
         LinearLayout tarjeta;
-      //  ImageView fotoRec;
+        ImageView fotoRec;
         public MyViewHolder(View itemView) {
             super(itemView);
             nombre = (TextView) itemView.findViewById(R.id.nombreRec);
             descripcion = (TextView) itemView.findViewById(R.id.descripcionRec);
             prodserv= (TextView) itemView.findViewById(R.id.prodservRec);
-         //   fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);
+            fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);
             tarjeta= (LinearLayout)itemView.findViewById(R.id.tarjetaReclamo);
          }
     }

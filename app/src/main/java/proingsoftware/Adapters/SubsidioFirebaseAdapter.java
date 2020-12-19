@@ -39,7 +39,7 @@ public class SubsidioFirebaseAdapter extends RecyclerView.Adapter<SubsidioFireba
         holder.descripcion.setText(productos.get(position).getDescripcion());
         holder.nombre.setText(productos.get(position).getNombre());
         holder.precio.setText(productos.get(position).getPrecio());
-        Picasso.get().load(productos.get(position).getFoto()).into(holder.fotoRec);
+        Picasso.get().load(productos.get(position).getFoto()).into(holder.fotoSub);
     }
 
     @Override
@@ -50,13 +50,13 @@ public class SubsidioFirebaseAdapter extends RecyclerView.Adapter<SubsidioFireba
     class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView nombre, descripcion, precio;
-        ImageView fotoRec;
+        ImageView fotoSub;
         public MyViewHolder(View itemView) {
             super(itemView);
             nombre = (TextView) itemView.findViewById(R.id.nombreSub);
             descripcion = (TextView) itemView.findViewById(R.id.descSub);
             precio= (TextView) itemView.findViewById(R.id.precioSub);
-           fotoRec = (ImageView) itemView.findViewById(R.id.fotoSub);
+           fotoSub = (ImageView) itemView.findViewById(R.id.fotoSub);
          }
     }
 }

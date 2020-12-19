@@ -35,6 +35,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.UUID;
 
 import proingsoftware.firebase.Firebase;
+import proingsoftware.model.ProductoFirebase;
 import proingsoftware.model.ReclamoFirebase;
 
 public class DescribirReclamoActivity extends AppCompatActivity {
@@ -61,15 +62,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
 
     //Del anterior activity
     Bundle extras ;
-    private String id ;
-    private String nombre;
-    private String ci;
-    private String ext;
-    private String cel;
-    private String correo;
-    private String depto;
-    private String producto;
-    private String descripcion;
+    private String id, foto, nombre, ci, ext, cel, correo, depto, producto, descripcion;
 
 
     @Override
@@ -99,8 +92,6 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                     CharSequence text = "Su reclamo será atendido lo antes posible";
                     Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG);
                     toast.show();
-                    ReclamoFirebase reclamo = new ReclamoFirebase(id,nombre,ci,ext,cel,correo,depto,producto,descripcion,"URI DE LA FOTO", false);
-                    reclamoRef.child("Reclamos").child(id).setValue(reclamo);
                 } else {
                     CharSequence text = "Debe adjuntar una imagen";
                     Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
@@ -198,6 +189,9 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         pd.dismiss();
                         Snackbar.make(findViewById(android.R.id.content), "Imagen cargada", Snackbar.LENGTH_SHORT).show();
+                        foto= "https://firebasestorage.googleapis.com/v0/b/flecha-xd.appspot.com/o/reclamos%2Fimages%2F" +randomName+ "?alt=media&token=4634c7c9-299d-4186-8a3d-b37d91342441";
+                        ReclamoFirebase reclamo = new ReclamoFirebase(id,nombre,ci,ext,cel,correo,depto,producto,descripcion,foto, false);
+                        reclamoRef.child("Reclamos").child(id).setValue(reclamo);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

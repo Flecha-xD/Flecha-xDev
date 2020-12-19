@@ -30,14 +30,12 @@
     <ImageView
         android:id="@+id/imagereclamoVER"
         android:layout_width="300dp"
-        android:layout_height="180dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
       android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="20dp"
-
-
         />
 
     <TextView
@@ -62,6 +60,20 @@
         android:layout_gravity="center"
         android:layout_marginTop="2dp"
         android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/celVER"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="2dp"/>
+    <TextView
+        android:id="@+id/correoVER"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="2dp"/>
     <TextView
         android:id="@+id/deptoVER"
         android:layout_width="320dp"

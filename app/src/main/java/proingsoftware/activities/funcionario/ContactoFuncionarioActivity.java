@@ -34,22 +34,24 @@ public class ContactoFuncionarioActivity extends AppCompatActivity { //en teoria
 
                     if (cardIndex == 0) {
                         Intent intent = new Intent(Intent.ACTION_DIAL);
-                        intent.setData(Uri.parse("tel:70576881"));
+                        intent.setData(Uri.parse("tel:70576881")); //hardcodeado
+                        // aqui un get del telefono del reclamador
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
-                        Uri uri = Uri.fromParts("Buscando Distribuidor", "2240006", null); //poner una variable para el unmerodesde bdd
-                        Intent newIntent = new Intent(Intent.ACTION_CALL, uri);
-                        newIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(newIntent);
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        intent.setData(Uri.parse("tel:22158900"));
+                        startActivity(intent);
                     }else if(cardIndex == 2){
                         Intent intent=new Intent(Intent.ACTION_SEND);
-                        intent.putExtra(Intent.EXTRA_EMAIL, "f.l.m.m.0027@gmail.com"); //poner variable que obtenga desde bdd
+                        intent.putExtra(Intent.EXTRA_EMAIL, "f.l.m.m.0027@gmail.com"); //hardcodeado
+                        //get del correo del reclamador
                         intent.setType("text/html");
                         intent.setPackage("com.google.android.gm");
                         startActivity(Intent.createChooser(intent, "Enviar un Mail"));
                     }else if(cardIndex == 3){
                         intent = new Intent(ContactoFuncionarioActivity.this, MenuFuncionarioActivity.class);
-                        intent.putExtra("info", "Asociado en Base de Datos....." ); //cambiar estado del reclamo en base de datos.
+                        intent.putExtra("info", "Asociado en Base de Datos....." );
+                        //cambiar estado del reclamo en base de datos.
                         startActivity(intent);
                     }
                 }

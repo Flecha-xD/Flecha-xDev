@@ -33,7 +33,7 @@ public class ContactoConsumidorActivity extends AppCompatActivity { //en teoria,
 
                     if (cardIndex == 0) {
                         Intent intent = new Intent(Intent.ACTION_DIAL);
-                        intent.setData(Uri.parse("tel:22141040"));
+                        intent.setData(Uri.parse("tel:800100202"));
                         startActivity(intent);
                     }else if(cardIndex == 1 ){
                         Intent intent=new Intent(Intent.ACTION_SEND);

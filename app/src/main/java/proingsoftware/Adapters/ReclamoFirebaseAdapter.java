@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
 
+import proingsoftware.activities.funcionario.ContactoFuncionarioActivity;
 import proingsoftware.activities.funcionario.ModificarProductoActivity;
+import proingsoftware.activities.funcionario.VerReclamoActivity;
 import proingsoftware.model.ReclamoFirebase;
 
 import java.util.ArrayList;
@@ -39,14 +41,14 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.descripcion.setText(reclamos.get(position).getExt());
-        holder.nombre.setText(reclamos.get(position).getNombre());
+        holder.descripcion.setText(reclamos.get(position).getDescripcion());
+        holder.depto.setText(reclamos.get(position).getDept());
         holder.prodserv.setText(reclamos.get(position).getProducto());
         Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
             holder.tarjeta.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View view) {
                     context.startActivity(new
-                            Intent(context, ModificarProductoActivity.class));	          }
+                            Intent(context, VerReclamoActivity.class));	          }
             });
     }
 
@@ -57,12 +59,12 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView nombre, descripcion, prodserv;
+        TextView depto, descripcion, prodserv;
         LinearLayout tarjeta;
         ImageView fotoRec;
         public MyViewHolder(View itemView) {
             super(itemView);
-            nombre = (TextView) itemView.findViewById(R.id.nombreRec);
+            depto = (TextView) itemView.findViewById(R.id.deptoRec);
             descripcion = (TextView) itemView.findViewById(R.id.descripcionRec);
             prodserv= (TextView) itemView.findViewById(R.id.prodservRec);
             fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);

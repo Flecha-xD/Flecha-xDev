@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 
 import com.R;
 
+import proingsoftware.activities.consumidor.HistorialReclamosActivity;
 import proingsoftware.activities.consumidor.MenuConsumidorActivity;
 
 public class MenuFuncionarioActivity extends AppCompatActivity {
@@ -68,7 +69,7 @@ public class MenuFuncionarioActivity extends AppCompatActivity {
                         intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }else if (cardIndex == 3){
-                        intent = new Intent(MenuFuncionarioActivity.this, VerTodosReclamosActivity.class); //Filtra con firebase
+                        intent = new Intent(MenuFuncionarioActivity.this, HistorialReclamosActivity.class); //Filtra con firebase
                         intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                         startActivity(intent);
                     }

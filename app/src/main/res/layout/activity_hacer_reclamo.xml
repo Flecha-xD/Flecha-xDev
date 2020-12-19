@@ -154,7 +154,7 @@
         android:background="@drawable/round_box"
         android:hint="Descripción"
         android:inputType="text"
-        android:maxLength="20"
+        android:maxLength="80"
         android:paddingStart="80dp"
         android:singleLine="true"
         android:textColor="@color/colorAccent"

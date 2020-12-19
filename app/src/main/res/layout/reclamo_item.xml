@@ -39,7 +39,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nombreRec"
+            android:id="@+id/prodservRec"
             android:layout_width="match_parent"
             android:textColor="@color/colorOrange"
             android:textAllCaps="true"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/prodservRec"
+            android:id="@+id/deptoRec"
             android:layout_width="match_parent"
             android:textColor="@color/white"
             android:textSize="17dp"

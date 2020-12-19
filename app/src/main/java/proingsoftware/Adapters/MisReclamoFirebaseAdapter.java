@@ -37,8 +37,8 @@ public class MisReclamoFirebaseAdapter extends RecyclerView.Adapter<MisReclamoFi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.descripcion.setText(reclamos.get(position).getExt());
-        holder.nombre.setText(reclamos.get(position).getNombre());
+        holder.descripcion.setText(reclamos.get(position).getDescripcion());
+        holder.depto.setText(reclamos.get(position).getDept());
         holder.prodserv.setText(reclamos.get(position).getProducto());
         Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
     }
@@ -50,11 +50,11 @@ public class MisReclamoFirebaseAdapter extends RecyclerView.Adapter<MisReclamoFi
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        TextView nombre, descripcion, prodserv;
+        TextView depto, descripcion, prodserv;
         ImageView fotoRec;
         public MyViewHolder(View itemView) {
             super(itemView);
-            nombre = (TextView) itemView.findViewById(R.id.nombreRec);
+            depto = (TextView) itemView.findViewById(R.id.deptoRec);
             descripcion = (TextView) itemView.findViewById(R.id.descripcionRec);
             prodserv= (TextView) itemView.findViewById(R.id.prodservRec);
             fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);

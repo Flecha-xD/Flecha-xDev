@@ -152,21 +152,51 @@ public class ModificarProductoActivity extends AppCompatActivity {
         borrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String codigo = ((EditText) findViewById(R.id.codact)).getText().toString();
+                String codigoFunc =  ((EditText) findViewById(R.id.codigofuncEP)).getText().toString();
                 String password = ((EditText) findViewById(R.id.contraseniaact)).getText().toString();
 
-                if (password.equals(contra) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                //get CODIGO func from db
+                productoRef.child("Funcionarios").child("Funcionario: " + codigoFunc).child("codigo").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //Si existe el superadmin y si el boolean "esAdmin" es true
+                        if(snapshot.exists()){
+                            codigoFuncionarioDB = snapshot.getValue().toString();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        toast = Toast.makeText(getApplicationContext(), "Error al conectar con la base de datos", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+
+                //get PASSWORD SUPERADMIN from db
+                productoRef.child("Funcionarios").child("Funcionario: " + codigoFunc).child("password").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //Si existe el superadmin y si el boolean "esAdmin" es true
+                        if(snapshot.exists() ){
+                            passFuncionarioDB = snapshot.getValue().toString();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        toast = Toast.makeText(getApplicationContext(), "Error al conectar con la base de datos", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+                if (password.equals(passFuncionarioDB) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                    productoRef.child("Productos Subsidio").child("Producto: " + codigo).removeValue();
                     Toast toast = Toast.makeText(getApplicationContext(), "Producto borrado", Toast.LENGTH_SHORT);
                     toast.show();
                     anadirIntent = new Intent(ModificarProductoActivity.this, MenuFuncionarioActivity.class);
                     startActivity(anadirIntent);
                 } else {
-
                     Toast toast = Toast.makeText(getApplicationContext(), "Introduzca la contraseña", Toast.LENGTH_SHORT);
                     toast.show();
-
                 }
-
-
             }
         })
         ;

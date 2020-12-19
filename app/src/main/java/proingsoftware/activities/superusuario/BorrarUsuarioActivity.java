@@ -26,9 +26,9 @@ public class BorrarUsuarioActivity  extends AppCompatActivity {
     Toast toast;
 
 
-    private String codigoSuperAdminDB ="-1";
-    private String contrasenaSuperAdminDB="-1";
-    private String codigoFuncionarioDB="-1";
+    private String codigoSuperAdminDB;
+    private String contrasenaSuperAdminDB;
+    private String codigoFuncionarioDB;
 
     //Firebase variables
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -37,10 +37,6 @@ public class BorrarUsuarioActivity  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminar_funcionario);
-        final String passHardcodeo = "1234";
-        final String codHarcodeado = "666";
-        final String funcHArdcodeado = "777";
-
 
         borrar = findViewById(R.id.eliminar);
         borrar.setOnClickListener(new View.OnClickListener() {

@@ -1,15 +1,23 @@
 DONE
+Reclamo:
 consumidores postean reclamos. (POST)
+todos, absolutamente todos, leen los reclamos (GET)
+admins finalizan la revision del reclamo y la mandan al historial (PUT)
+
+Productos:
 admins crean productos (POST)
+admins editan productos (PUT)
+consumidores  leen productos del subsidio. (GET)
+admins leen y eliminan productos del subsidio. (GET, DELETE)
+
+Funcionarios:
 superadmin crea y modifica funcionarios (POST, PUT)
 superadmin crea superadmin(POST)
 superadmin elimina funcionarios. (DELETE)
-admins editan productos (PUT)
 LOGIN funcionario (GET)
 
 TODO
-consumidores  leen productos del subsidio. (GET)
+
 admins eliminan reclamos. (DELETE)
-admins leen y eliminan productos del subsidio. (GET, DELETE)
-todos, absolutamente todos, leen los reclamos (GET)
+
 

@@ -77,7 +77,6 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 subsidioRef.child("Funcionarios").child("Funcionario: " + codigofunc).child("password").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        //Si existe el funcionario
                         if(snapshot.exists() ){
                             funcionarioPass = snapshot.getValue().toString();
                         }
@@ -90,7 +89,6 @@ public class AnadirProductoActivity extends AppCompatActivity {
                 });
                 if (password.equals(funcionarioPass)) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
                     if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
-                        //compare todos los datos
                         uploadPicture();
                         Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
                         toast.show();

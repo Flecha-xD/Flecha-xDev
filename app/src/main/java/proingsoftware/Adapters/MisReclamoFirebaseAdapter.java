@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -38,7 +40,7 @@ public class MisReclamoFirebaseAdapter extends RecyclerView.Adapter<MisReclamoFi
         holder.descripcion.setText(reclamos.get(position).getExt());
         holder.nombre.setText(reclamos.get(position).getNombre());
         holder.prodserv.setText(reclamos.get(position).getProducto());
-      //  Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
+        Picasso.get().load(reclamos.get(position).getFoto()).into(holder.fotoRec);
     }
 
     @Override
@@ -49,13 +51,13 @@ public class MisReclamoFirebaseAdapter extends RecyclerView.Adapter<MisReclamoFi
     class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView nombre, descripcion, prodserv;
-      //  ImageView fotoRec;
+        ImageView fotoRec;
         public MyViewHolder(View itemView) {
             super(itemView);
             nombre = (TextView) itemView.findViewById(R.id.nombreRec);
             descripcion = (TextView) itemView.findViewById(R.id.descripcionRec);
             prodserv= (TextView) itemView.findViewById(R.id.prodservRec);
-         //   fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);
+            fotoRec = (ImageView) itemView.findViewById(R.id.fotoRec);
          }
     }
 }

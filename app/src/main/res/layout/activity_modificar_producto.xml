@@ -147,7 +147,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:paddingTop="12dp">
+        android:paddingTop="5dp">
         <ImageButton
             android:id="@+id/galeria3Button"
             android:layout_width="80dp"
@@ -159,8 +159,8 @@
 
         <ImageView
             android:id="@+id/imageact"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true"
             android:background="@drawable/redondeo"
@@ -174,13 +174,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/actprod"
             android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
@@ -196,7 +196,7 @@
         <Button
             android:id="@+id/delprod"
             android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_gravity="center"
             android:layout_marginStart="50dp"

@@ -44,12 +44,6 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
         mIntent = getIntent();
         checkBox = findViewById(R.id.sumodoAdmin);
         encabezado = findViewById(R.id.SUtag);
-//        String previousActivity= mIntent.getStringExtra("FROM_ACTIVITY");
-//        if (previousActivity.equals("CREAR")){
-//            encabezado.setText("CREAR FUNCIONARIO");
-//        } else if (previousActivity.equals("CAMBIAR")){
-//            encabezado.setText("MODIFICAR FUNCIONARIO");
-//        }
         guardar = findViewById(R.id.suguardar);
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +56,7 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
                 String codigo = ((EditText) findViewById(R.id.codigofuncACAMBIAR)).getText().toString();
                 String password = ((EditText) findViewById(R.id.supasswordfuncionario)).getText().toString();
                 String passwordSuperUser = ((EditText) findViewById(R.id.supassword)).getText().toString();
-               String codAdmin = ((EditText) findViewById(R.id.SUCodEditFunc)).getText().toString();
+                String codAdmin = ((EditText) findViewById(R.id.SUCodEditFunc)).getText().toString();
                 //get CODIGO func from db
                 adminRef.child("Funcionarios").child("Funcionario: " + codAdmin).child("codigo").addValueEventListener(new ValueEventListener() {
                     @Override
@@ -114,8 +108,6 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
                                 Toast.makeText(ModificarFuncionarioActivity.this, "Se actualizo la info", Toast.LENGTH_SHORT).show();
                             }
                         });
-
-
                         toast = Toast.makeText(getApplicationContext(), "Otorgados Permisos Administrativos", Toast.LENGTH_SHORT);
                         toast.show();
 

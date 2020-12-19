@@ -22,13 +22,15 @@
             android:text="RECLAMO"
             android:textColor="@color/white"
             android:textSize="28dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+
+        </TextView>
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/imageprod"
+        android:id="@+id/imagereclamoVER"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
         android:layout_gravity="center"
       android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
@@ -39,45 +41,40 @@
         />
 
     <TextView
-        android:id="@+id/nombrereclamo"
+        android:id="@+id/nombrereclamoVER"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="titulo"
         android:layout_marginTop="2dp"
         android:gravity="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/colorOrange" />
     <TextView
-        android:id="@+id/propietario"
+        android:id="@+id/propietarioVER"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="simpson"
         android:layout_marginTop="2dp"
         android:textColor="@color/white" />
     <TextView
-        android:id="@+id/depto"
+        android:id="@+id/ciVER"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="La paz"
         android:layout_marginTop="2dp"
         android:textColor="@color/white" />
     <TextView
-        android:id="@+id/fecha"
+        android:id="@+id/deptoVER"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="ayer"
         android:textColor="@color/white"
         android:layout_marginTop="2dp"/>
 
     <TextView
-        android:id="@+id/desc"
+        android:id="@+id/descVER"
         android:layout_width="320dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:text="nasdjnlafbddsbfdblsafbldsbf"
         android:textColor="@color/white"
         android:layout_marginTop="2dp"/>
 

@@ -22,14 +22,16 @@
             android:text="CONTACTO"
             android:textColor="@color/white"
             android:textSize="24dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+
+        </TextView>
     </RelativeLayout>
 
 
     <GridLayout
         android:id="@+id/menuGrid"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:layout_weight="8"
         android:alignmentMode="alignMargins"
         android:columnCount="1"
@@ -98,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="LLamar Distribuidor"
+                    android:text="LLamar Superiores"
                     android:textColor="@android:color/white"
                     android:textSize="22sp"
                     android:textStyle="bold" />

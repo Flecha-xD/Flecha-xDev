@@ -32,6 +32,7 @@
         android:id="@+id/sunombre"
         android:layout_gravity="center"
         android:layout_width="250dp"
+        android:text=""
         android:layout_height="45dp"
         android:background="@drawable/round_box"
         android:hint="Nombre Funcionario"
@@ -59,6 +60,7 @@
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="0"
+            android:text=""
             android:layout_marginTop="9dp"
             android:background="@drawable/round_box"
             android:gravity="center"
@@ -77,6 +79,7 @@
             android:layout_width="70dp"
             android:layout_height="45dp"
             android:layout_row="0"
+            android:text=""
             android:layout_column="1"
             android:layout_gravity="center"
             android:layout_marginTop="3dp"
@@ -88,21 +91,22 @@
             android:textColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent" />
     </GridLayout>
+
     <EditText
         android:id="@+id/sucel"
-        android:layout_gravity="center"
         android:layout_width="250dp"
-        android:layout_height="45dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
         android:background="@drawable/round_box"
         android:hint="Número Celular"
         android:inputType="number"
         android:maxLength="8"
         android:paddingStart="10dp"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
         android:singleLine="true"
-        android:layout_marginTop="4dp"
-        />
+        android:text=""
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
     <EditText
         android:id="@+id/sumail"
         android:layout_gravity="center"
@@ -110,6 +114,7 @@
         android:layout_height="45dp"
         android:background="@drawable/round_box"
         android:hint="Correo Electrónico"
+        android:text=""
         android:inputType="textEmailAddress"
         android:maxLength="40"
         android:paddingStart="10dp"
@@ -129,6 +134,7 @@
         android:inputType="numberPassword"
         android:maxLength="12"
         android:paddingStart="10dp"
+        android:text=""
         android:textColor="@color/colorAccent"
         android:textColorHint="@color/colorAccent"
         android:singleLine="true"

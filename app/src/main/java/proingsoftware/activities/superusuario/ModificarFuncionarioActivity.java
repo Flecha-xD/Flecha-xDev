@@ -90,9 +90,7 @@ public class ModificarFuncionarioActivity extends AppCompatActivity {
                 });
 
                 if (passwordSuperUser.equals(passSuperDB)) {
-                    if (nombre != null && ci != null && ext != null && cel != null && correo != null && codigo != null) { //todos los datos llenos
-                        //idealmente aqui una linea compara que el codigo que da el ministerio sea unico pero sino nayproblem
-                        // update info
+                    if (!nombre.equals("") && !ci.equals("") && !ext.equals("") && !cel.equals("") && !correo.equals("") && !codigo.equals("")) {
                         HashMap hashMap = new HashMap();
                         hashMap.put("nombre", nombre);
                         hashMap.put("ci", ci);

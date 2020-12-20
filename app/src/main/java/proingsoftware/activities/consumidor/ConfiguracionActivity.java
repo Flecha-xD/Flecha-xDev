@@ -28,7 +28,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
         modoEmo = (Switch) findViewById(R.id.nightMode);
-        saveData = (Switch) findViewById(R.id.nightMode);
+        saveData = (Switch) findViewById(R.id.saveInfo);
         modoEmo.setOnCheckedChangeListener(
                 (buttonView, isChecked) -> {
                     if (isChecked) {
@@ -43,18 +43,16 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 (buttonView, isChecked) -> {
                     if (isChecked) {
                         Toast.makeText(ConfiguracionActivity.this,
-                                "Sus datos se cargarán automáticamente", Toast.LENGTH_LONG).show();
+                                "Esta función será implementada en la siguiente versión", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(ConfiguracionActivity.this,
-                                "Sus datos no se cargarán automáticamente", Toast.LENGTH_LONG).show();
+                                "Sin datos guardados", Toast.LENGTH_SHORT).show();
                     }
                 });
-        //TODO volver a arreglar el intent cuando se termine el desarrollo
         admin = (Button) findViewById(R.id.adminButton);
         admin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 intent = new Intent(ConfiguracionActivity.this, IngresoFuncionarioActivity.class);
-
                 startActivity(intent);
             }
         });

@@ -33,13 +33,7 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
 
     Context context;
     ArrayList<ReclamoFirebase> reclamos;
-    ReclamoFirebase reclamoFirebase;
-    Toast toast;
     Intent intent;
-
-    //Firebase variables
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reclamoRef = database.getReference();
 
     public ReclamoFirebaseAdapter(Context c , ArrayList<ReclamoFirebase> p)
     {
@@ -85,12 +79,7 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
 
     class MyViewHolder extends RecyclerView.ViewHolder
     {
-        String id;
-        String nombre;
-        String ci;
-        String ext;
-        String cel;
-        String correo;
+
         TextView depto, descripcion, prodserv;
         LinearLayout tarjeta;
         ImageView fotoRec;
@@ -103,7 +92,5 @@ public class ReclamoFirebaseAdapter extends RecyclerView.Adapter<ReclamoFirebase
             tarjeta= (LinearLayout)itemView.findViewById(R.id.tarjetaReclamo);
          }
     }
-    public void mandarReclamo(ReclamoFirebase reclamo){
 
-    }
 }

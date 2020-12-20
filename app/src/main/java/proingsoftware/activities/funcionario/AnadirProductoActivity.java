@@ -64,7 +64,6 @@ public class AnadirProductoActivity extends AppCompatActivity {
         anadir = findViewById(R.id.addprod1);
         galeria = findViewById(R.id.galeria2Button);
         imagenElegida = findViewById(R.id.imagetoupload2);
-        final String contra = "4602546025"; //hardcodeado
         anadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +87,7 @@ public class AnadirProductoActivity extends AppCompatActivity {
                     }
                 });
                 if (password.equals(funcionarioPass)) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
-                    if (nombre != null && descripcion != null && precio != null && codigo != null ) {//validacion momentanea)
+                    if (!nombre.equals("") && !descripcion.equals("") && !precio.equals("") && !codigo.equals("") ) {//validacion momentanea)
                         uploadPicture();
                         Toast toast = Toast.makeText(getApplicationContext(), "Producto Añadido", Toast.LENGTH_LONG);
                         toast.show();

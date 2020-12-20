@@ -55,9 +55,8 @@ public class HacerReclamoActivity extends AppCompatActivity {
                 String razon = ((EditText) findViewById(R.id.prodserv)).getText().toString();
                 String descripcion = ((EditText) findViewById(R.id.descripQueja)).getText().toString();
 
-                if (nombre != null && ci != null && ext != null && cel != null &&
-                        correo != null && depto != null && razon != null && descripcion != null) {
-                    //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                if (!nombre.equals("") && !ci.equals("") && ! ext.equals("") &&! cel.equals("") &&
+                       ! correo.equals("") && ! depto.equals("") && !razon.equals("") && !descripcion.equals("")) {
                     String id = UUID.randomUUID().toString();
                     id = UUID.randomUUID().toString();
                     if (checkBox.isChecked()) {

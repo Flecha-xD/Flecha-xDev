@@ -96,7 +96,7 @@ public class BorrarUsuarioActivity  extends AppCompatActivity {
 
 //                COND: passwordSuperUser.equals(contrasenaSuperAdminDB)
                 if (passwordSuperUser.equals(contrasenaSuperAdminDB)) {
-                    if (codigoFunc != null && codAdmin != null) { //todos los datos llenos
+                    if (!codigoFunc.equals("") && !codAdmin.equals("")) { //todos los datos llenos
 //                        COND: codAdmin.equals(codigoSuperAdminDB)
                         if (codAdmin.equals(codigoSuperAdminDB)) {
 //                            COND: codigoFunc.equals(codigoFuncionarioDB)

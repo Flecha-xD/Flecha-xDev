@@ -115,16 +115,12 @@ public class ModificarProductoActivity extends AppCompatActivity {
                     }
                 });
 
-                if (password.equals(passFuncionarioDB) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
-                    if (nombre != null && descripcion != null && precio != null ) {//validacion momentanea)
-                        //compare todos los datos
-                        // update info
+                if (password.equals(passFuncionarioDB) ) {
+                    if (! nombre.equals("") && !descripcion.equals("") && !precio.equals("") ) {
                         HashMap hashMap = new HashMap();
                         hashMap.put("nombre", nombre);
                         hashMap.put("descripcion", descripcion);
                         hashMap.put("precio", precio);
-
-
                         productoRef.child("Productos Subsidio").child("Producto: " + codigo).updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
                             @Override
                             public void onSuccess(Object o) {
@@ -187,7 +183,7 @@ public class ModificarProductoActivity extends AppCompatActivity {
                         toast.show();
                     }
                 });
-                if (password.equals(passFuncionarioDB) ) { //AQUI ENLAZAR LA BASE DE DATOS CON VALIDACIONES y que
+                if (password.equals(passFuncionarioDB) ) {
                     productoRef.child("Productos Subsidio").child("Producto: " + codigo).removeValue();
                     Toast toast = Toast.makeText(getApplicationContext(), "Producto borrado", Toast.LENGTH_SHORT);
                     toast.show();
@@ -203,8 +199,6 @@ public class ModificarProductoActivity extends AppCompatActivity {
 
     }
 
-
-
 //mostar foto en pantalla
 
     @Override
@@ -217,11 +211,10 @@ public class ModificarProductoActivity extends AppCompatActivity {
                 photoURI = pickedImage;
                 imagenElegida.setClipToOutline(true);   
                 imagenElegida.setImageURI(photoURI);
-              //  uploadPicture();
+                uploadPicture();
             }
         }
     }
-
 
     //codigo para subir la fotografía al storage de producots/images
 

@@ -51,8 +51,7 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
                     String codigoSuperUser = ((EditText) findViewById(R.id.sucodigo)).getText().toString();
 
                     if (passwordSuperUser.equals(passHardcodeo)) {
-                        if (nombre != null && ci != null && ext != null && cel != null && correo != null && codigo != null) { //todos los datos llenos
-                            //idealmente aqui una linea compara que el codigo que da el ministerio sea unico pero sino nayproblema
+                        if (!nombre.equals("") && !ci.equals("") && !ext.equals("") && !cel.equals("") && !correo.equals("") && !codigo.equals("") ) {
                             if (checkBox.isChecked()) {
                                 //post un superadmin
                                 String id = UUID.randomUUID().toString();

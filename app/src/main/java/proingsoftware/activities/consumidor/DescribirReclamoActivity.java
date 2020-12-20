@@ -55,7 +55,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
     private FirebaseStorage storage;
     private StorageReference mStorageReference;
     public Uri photoURI;
-
+    private boolean permitido;
     //Firebase variables
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reclamoRef = database.getReference();
@@ -70,7 +70,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         storage = FirebaseStorage.getInstance();
         mStorageReference = FirebaseStorage.getInstance().getReference();
-
+         permitido= false;
         setContentView(R.layout.activity_describir_reclamo);
         this.imageView = (ImageView) this.findViewById(R.id.imagetoupload);
         sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
@@ -86,7 +86,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (imageView != null) {
+                if (permitido) {
                     enviarReclamo = new Intent(DescribirReclamoActivity.this, MenuConsumidorActivity.class);
                     startActivity(enviarReclamo);
                     CharSequence text = "Su reclamo será atendido lo antes posible";
@@ -162,6 +162,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                 photoURI = data.getData();
                 imageView.setImageBitmap(photo);
                 imageView.setImageURI(photoURI);
+                uploadPicture();
             }
             if (requestCode == SELECT_PHOTO) {
                 Uri pickedImage = data.getData();
@@ -192,6 +193,7 @@ public class DescribirReclamoActivity extends AppCompatActivity {
                         foto= "https://firebasestorage.googleapis.com/v0/b/flecha-xd.appspot.com/o/reclamos%2Fimages%2F" +randomName+ "?alt=media&token=4634c7c9-299d-4186-8a3d-b37d91342441";
                         ReclamoFirebase reclamo = new ReclamoFirebase(id,nombre,ci,ext,cel,correo,depto,producto,descripcion,foto, false);
                         reclamoRef.child("Reclamos").child(id).setValue(reclamo);
+                        permitido = true;
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

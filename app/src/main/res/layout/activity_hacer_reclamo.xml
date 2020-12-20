@@ -161,7 +161,7 @@
         android:layout_marginTop="13dp"
         android:background="@drawable/round_box"
         android:hint="Descripción"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:text=""
         android:maxLength="80"
         android:gravity="top"

@@ -1,7 +1,9 @@
 package proingsoftware.activities.consumidor;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ import java.util.ArrayList;
 
 import proingsoftware.Adapters.MisReclamoFirebaseAdapter;
 import proingsoftware.Adapters.ReclamoFirebaseAdapter;
+import proingsoftware.activities.funcionario.MenuFuncionarioActivity;
 import proingsoftware.model.ReclamoFirebase;
 
 public class HistorialReclamosActivity extends AppCompatActivity {
@@ -64,27 +67,36 @@ public class HistorialReclamosActivity extends AppCompatActivity {
                     Toast.makeText(HistorialReclamosActivity.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
                 }
             });
-        } else if (activity.equals("CONSUMIDOR")){
+        } else if (activity.equals("CONSUMIDOR")) {
             titulo.setText("MIS RECLAMOS");
-             query = reference.orderByChild("dept").equalTo("La Paz");
-            query.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    list = new ArrayList<ReclamoFirebase>();
-                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
-                    {
-                        ReclamoFirebase p = dataSnapshot1.getValue(ReclamoFirebase.class);
-                        list.add(p);
-                    }
-                    adapter = new MisReclamoFirebaseAdapter(HistorialReclamosActivity.this,list);
-                    recyclerView.setAdapter(adapter);
-                }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(HistorialReclamosActivity.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
-                }
-            });
+            final SharedPreferences mSharedPreference = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+            String value = (mSharedPreference.getString("carnet", "DEFAULT"));
+            if (value.equals("DEFAULT")) {
+                Toast.makeText(HistorialReclamosActivity.this, "No ha realizado reclamos", Toast.LENGTH_SHORT).show();
+                intent = new Intent(HistorialReclamosActivity.this, ConfiguracionActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                query = reference.orderByChild("ci").equalTo(value);
+                query.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        list = new ArrayList<ReclamoFirebase>();
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            ReclamoFirebase p = dataSnapshot1.getValue(ReclamoFirebase.class);
+                            list.add(p);
+                        }
+                        adapter = new MisReclamoFirebaseAdapter(HistorialReclamosActivity.this, list);
+                        recyclerView.setAdapter(adapter);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(HistorialReclamosActivity.this, "Algo salió mal", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
         }
     }
 }

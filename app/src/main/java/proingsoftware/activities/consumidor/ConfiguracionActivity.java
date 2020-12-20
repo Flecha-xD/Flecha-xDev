@@ -17,9 +17,7 @@ import proingsoftware.activities.funcionario.VerTodosReclamosActivity;
 import proingsoftware.activities.superusuario.MenuSuperUsuarioActivity;
 
 public class ConfiguracionActivity extends AppCompatActivity {
-
     Button admin, historialReclamos;
-    SharedPreferences sharedPreferences;
     Intent intent;
     Switch modoEmo, saveData;
 
@@ -59,9 +57,6 @@ public class ConfiguracionActivity extends AppCompatActivity {
         historialReclamos = (Button) findViewById(R.id.historialButton);
         historialReclamos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //SharedPreferences.Editor editor = sharedPreferences.edit();
-                //editor.apply();
-                //editor.commit();
                 intent = new Intent(ConfiguracionActivity.this, HistorialReclamosActivity.class);
                 intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
                 startActivity(intent);

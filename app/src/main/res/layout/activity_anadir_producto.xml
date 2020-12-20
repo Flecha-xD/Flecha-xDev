@@ -96,7 +96,7 @@
         android:text=""
         android:background="@drawable/round_box"
         android:hint="Descripción"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:maxLength="400"
         android:gravity="top"
         android:paddingStart="10dp"

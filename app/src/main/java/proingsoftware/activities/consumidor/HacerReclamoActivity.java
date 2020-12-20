@@ -3,6 +3,7 @@ package proingsoftware.activities.consumidor;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -28,26 +29,21 @@ public class HacerReclamoActivity extends AppCompatActivity {
     Button enviar;
     Intent seguirIntent;
     CheckBox checkBox;
-    SharedPreferences sharedPreferences;
-
+    String carnet;
+    EditText ci;
     //Firebase variables
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reclamoRef = database.getReference();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hacer_reclamo);
-        sharedPreferences = getSharedPreferences("DatoCheckbox", MODE_PRIVATE);
-        checkBox = findViewById(R.id.essubsi);
-
+        checkBox = (CheckBox) findViewById(R.id.essubsi);
         enviar = findViewById(R.id.siguienteButton);
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String nombre = ((EditText) findViewById(R.id.nombre)).getText().toString();
-                String ci = ((EditText) findViewById(R.id.carnet)).getText().toString();
+                ci = (EditText) findViewById(R.id.carnet);
                 String ext = ((EditText) findViewById(R.id.extension)).getText().toString();
                 String cel = ((EditText) findViewById(R.id.celular)).getText().toString();
                 String correo = ((EditText) findViewById(R.id.email)).getText().toString();
@@ -67,13 +63,18 @@ public class HacerReclamoActivity extends AppCompatActivity {
                     seguirIntent = new Intent(HacerReclamoActivity.this, DescribirReclamoActivity.class);
                     seguirIntent.putExtra("id", id);
                     seguirIntent.putExtra("nombre", nombre);
-                    seguirIntent.putExtra("ci", ci);
+                    seguirIntent.putExtra("ci", ci.getText().toString());
                     seguirIntent.putExtra("ext", ext);
                     seguirIntent.putExtra("cel", cel);
                     seguirIntent.putExtra("correo", correo);
                     seguirIntent.putExtra("dept", depto);
                     seguirIntent.putExtra("producto", razon);
                     seguirIntent.putExtra("descripcion", descripcion);
+                    SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                    SharedPreferences.Editor editor = mSharedPreferences.edit();
+                    carnet =  mSharedPreferences.getString("carnet", "DEFAULT");
+                    editor.putString("carnet", ci.getText().toString());
+                    editor.apply();
                     startActivity(seguirIntent);
                 } else {
                     CharSequence text = "Datos Incompletos";

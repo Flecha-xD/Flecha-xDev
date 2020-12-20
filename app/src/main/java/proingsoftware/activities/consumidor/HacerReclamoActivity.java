@@ -28,7 +28,6 @@ import proingsoftware.model.ReclamoFirebase;
 public class HacerReclamoActivity extends AppCompatActivity {
     Button enviar;
     Intent seguirIntent;
-    CheckBox checkBox;
     String carnet;
     EditText ci;
     //Firebase variables
@@ -37,7 +36,6 @@ public class HacerReclamoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hacer_reclamo);
-        checkBox = (CheckBox) findViewById(R.id.essubsi);
         enviar = findViewById(R.id.siguienteButton);
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +53,6 @@ public class HacerReclamoActivity extends AppCompatActivity {
                        ! correo.equals("") && ! depto.equals("") && !razon.equals("") && !descripcion.equals("")) {
                     String id = UUID.randomUUID().toString();
                     id = UUID.randomUUID().toString();
-                    if (checkBox.isChecked()) {
-                        CharSequence text = "Producto del Subsidio";
-                        Toast toast = Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
-                        toast.show();
-                    }
                     seguirIntent = new Intent(HacerReclamoActivity.this, DescribirReclamoActivity.class);
                     seguirIntent.putExtra("id", id);
                     seguirIntent.putExtra("nombre", nombre);

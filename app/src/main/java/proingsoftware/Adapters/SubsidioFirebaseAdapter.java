@@ -38,7 +38,7 @@ public class SubsidioFirebaseAdapter extends RecyclerView.Adapter<SubsidioFireba
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.descripcion.setText(productos.get(position).getDescripcion());
         holder.nombre.setText(productos.get(position).getNombre());
-        holder.precio.setText(productos.get(position).getPrecio());
+        holder.precio.setText(productos.get(position).getPrecio() + " Bs.");
         Picasso.get().load(productos.get(position).getFoto()).into(holder.fotoSub);
     }
 

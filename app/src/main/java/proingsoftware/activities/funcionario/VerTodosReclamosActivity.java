@@ -13,6 +13,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import proingsoftware.Adapters.ReclamoFirebaseAdapter;
@@ -34,7 +35,8 @@ public class VerTodosReclamosActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerViewMenu);
         recyclerView.setLayoutManager( new LinearLayoutManager(this));
         reference = FirebaseDatabase.getInstance().getReference().child("Reclamos");
-        reference.addValueEventListener(new ValueEventListener() {
+        Query query = reference.orderByChild("fueAtendido").equalTo(false);
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list = new ArrayList<ReclamoFirebase>();

@@ -9,10 +9,15 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.UUID;
 
@@ -28,6 +33,10 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
         //Firebase variables
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference adminRef = database.getReference();
+
+    private String codigoSuperAdminDB;
+    private String contrasenaSuperAdminDB;
+    private String codigoFuncionarioDB;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -50,7 +59,42 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
                     String passwordSuperUser = ((EditText) findViewById(R.id.supassword)).getText().toString();
                     String codigoSuperUser = ((EditText) findViewById(R.id.sucodigo)).getText().toString();
 
-                    if (passwordSuperUser.equals(passHardcodeo)) {
+                    //get PASSWORD SUPERADMIN from db
+                    adminRef.child("Funcionarios").child("Funcionario: " + codigoSuperUser).child("password").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            //Si existe el superadmin y si el boolean "esAdmin" es true
+                            if(snapshot.exists() ){
+                                contrasenaSuperAdminDB = snapshot.getValue().toString();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            toast = Toast.makeText(getApplicationContext(), "Error al conectar con la base de datos", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    });
+
+                    //get CODIGO SUPERADMIN from db
+                    adminRef.child("Funcionarios").child("Funcionario: " + codigoSuperUser).child("codigo").addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            //Si existe el superadmin y si el boolean "esAdmin" es true
+                            if(snapshot.exists()){
+                                codigoSuperAdminDB = snapshot.getValue().toString();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            toast = Toast.makeText(getApplicationContext(), "Error al conectar con la base de datos", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    });
+
+
+
+
+                    if (passwordSuperUser.equals(contrasenaSuperAdminDB)) {
                         if (!nombre.equals("") && !ci.equals("") && !ext.equals("") && !cel.equals("") && !correo.equals("") && !codigo.equals("") ) {
                             if (checkBox.isChecked()) {
                                 //post un superadmin

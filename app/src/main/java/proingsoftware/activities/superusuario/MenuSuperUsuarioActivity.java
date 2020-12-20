@@ -64,6 +64,8 @@ public class MenuSuperUsuarioActivity extends AppCompatActivity {
             });
         }
     }
-
-
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 }

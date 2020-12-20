@@ -69,14 +69,16 @@ public class MenuFuncionarioActivity extends AppCompatActivity {
                         intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }else if (cardIndex == 3){
-                        intent = new Intent(MenuFuncionarioActivity.this, HistorialReclamosActivity.class); //Filtra con firebase
-                        intent.putExtra("FROM_ACTIVITY", "CONSUMIDOR");
+                        intent = new Intent(MenuFuncionarioActivity.this, HistorialReclamosActivity.class);
+                        intent.putExtra("FROM_ACTIVITY", "FUNCIONARIO");
                         startActivity(intent);
                     }
                 }
             });
         }
     }
-
-
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 }

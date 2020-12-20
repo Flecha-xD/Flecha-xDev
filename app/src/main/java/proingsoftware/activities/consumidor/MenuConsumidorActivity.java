@@ -69,6 +69,9 @@ public class MenuConsumidorActivity extends AppCompatActivity { //reparar el xml
             });
         }
     }
-
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 
 }

@@ -31,20 +31,14 @@ public class ConfiguracionActivity extends AppCompatActivity {
                 (buttonView, isChecked) -> {
                     if (isChecked) {
                         Toast.makeText(ConfiguracionActivity.this,
-                                "Modo oscuro activado", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(ConfiguracionActivity.this,
-                                "Modo oscuro desactivado", Toast.LENGTH_SHORT).show();
+                                "Disponible desde la siguiente versión", Toast.LENGTH_SHORT).show();
                     }
-                }); //probar no hay certeza de que funcione
+                });
         saveData.setOnCheckedChangeListener(
                 (buttonView, isChecked) -> {
                     if (isChecked) {
                         Toast.makeText(ConfiguracionActivity.this,
-                                "Esta función será implementada en la siguiente versión", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(ConfiguracionActivity.this,
-                                "Sin datos guardados", Toast.LENGTH_SHORT).show();
+                                "Disponible desde la siguiente versión", Toast.LENGTH_SHORT).show();
                     }
                 });
         admin = (Button) findViewById(R.id.adminButton);

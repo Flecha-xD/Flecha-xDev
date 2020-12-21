@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.R;
+import com.google.firebase.FirebaseError;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -92,8 +93,6 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
                     });
 
 
-
-
                     if (passwordSuperUser.equals(contrasenaSuperAdminDB)) {
                         if (!nombre.equals("") && !ci.equals("") && !ext.equals("") && !cel.equals("") && !correo.equals("") && !codigo.equals("") ) {
                             if (checkBox.isChecked()) {
@@ -121,9 +120,6 @@ public class CrearFuncionarioActivity extends AppCompatActivity{
                             toast = Toast.makeText(getApplicationContext(), "Todos los campos son obligatorios", Toast.LENGTH_SHORT);
                             toast.show();
                         }
-                    } else {
-                        toast = Toast.makeText(getApplicationContext(), "Contraseña equivocada", Toast.LENGTH_LONG);
-                        toast.show();
                     }
                 }
 

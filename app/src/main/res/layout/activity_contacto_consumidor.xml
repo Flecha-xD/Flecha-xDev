@@ -21,8 +21,10 @@
             android:gravity="center"
             android:text="CONTACTO"
             android:textColor="@color/white"
-            android:textSize="24dp"
-            android:textStyle="bold"></TextView>
+            android:textSize="21dp"
+            android:textStyle="bold">
+
+        </TextView>
     </RelativeLayout>
 
     <GridLayout

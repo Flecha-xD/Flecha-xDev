@@ -21,7 +21,7 @@
             android:gravity="center"
             android:text="ELIMINAR FUNCIONARIO"
             android:textColor="@color/white"
-            android:textSize="24dp"
+            android:textSize="21dp"
             android:textStyle="bold">
 
         </TextView>

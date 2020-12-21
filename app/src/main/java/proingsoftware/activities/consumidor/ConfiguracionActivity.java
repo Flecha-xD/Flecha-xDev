@@ -29,13 +29,17 @@ public class ConfiguracionActivity extends AppCompatActivity {
         saveData = (Switch) findViewById(R.id.saveInfo);
         modoEmo.setOnCheckedChangeListener(
                 (buttonView, isChecked) -> {
-                    Toast.makeText(ConfiguracionActivity.this,
-                            "Disponible desde la siguiente versión", Toast.LENGTH_SHORT).show();
+                    if (isChecked) {
+                        Toast.makeText(ConfiguracionActivity.this,
+                                "Disponible desde la siguiente versión", Toast.LENGTH_SHORT).show();
+                    }
                 });
         saveData.setOnCheckedChangeListener(
                 (buttonView, isChecked) -> {
-                    Toast.makeText(ConfiguracionActivity.this,
-                            "Disponible desde la siguiente versión", Toast.LENGTH_SHORT).show();
+                    if (isChecked) {
+                        Toast.makeText(ConfiguracionActivity.this,
+                                "Disponible desde la siguiente versión", Toast.LENGTH_SHORT).show();
+                    }
                 });
         admin = (Button) findViewById(R.id.adminButton);
         admin.setOnClickListener(new View.OnClickListener() {

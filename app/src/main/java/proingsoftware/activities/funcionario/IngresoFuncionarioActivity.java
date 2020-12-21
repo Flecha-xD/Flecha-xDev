@@ -64,7 +64,9 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
                 String password = ((EditText) findViewById(R.id.contrasenia)).getText().toString();
 
                 getFromDB(codigo);
-               if ((codigo.equals(funcionarioCodigoDB)) && (nombre.equals(funcionarioNameDB)&& ci.equals(funcionarioCIDB) && ext.equals(funcionarioExtDB) && cel.equals(funcionarioCelDB)&& correo.equals(funcionarioCorreoDB) && password.equals(funcionarioPassDB))) {
+               if ((codigo.equals(funcionarioCodigoDB)) && (nombre.equals(funcionarioNameDB)&& ci.equals(funcionarioCIDB)
+                       && ext.equals(funcionarioExtDB) && cel.equals(funcionarioCelDB)&& correo.equals(funcionarioCorreoDB)
+                       && password.equals(funcionarioPassDB))) {
                    if (validadorIF) {
                        superIntent = new Intent(IngresoFuncionarioActivity.this, MenuSuperUsuarioActivity.class);
                        startActivity(superIntent);
@@ -78,7 +80,7 @@ public class IngresoFuncionarioActivity extends AppCompatActivity {
         });
    }
 
-    public void ToastLoginFail() {
+    public void datosEquivocados() {
         CharSequence text = "Datos Equivocados";
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(getApplicationContext(), text, duration);
